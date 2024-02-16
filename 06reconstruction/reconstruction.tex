@@ -1,0 +1,150 @@
+\chapter{Reconstruction}
+
+\label{ch:Reconstruction}
+
+Reconstruction involves converting energy deposits, or hits, along with their positions and timings—calibrated as described in Section~\ref{sec:calibration}—into physical quantities essential for the physics interpretation. Since the completion of its physics run, part of MINERvA's data preservation efforts \cite{dataPreservation_fine2020}, in which I have been involved, was to integrate reconstruction tools across various analyses and produce unified files containing both low- and high-level reconstructed objects used in all current and future analyses. Recently, the first iteration of these files, passing validation studies, has been produced and is used in this measurement.
+
+This chapter focuses on the individual components of the common MINERvA reconstruction tool relevant for measuring nuclear dependence in antineutrino scattering. Therefore, in addition to the low-level grouping of hits in time and space, the reconstruction of the antimuon---specifically its track, direction, and momentum---is discussed. Furthermore, the reconstruction of the hadronic recoil system, i.e., energy in the detector not associated with the antimuon, needed for calculating Bjorken $x$ as defined in the previous chapter is also described. Finally, as the accurate placement of the interaction vertex is crucial for studying how antineutrinos interact with different materials, MINERvA's machine-learning technique for doing so is briefly reviewed. Note that both the data and the simulation sample are reconstructed this way.
+
+% time slicing
+% time and energy calibrated
+% hit clustering
+
+\section{Hit clustering by time and position}
+
+Multiple antineutrino and other particle interactions could occur during one data-taking period, i.e.~a 16~$\mu$s gate, of the MINERvA detector. To distinguish each interaction in time, hits within each gate are initially clustered in 24~ns time windows, referred to as slices, if their total energy deposition surpasses the threshold of 10 photoelectrons. This threshold corresponds to 2/3 of the signal over a plane for a normally incident minimum ionizing particle, such as a rock muon. The time slice is then extended forward to incorporate additional hits until the threshold requirement is no longer met, resulting in variable-length time slice windows. All subsequent reconstruction steps are performed within these time slices.
+
+[Include a figure of color-coded time slices here]
+
+Thereafter, hits within a plane that are 'touching' each other are grouped into clusters of various sizes based on total energy deposits, categorized as low activity, trackable, heavy-ionizing, or superclusters. These clusters are then subjected to further reconstruction processes, involving track finding for the antimuon and summing all other hits for the recoil system. Clusters are corrected for cross-talk and are excluded from consideration after being used in the reconstruction process. Each cluster is utilised only once. 
+
+[Include a figure illustrating the clusters]
+
+
+\section{Antimuon information}
+% useful: Amy's thesis: https://scholarworks.wm.edu/cgi/viewcontent.cgi?article=7271&context=etd
+% Description: https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=10017&filename=Minerva101-2015-Reconstruction.pdf&version=2
+
+% Muon track reco
+Any antineutrino interactions in the MINERvA detector can be identified by the produced antimuon. An (anti)muon, being a minimum ionising particle (MIP), leaves a distinctive signature of a long straight track in the detector. As described in Ref.~\cite{Aliaga_2014}, the reconstruction starts with finding trackable and heavy-ionising clusters forming a straight track in a minimum of three planes in each of the three views. Any additional clusters with slope and intercept consistent with this straight-track topology are added in each view.
+
+The two-dimensional (2D) candidate tracks from each view are combined into a three-dimensional (3D) track if they are compatible to form a straight line. Due to the aforementioned three-plane requirement for the 2D candidates and the plane configuration of the MINERvA detector, as discussed in Section~reference[], the 3D track must span at least eleven planes in total. Subsequently, the track is fitted using Kalman filter [cite Kalman filter], considering the potential multiple scattering of the (anti)muon track. %It minimizes the local $\chi^2$ of the sum of the distance between the cluster position and the estimated track parameters, including track angle and position. The resulting straight track is projected upstream and downstream, including any clusters along this projection. 
+Any super-cluster included in this way is subdivided into smaller clusters, ensuring the cluster energy aligns with that of a MIP---otherwise, they are removed and accounted for as a part of the recoil system. The fitted (anti)muon track has a resolution of 3~mm \cite{Aliaga_2014}.
+
+% MINOS matching
+For the antineutrino interaction to be considered in this work's measurement, the antimuon must have its charge (positive to be identified as antimuon) and its momentum measured by the MINOS spectrometer---various details and constraints of the MINERvA--MINOS combination are discussed in Chapter~\ref{sec:MINOS}. Therefore, the antimuon track found in the MINERvA detector must be matched to the one found in the MINOS spectrometer within a 200~ns time window. The tracks are matched if the difference between the end-point of MINERvA track projected upstream and the start of the MINOS spectrometer track (and vice versa) is less than 40~cm. The (anti)muon track reconstruction in the MINOS near detector has similar steps to the MINERvA reconstruction.
+
+% Muon momentum recontruction
+The antimuon momentum in the MINOS spectrometer is reconstructed either by range or curvature, utilising the magnetic field. Typically, (anti)muons with momenta up to 6~GeV/$c$ were contained within MINOS and were thus reconstructed by range, i.e.~total energy loss through interactions, with momentum resolution of 5\%\cite{Aliaga_2014, PhysRevD.81.072002}. In order to reconstruct (anti)muons originating from interactions in the MINERvA detector, they had to enter MINOS and penetrate at least 25.4~cm into it, requiring a minimum (anti)muon momentum of about 2~GeV/$c$ \cite{Aliaga_2014}. (Anti)muons with higher momenta were reconstructed by curvature with 10\% momentum resolution \cite{PhysRevD.81.072002}. Specifically, the antimuon momentum $p_{\text{MINOS}}$ measured in the MINOS spectrometer  by curvature is proportional to the magnetic field $B$ over the measured radius $R$ of the curvature, 
+\begin{equation}
+    \label{eq:momByCurvature}
+    p_{\text{MINOS}} \text{ }[\text{MeV}/c] = \frac{0.3B\text{ }[\text{kGauss}]}{R\text{ }[\text{cm}]} \hspace{5pt}.
+\end{equation}
+% systematics MINOS
+%The additional systematic uncertainties on muon momenta measured by curvature are 0.6\% for muons with momenta greater than 1 GeV/c and 2.5\% for those less than 1 GeV/c. The range and curvature uncertainties for muons measured by curvature are added in quadrature to obtain the total muon momentum uncertainty for muons measured by curvature of 2.1\% (3.1\%) for muons with momenta above (below) 1 GeV.
+In addition to the antimuon momentum measured by MINOS, the total antimuon momentum also accounts for the energy loss while traversing the MINERvA detector, i.e. $p_{\text{total}} = p_{\text{MINOS}} + p_{\text{MINERvA}}$.
+
+% systematics MINERvA
+% The reconstructed energy loss in Minerva has two sources of uncertainty. The first source is the parameters of the Bethe Bloch equation, which varies the energy by 30 MeV for tracks that start in the active tracker region and 40 MeV for tracks that start in the nuclear target region. The second source is the material assay, which can vary the energy by 11 MeV for tracks that start in the active tracker region and 17 MeV for tracks that start in the nuclear target region.
+
+The antimuon track reconstruction, i.e., determining the direction and momentum of the antimuon, is performed in the detector coordinates, which differ from the antineutrino beam coordinates as defined in Chapter~\ref{ch:minerva}. To express quantities with respect to the incoming antineutrino beam, the antimuon momentum vector in the detector coordinates is rotated 3.34$^{\circ}$ downwards in the $y$-$z$ plane to align with the beam coordinates. Subsequently, the transverse antimuon momentum $p_{\text{T}}$ is calculated using the rotated antimuon momentum vector, and it is, therefore, perpendicular to the beam direction, as illustrated in Figure~[make figure of the perpendicular pT].
+
+%which is perpendicular to the beam direction is then reconstructed as
+%\begin{equation}
+%    \label{eq:pRotationX}
+%    %\vspace{
+%    p_x' = p_x, 
+%\end{equation}
+%\vspace{-38pt}
+%\begin{equation}
+%    \label{eq:pRotationY}
+%    %\vspace{
+%   p_y' = \cos (\theta_{\text{beam}}) p_y - \sin (\theta_{\text{beam}}) p_z,
+%\end{equation}
+%\vspace{-30pt}
+%\begin{equation}
+%    \label{eq:pRotationZ}
+%   %\vspace{
+%    p_z' = \sin (\theta_{\text{beam}}) p_y + \cos %(\theta_{\text{beam}}) p_z \hspace{5pt}.
+%\end{equation}
+%The transverse antimuon momentum $p_{\text{T}}$ which is perpendicular to the beam direction is then reconstructed as
+%\begin{equation}
+%    \label{eq:pTreco}
+%    %\vspace{
+%    p_\text{T} = \sqrt{p_x^2 + p_y'^2} \hspace{5pt}.
+%\end{equation}
+
+% NOTE
+% beam direction facing 3.34 degrees downwards in the yz plane, hence rotation by 3.34 around x to get from the detector coordiante to the beam coordinates
+% Rx(theta) = [ 1       0            0
+%               0   cos(theta)   -sin(theta)
+%               0   sin(theta)    cos(theta)  ]
+
+
+\section{Recoil energy}
+% calorimetric correction Anne Norrick: https://scholarworks.wm.edu/etd/1550153893/ (thesis)
+% calorimetric correction Anne Norrick technote: 
+% Devan: full detail %https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=7712&filename=calorimetry-note.pdf&version=2
+% depth mainly based on Amy
+% https://scholarworks.wm.edu/etd/1681950288/
+
+
+Any remaining clusters in the detector not associated with the antimuon track contribute to the hadronic recoil system, which is relevant for the calculation of Bjorken $x$ (excluding low-activity clusters identified as cross-talk). However, the recoil energy deposited by these clusters must be corrected to account for energy loss in the passive material of the detector. This process of estimating the energy of the hadronic recoil system is known as calorimetry. 
+
+Specifically, the total energy of the non-antimuon clusters per subdetector is corrected by the sampling frequency\footnote{Sampling frequency is defined as the ratio of the energy deposited by an incident MIP in the active part of the detector divided by the sum of energies deposited by an incident MIP in the active and passive part.} of the given subdetector, also taking into account that the active scintillator planes are not fully active, as described in Chapter~\ref{ch:minerva}.\enlargethispage{2\baselineskip} The calorimetrically reconstructed recoil energy corrected for passive material overall is then the sum of these corrected subdetector energies. In the nuclear target region, the calorimetric correction is done cluster by cluster to account for the amount of passive material through which the resulting particles travel; for example, particles produced in target 1 traverse more passive material than those produced in target 5. In addition, if clusters are located only on one side of the target, the sampling frequency is calculated using half of the width of the passive target. A more detailed description of MINERvA's calorimetric correction can be found in Refs.~[cite]. 
+
+
+%The calorimetrically reconstructed recoil energy corrected for passive material $E_{\text{recoil}}^{\text{reco, pmc}}$ is calculated as
+%\begin{equation}
+%    \label{eq:recoRecoil1}
+%    %\vspace{
+%    E_{\text{recoil}}^{\text{reco, pmc}} = \sum_{i}^{\text{subdetector}}\left( \frac{E_i}{f^{\text{sampling}}}\right) \times \text{scintillator active fraction}
+%\end{equation}
+%where the sum is performed over the individual subdetectors $i$ of the MINERvA detector and $E_i$ represents the total energy of the non-antimuon clusters in that subdetectors, and the $f_{i}$ term is the sampling frequency of the subdetector.  The expression also takes into account that the active scintillator planes are not fully active, as described in Chapter~\ref{ch:minerva}.
+
+% f_sampling is (Eactive)/(Eactive+EAbsorber)
+% sampling freqency page 11: https://cds.cern.ch/record/692252/files/ep-2003-075.pdf
+
+% also binding energy of the struck nucleon within the nucleus
+% or energy leakage out of the side of the detector.
+Moreover, MINERvA also applies an additional calorimetric correction considering any differences between the above-corrected reconstructed recoil energy and the true recoil energy based on the true information available in the simulation, defined as the difference between the true antineutrino and true antimuon energy. This correction accounts for the loss of visible energy due to final state interactions (FSI), neutral particles, and other effects. Since these effects cannot be disentangled in an inclusive analysis, the correction is somewhat dependent on the underlying understanding of their behaviour encoded in the simulation. In this measurement, this is particularly relevant as antineutrino scattering produces final-state neutrons, whose kinetic energy cannot be reconstructed. Furthermore, this correction is energy dependent. Higher energy processes can have more significant FSI, produce more neutral particles in final states, etc. Therefore, it is applied bin-by-bin as a spline correction.~Historically, this correction process was carried out at the reconstruction level for each analysis separately. However, to support the new data preservation analysis files enabling all current and future analyses, I implemented this process on the post-reconstruction level within the high-level MINERvA Analysis Toolkit~(MAT) \cite{MAT_Messerly_2021}. This also allows for future improvements of these corrections using simulations with improved interaction models if necessary. 
+
+In particular, this additional spline correction is calculated by the fractional 
+
+applied as a multiplicative factor to the reconstructed recoil energy corrected for passive material. 
+
+
+
+- true recoil energy directly from the simulation as the difference between the known antineutrino and antimuon energy
+-  reconstruction more complex combining clusters not attached to antimuon in each materila, correcting them based on the fraction of the passive material in that region 
+- passive matrial correction pont to Anne's thesis
+- normalisation correction found by comparing true and the reconstructed sum
+- correction to account for neutral particles such as neutrons by fitting  polyline the fractional difference between the calorimeric and true recoil energy such that the average difference is 0
+- splines between 0 and 50 GeV
+
+%This is calculated by looking at the fractional energy resolution of the calorimetric energy in bins of true recoil energy in the simulation. 
+
+
+%A test beam program which used a scaled down version of the MINERvA detector in a charged particle beam was used to validate the calibration of the calorimetric response to single particles. It showed agreement between the data and simulation of particle interactions to within 4\% [72].
+
+
+[ADD migration matrix with and without the correction]
+
+
+
+
+%- calorimetric spline correction
+%- passive material correction
+
+\section{Interaction vertex}
+
+%All events reconstructed using the machine-learning vertexing technique discussed in Chapter~{ch:Reconstruction} are by default so-called MINOS-matched events. This refers to interactions for which the antimuon track observed in the MINERvA detector was matched to the track observed in the MINOS spectrometer. The MINOS spectrometer is used to select positively charged muons, i.e. antimuons, based on the curvature of the track in the magnetic field. 
+
+
+
+%\section{ML}
+
+
+%https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=16995&filename=MachineLearningVertexing.pdf&version=1
+
+

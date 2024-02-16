@@ -1,0 +1,117 @@
+\documentclass[a4paper,12pt,oneside]{report}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=3cm]{geometry}
+
+\include{thesis.preamble}
+
+% fancy header for line in the header
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+
+% Clickable table of content
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Paragraph setting
+\usepackage[export]{adjustbox}
+%\usepackage{indentfirst}
+\usepackage{parskip}
+% Change the value to adjust the spacing
+\setlength{\parskip}{1pt} 
+
+% indent everything
+\setlength{\parindent}{20pt}
+
+% Other packages
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{accents}
+\newcommand*{\bbar}[1]{\accentset{[-]}{#1}}
+\newcommand*{\pbar}[1]{\accentset{(-)}{#1}}
+\clubpenalty=9999
+\widowpenalty=9999
+\raggedbottom 
+\usepackage[all]{nowidow}
+\usepackage[british]{babel}
+\usepackage{cite}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{tabularx,ragged2e}
+\usepackage{rotating}
+\usepackage{tikzpagenodes}
+
+% ===============================================================================================
+% ===================================== THESIS HERE =============================================
+% ===============================================================================================
+\begin{document}
+
+% Title
+\title{\LARGE {\bf Measurement of Nuclear Dependence in Inclusive Antineutrino Scattering}\\
+ \vspace*{6mm}
+}
+% Author
+\author{Ane\v{z}ka KLUSTOV\'{A}}
+% Date
+\submitdate{February 2024}
+
+\normallinespacing
+\maketitle
+
+% Preface  - roman page count
+\preface
+\input{00preface/abstract}
+\input{00preface/declaration}
+\input{00preface/declarationcopyright}
+\input{00preface/acknowledgements}
+\input{00preface/quotes}
+ 
+% Body of the thesis
+% All chapters come here
+\body
+\pagestyle{fancy}% Change page style to fancy
+\fancyhf{}% Clear header/footer
+% this would be chapter mark left and section mark right
+%\fancyhead[R]{\bfseries \rightmark}
+%\fancyhead[L]{\bfseries \leftmark}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[L]{\chaptername{} \thechapter }
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.1pt}% Default \headrulewidth is 0.4pt
+% Include individual chapters
+
+\input{01introduction/introduction.tex}
+\input{02theory/theory.tex}
+\input{03minerva/minerva.tex}
+\input{04measurement/measurement.tex}
+\input{05dataAsimulation/dataAsimulation.tex}
+\input{06reconstruction/reconstruction.tex}
+\input{07analysis1D/analysis1D.tex}
+\input{08analysis2D/analysis2D.tex}
+\input{09systematics/systematics.tex}
+\input{10results/results.tex}
+\input{11conclusions/conclusions.tex}
+
+% Formatting of Bibligraphy
+\addcontentsline{toc}{chapter}{Bibliography}
+%\bibliographystyle{alpha}
+\bibliographystyle{unsrturl2authabbrvpp}
+\bibliography{bibliography/bibliography.bib}
+
+\input{glossary/glossary.tex}
+
+% Appendices
+\appendix
+\input{appendix/appendix_eventSelection}
+\input{appendix/appendix_migrationMatrices}
+\input{appendix/appendix_unfolding}
+\input{appendix/appendix_unfoldingStudies}
+\input{appendix/appendix_efficiency}
+\input{appendix/appendixA}
+\input{appendix/appendixB}
+
+\end{document}

@@ -1,0 +1,16 @@
+thesis.synctex.gz
+thesis.preamble.aux
+thesis.bbl
+thesisFigures/*/*/*.roots
+thesis.aux
+thesis.blg
+thesis.fdb_latexmk
+thesis.fls
+thesis.lof
+thesis.log
+thesis.lot
+thesis.out
+thesis.toc
+thesis.pdf
+thesisFigures/*
+.DS_Store

@@ -1,0 +1,10 @@
+{
+    "latex-workshop.texcount.autorun": "onSave",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.outDir": "%DIR%",
+    "editor.wordWrap": "on",
+    "files.associations": {
+        "EventSelection_Bkg+ratio_t99_z99_x_minervame5A6A6B6C6D6E6F6G6H6I6J.C": "cpp",
+        "Joint_LE_ME_Flux_isFHC_0_doLog_0_POT_1.240000e+21.C": "cpp"
+    }
+}

@@ -1,0 +1,81 @@
+\chapter{Regularised D'Agostini iterative unfolding}
+
+\label{ch:appendix_unfolding}
+
+This appendix describes my understanding of the derivation and implementation of the regularised D'Agostini iterative unfolding algorithm, particularly the origin of the Equation~\ref{eq:unfolding}, based on References~\cite{DAgostini:1994fjx,DAgostini:2010hil,KuuselaThesis2016}. The reasons for the smearing of reconstructed distributions and the needs to reverse this process are discussed in Section~\ref{sec:migration_unfolding}.
+
+The number of events of a reconstructed distribution $\boldsymbol{y}$ in a particular bin $j$ can be related to the number of events of a true distribution $\boldsymbol{\lambda}$ in the bin $\alpha$ via a migration matrix $U_{j\alpha}$ such as
+\begin{equation}
+    \label{eq:folding}
+    y_{j} = \sum_{\alpha} U_{j\alpha}\lambda_{\alpha},
+\end{equation}
+where the migration matrix $U_{j\alpha}$ corresponds to
+\begin{equation}
+    \label{eq:migration}
+    U_{j\alpha} = P(y \in \text{reco bin } j~|~\lambda \in \text{true bin}~\alpha).
+\end{equation}
+Here, $y$ and $\lambda$ are the events from the reconstructed distribution $\boldsymbol{y}$ and the true distribution $\boldsymbol{\lambda}$, respectively. Therefore, the Equation~\ref{eq:folding} can be also thought of as the probability that a $y$ event belongs to the bin $j$,
+\begin{equation}
+    \label{eq:yDistribution}
+    P(y \in \text{reco bin } j) = \sum_{\alpha} P(y \in \text{reco bin } j~|~\lambda \in \text{true bin}~\alpha)  P(\lambda \in \text{true bin}~\alpha) .
+\end{equation}
+
+To reverse the smearing of the reconstructed distribution as described in Section~\ref{sec:migration_unfolding}, the unfolding matrix $\tilde{U}_{j\alpha}$ can be expressed as
+\begin{equation}
+    \label{eq:unfoldingMatrix}
+    \tilde{U}_{j\alpha} = P(\lambda \in \text{true bin } \alpha~|~y \in \text{reco bin }j).
+\end{equation}
+Applying the Bayes' theorem, this becomes
+\begin{equation}
+    \label{eq:unfoldingMatrix2}
+    \tilde{U}_{j\alpha} = \frac{P(y \in \text{reco bin } j~|~\lambda \in \text{true bin }\alpha) P(\lambda \in \text{true bin } \alpha)}{P(y \in \text{reco bin } j)}.
+\end{equation}
+Using the Equation~\ref{eq:yDistribution}, the denominator of the unfolding matrix can be rewritten as
+\begin{equation}
+    \label{eq:unfoldingMatrix3}
+    \tilde{U}_{j\alpha} = \frac{P(y \in \text{reco bin } j~|~\lambda \in \text{true bin }\alpha) P(\lambda \in \text{true bin } \alpha)}{\sum_{\beta}
+    P(y \in \text{reco bin } j~|~\lambda \in \text{true bin}~\beta) P(\lambda \in \text{true bin}~\beta)}.
+\end{equation}
+
+Taking into account that the conditional probability can be represented by the migration matrix from Equation~\ref{eq:migration}, the unfolding matrix is
+\begin{equation}
+    \label{eq:unfoldingMatrix4}
+    \tilde{U}_{j\alpha} = \frac{U_{j\alpha} P(\lambda \in \text{true bin } \alpha)}{\sum_{\beta}
+    U_{j\beta} P(\lambda \in \text{true bin}~\beta)}, 
+\end{equation}
+The zeroth order probability of the true event $\lambda$ in the bin $\alpha$ is the true event $\lambda_{\alpha}^0$ over the total of the observed events, i.e. 
+\begin{equation}
+    \label{eq:zerothOrder}
+    P^0(\lambda \in \text{true bin}~\alpha) = \frac{\lambda_{\alpha}^0}{\sum_{j}y_{j}}, 
+\end{equation}
+and hence the unfolding migration matrix for the first iteration can be represented by
+\begin{equation}
+    \label{eq:unfoldingMatrix5}
+    \tilde{U}_{j\alpha} = \frac{U_{j\alpha} \lambda_{\alpha}^0}{\sum_{\beta}
+    U_{j\beta} \lambda_{\beta}^0}.
+\end{equation}
+As discussed in Section~\ref{sec:migration_unfolding}, the zeroth order true distribution comes from the simulation prediction of the true distribution.
+
+The unfolded truth can be expressed as 
+\begin{equation}
+    \label{eq:unfolding1}
+    \lambda_{\alpha} = \sum_{j} \frac{P(\lambda \in \text{true bin} ~\alpha~|~y \in \text{reco bin}~j)~y_{j}}{P(y \in \text{reco bin}~j~|~\lambda \in \text{true bin}~\alpha)},
+\end{equation}
+where the denominator represents the overall unfolding efficiency $\epsilon_{\alpha}$, which is the sum over the reconstructed bins $j$ of the migration matrix in the Equation~\ref{eq:migration}, 
+\begin{equation}
+    \label{eq:efficiencyUnfolding}
+    \epsilon_{\alpha} = \sum_{j} P(y \in \text{reco bin } j~|~\lambda \in \text{true bin}~\alpha) = \sum_{j} U_{j\alpha}.
+\end{equation}
+The estimate of the true distribution after the first iteration is then given by substituting the Equation~\ref{eq:unfoldingMatrix5} in the Equation~\ref{eq:unfolding1}, i.e. 
+\begin{equation}
+    \label{eq:unfolding2}
+    \lambda_{\alpha} = \frac{\lambda_{\alpha}^0}{\sum_{j}U_{\j\alpha}}\sum_{j} \frac{U_{j\alpha}y_j}{\sum_{\beta}U_{j\beta}\lambda_{\beta}^0}.
+\end{equation}
+
+This is valid for each iteration, as the true distribution $\boldsymbol{\lambda}$ is updated after each step with the new prediction. Finally, the $(k+1)$th iteration of the D'Agostini method can be determined by 
+\begin{equation}
+    \label{eq:unfolding3}
+    \lambda_{\alpha}^{(k+1)} = \frac{\lambda_{\alpha}^{(k)}}{\sum_{j}U_{\j\alpha}}\sum_{j} \frac{U_{j\alpha}y_j}{\sum_{\beta}U_{j\beta}\lambda_{\beta}^{(k)}}.
+\end{equation}
+
+It is also important to note that this method was shown to be equivalent to the expectation--maximisation (EM) iteration algorithm \cite{EM:477e7e2b-4ded-3369-981e-9b40850a2701} for finding the maximum likelihood estimator (MLE) of $\boldsymbol{\lambda}$ in the Poisson regression problem $\boldsymbol{y} \sim \text{Poission}(\boldsymbol{U\lambda})$, $\boldsymbol{\lambda} \geq 0$ as $k \rightarrow \infty$ \cite{McLachlan2004Algorithm, KuuselaThesis2016}.
