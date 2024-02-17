@@ -12,7 +12,7 @@ This chapter focuses on the individual components of the common MINERvA reconstr
 
 \section{Hit clustering by time and position}
 
-Multiple antineutrino and other particle interactions could occur during one data-taking period, i.e.~a 16~$\mu$s gate, of the MINERvA detector. To distinguish each interaction in time, hits within each gate are initially clustered in 24~ns time windows, referred to as slices, if their total energy deposition surpasses the threshold of 10 photoelectrons. This threshold corresponds to 2/3 of the signal over a plane for a normally incident minimum ionizing particle, such as a rock muon. The time slice is then extended forward to incorporate additional hits until the threshold requirement is no longer met, resulting in variable-length time slice windows. All subsequent reconstruction steps are performed within these time slices.
+Multiple antineutrino and other particle interactions could occur during one data-taking period, i.e.~a 16~$\mu$s gate, of the MINERvA detector. To distinguish each interaction, i.e. event, in time, hits within each gate are initially clustered in 24~ns time windows, referred to as slices, if their total energy deposition surpasses the threshold of 10 photoelectrons. This threshold corresponds to 2/3 of the signal over a plane for a normally incident minimum ionizing particle, such as a rock muon. The time slice is then extended forward to incorporate additional hits until the threshold requirement is no longer met, resulting in variable-length time slice windows. All subsequent reconstruction steps are performed within these time slices.
 
 [Include a figure of color-coded time slices here]
 
@@ -91,7 +91,7 @@ The antimuon track reconstruction, i.e., determining the direction and momentum 
 
 Any remaining clusters in the detector not associated with the antimuon track contribute to the hadronic recoil system, which is relevant for the calculation of Bjorken $x$ (excluding low-activity clusters identified as cross-talk). However, the recoil energy deposited by these clusters must be corrected to account for energy loss in the passive material of the detector. This process of estimating the energy of the hadronic recoil system is known as calorimetry. 
 
-Specifically, the total energy of the non-antimuon clusters per subdetector is corrected by the sampling frequency\footnote{Sampling frequency is defined as the ratio of the energy deposited by an incident MIP in the active part of the detector divided by the sum of energies deposited by an incident MIP in the active and passive part.} of the given subdetector, also taking into account that the active scintillator planes are not fully active, as described in Chapter~\ref{ch:minerva}.\enlargethispage{2\baselineskip} The calorimetrically reconstructed recoil energy corrected for passive material overall is then the sum of these corrected subdetector energies. In the nuclear target region, the calorimetric correction is done cluster by cluster to account for the amount of passive material through which the resulting particles travel; for example, particles produced in target 1 traverse more passive material than those produced in target 5. In addition, if clusters are located only on one side of the target, the sampling frequency is calculated using half of the width of the passive target. A more detailed description of MINERvA's calorimetric correction can be found in Refs.~[cite]. 
+Specifically, the total energy of the non-antimuon clusters per subdetector is corrected by the sampling frequency\footnote{Sampling frequency is defined as the ratio of the energy deposited by an incident MIP in the active part of the detector divided by the sum of energies deposited by an incident MIP in the active and passive part.} of the given subdetector, also taking into account that the active scintillator planes are not fully active, as described in Chapter~\ref{ch:minerva}.\enlargethispage{2\baselineskip} The calorimetrically reconstructed recoil energy corrected for passive material overall is then the sum of these corrected subdetector energies. In the nuclear target region, the calorimetric correction is done cluster by cluster to account for the amount of passive material through which the resulting particles travel; for example, particles produced in target 1 traverse more passive material than those produced in target 5. In addition, if clusters are located only on one side of the target, the sampling frequency is calculated using half of the width of the passive target. 
 
 
 %The calorimetrically reconstructed recoil energy corrected for passive material $E_{\text{recoil}}^{\text{reco, pmc}}$ is calculated as
@@ -107,22 +107,13 @@ Specifically, the total energy of the non-antimuon clusters per subdetector is c
 
 % also binding energy of the struck nucleon within the nucleus
 % or energy leakage out of the side of the detector.
-Moreover, MINERvA also applies an additional calorimetric correction considering any differences between the above-corrected reconstructed recoil energy and the true recoil energy based on the true information available in the simulation, defined as the difference between the true antineutrino and true antimuon energy. This correction accounts for the loss of visible energy due to final state interactions (FSI), neutral particles, and other effects. Since these effects cannot be disentangled in an inclusive analysis, the correction is somewhat dependent on the underlying understanding of their behaviour encoded in the simulation. In this measurement, this is particularly relevant as antineutrino scattering produces final-state neutrons, whose kinetic energy cannot be reconstructed. Furthermore, this correction is energy dependent. Higher energy processes can have more significant FSI, produce more neutral particles in final states, etc. Therefore, it is applied bin-by-bin as a spline correction.~Historically, this correction process was carried out at the reconstruction level for each analysis separately. However, to support the new data preservation analysis files enabling all current and future analyses, I implemented this process on the post-reconstruction level within the high-level MINERvA Analysis Toolkit~(MAT) \cite{MAT_Messerly_2021}. This also allows for future improvements of these corrections using simulations with improved interaction models if necessary. 
+Moreover, MINERvA also applies an additional calorimetric correction considering any differences between the above-corrected reconstructed recoil energy and the true recoil energy based on the true information available in the simulation, defined as the difference between the true antineutrino and true antimuon energy. This correction accounts for the loss of visible energy due to final state interactions (FSI), neutral particles, and other effects. Since these effects cannot be disentangled in an inclusive analysis, the correction is somewhat dependent on the underlying understanding of their behaviour encoded in the simulation. In this measurement, this is particularly relevant as antineutrino scattering produces final-state neutrons, whose kinetic energy cannot be reconstructed. 
 
-In particular, this additional spline correction is calculated by the fractional 
+First, the overall scale of the passive material corrected recoil energy for each subdetector is matched to the true recoil energy, and second, a bin-by-bin correction, i.e. spline correction, is applied to account for energy-dependent effects. For example, higher energy processes can have more significant FSI, produce more neutral particles in final states, etc.~Historically, this correction process was carried out at the reconstruction level for each analysis separately, as different analyses choose to account for missing energy differently. However, to support the new data preservation analysis files enabling all current and future analyses, I implemented this process on the post-reconstruction level within the high-level MINERvA Analysis Toolkit~(MAT) \cite{MAT_Messerly_2021}. This also allows for future improvements of these corrections using simulations with improved interaction models if necessary. 
 
-applied as a multiplicative factor to the reconstructed recoil energy corrected for passive material. 
+In particular, the spline correction part is calculated by fitting a Gaussian to the recoil energy resolution, i.e.~the fractional difference between the calorimetric and true recoil energy $\Delta E/E_{\text{recoil}} = (E_{\text{recoil}}^{\text{reco}} - E_{\text{recoil}}^{\text{true}})/E_{\text{recoil}}^{\text{true}} $, in each bin of true recoil energy for the inclusive antineutrino sample for each target and material combination. This is illustrated in Figure [Insert Figure Number]. The spline point for each bin of the recoil energy is such that it will center the resolution at zero. Figure [Insert Figure Number] also shows the relationship between the reconstructed and true recoil energy before and after applying the spline correction.
 
-
-
-- true recoil energy directly from the simulation as the difference between the known antineutrino and antimuon energy
--  reconstruction more complex combining clusters not attached to antimuon in each materila, correcting them based on the fraction of the passive material in that region 
-- passive matrial correction pont to Anne's thesis
-- normalisation correction found by comparing true and the reconstructed sum
-- correction to account for neutral particles such as neutrons by fitting  polyline the fractional difference between the calorimeric and true recoil energy such that the average difference is 0
-- splines between 0 and 50 GeV
-
-%This is calculated by looking at the fractional energy resolution of the calorimetric energy in bins of true recoil energy in the simulation. 
+A more detailed description of MINERvA's calorimetric correction can be found in Refs.~[Insert References].
 
 
 %A test beam program which used a scaled down version of the MINERvA detector in a charged particle beam was used to validate the calibration of the calorimetric response to single particles. It showed agreement between the data and simulation of particle interactions to within 4\% [72].
@@ -132,17 +123,31 @@ applied as a multiplicative factor to the reconstructed recoil energy corrected 
 
 
 
-
-%- calorimetric spline correction
-%- passive material correction
-
 \section{Interaction vertex}
+% ML stuff
+%https://iopscience.iop.org/article/10.1088/1748-0221/13/11/P11020
+%https://lss.fnal.gov/archive/thesis/2000/fermilab-thesis-2021-53.pdf
+
+Precise reconstruction of the interaction vertex in this analysis is crucial for determining on which nuclei the interaction has taken place, especially given the complex geometry of the nuclear target region. Therefore, in analyses involving nuclear targets, MINERvA enhances its vertex reconstruction capabilities by employing machine learning (ML) instead of the conventional technique of track-based vertexing, which involves calculating the intersection of various tracks seen in the detector to identify the vertex. The reconstruction of the interaction vertex is reframed as a multiclass image classification problem solved by MINERvA's deep convolutional neural network (DCNN), described in Refs.~[].
+
+First, the information from the antimuon track reconstruction is used to filter out events that visibly occurred outside of the detector and ones that did not continue into the MINOS spectrometer. All events reconstructed using the ML vertexing technique are thus by default so-called MINOS-matched events. Subsequently, the energy and timing information in each of the detector views is encoded to create images used for classification.
+
+[FIGURE of images]
+
+The multiclass image classification works by assigning objects, in this case, interaction vertices, into a set of predefined categories. These categories are the individual planes of the MINERvA detector, which are numbered to easily encode the position of the vertex in the detector. The DCNN is trained using a separate set of simulated interaction images, i.e.~images where the true vertex plane is known. The trained model is then applied to the data and corresponding simulated events to identify the interaction vertex plane, assigning it a probability associated with the DCNN's confidence that the vertex has been placed correctly. This probability is later used in the event selection process of this measurement described in Section~\ref{sec:eventSelection}. It is also important to note that any reconstructed quantities associated with the interaction vertex position are updated accordingly based on the assigned ML vertex plane. For example, shifts from the hadronic recoil system to the antimuon track and vice versa corresponding to changes in the antimuon path length are accounted for. 
+
+While the performance in the scintillator tracker is somewhat comparable to conventional track-based vertexing, the improvement in the nuclear targets is significant. This is mainly due to the better handling of more complex events with large shower topologies by the DCNN. The number of interaction vertices correctly assigned within a given target relative to all the vertices assigned to the target is improved by 10--15\% relative to the track-based vertexing. Furthermore, more interaction vertices are assigned to the individual targets rather than to the surrounding scintillator planes in the first place. This is demonstrated in Figure [SHOW FIGURE]. 
+
 
 %All events reconstructed using the machine-learning vertexing technique discussed in Chapter~{ch:Reconstruction} are by default so-called MINOS-matched events. This refers to interactions for which the antimuon track observed in the MINERvA detector was matched to the track observed in the MINOS spectrometer. The MINOS spectrometer is used to select positively charged muons, i.e. antimuons, based on the curvature of the track in the magnetic field. 
 
+% reference:
+% original paper about the DCNN: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7966131
+% numbers for the purity: https://iopscience.iop.org/article/10.1088/1748-0221/13/11/P11020/pdf
+% Faiza antineutrino: https://lss.fnal.gov/archive/thesis/2000/fermilab-thesis-2021-53.pdf
+% Tech-note: https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=16995&filename=MachineLearningVertexing.pdf&version=1 
+% Maya's thesis: https://www.osti.gov/biblio/1484178
 
-
-%\section{ML}
 
 
 %https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=16995&filename=MachineLearningVertexing.pdf&version=1
