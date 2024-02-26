@@ -12,10 +12,9 @@ line+=$(grep -Eo '[0-9]+' <<<"$wordCount")
 
 echo page count
 pageCount=$(mdls -name kMDItemNumberOfPages thesis.pdf)
+echo $(grep -Eo '[0-9]*' <<<"$pageCount")
 line+=" "
 line+=$(grep -Eo '[0-9]*' <<<"$pageCount")
-
-echo $(grep -Eo '[0-9]*' <<<"$pageCount")
 
 echo $line
 
