@@ -27,7 +27,7 @@ The MC encapsulates the simulation of the NuMI antineutrino beam, the antineutri
 
 The simulation begins with the base antineutrino flux simulation constrained by external hadron production data described in Section~\ref{sec:NuMI}. The flux model in this analysis is further improved by \textit{in-situ} measurements of processes with known cross-section, specifically the (anti)neutrino-electron elastic scattering \cite{Valencia2019_PhysRevD.100.092001,Zazueta2023_PhysRevD.107.012001} and inverse muon decay \cite{Ruterbories2021_PhysRevD.104.092010}.
 
-The (anti)neutrino-electron elastic scattering ($\nu$--$e$), $\nu_{\mu}e^{-}\rightarrow\nu_{\mu}e^{-}$, is a well understood, purely leptonic process. Therefore, its cross-section can be predicted to a very high precision using the Standard Model electroweak theory. The $\nu$--$e$ events are relatively rare with cross-section three orders of magnitude smaller than (anti)neutrino-nucleus scattering. However, due to their distinct experimental signature of very forward electromagnetic showers with no other activity, they can be selected with only a few background events. The discrepancies between the data and MC in the electron energy spectrum can be interpreted as mismodelling of the flux distribution, providing a constraint on the normalisation of the flux and thus the peak of the flux. MINERvA measured the $\nu$--$e$ electron energy spectra in both ME neutrino and antineutrino dominated beams physics runs \cite{Valencia2019_PhysRevD.100.092001,Zazueta2023_PhysRevD.107.012001}. 
+The (anti)neutrino-electron elastic scattering ($\nu$--$e$), $\nu_{\mu}e^{-}\rightarrow\nu_{\mu}e^{-}$, is a well understood, purely leptonic process. Therefore, its cross-section can be predicted to a very high precision using the Standard Model electroweak theory. The $\nu$--$e$ events are relatively rare with cross-section three orders of magnitude smaller than (anti)neutrino-nucleus scattering. However, due to their distinct experimental signature of very forward electromagnetic showers with no other activity, they can be selected with only a few background events.\enlargethispage{2\baselineskip}~The discrepancies between the data and MC in the electron energy spectrum can be interpreted as mismodelling of the flux distribution, providing a constraint on the normalisation of the flux and thus the peak of the flux.~MINERvA measured the $\nu$--$e$ electron energy spectra in both ME neutrino and antineutrino dominated beams physics runs \cite{Valencia2019_PhysRevD.100.092001,Zazueta2023_PhysRevD.107.012001}. 
 
 The inverse muon decay (IMD), $\nu_{\mu}e^{-}\rightarrow\mu^{-}\nu_{e}$, is another leptonic process which was measured by MINERvA in order to constrain the flux \cite{Ruterbories2021_PhysRevD.104.092010}. It can be identified by a very forward-going high-energy muon. IMD has (anti)neutrino energy threshold of \mbox{$\approx 11$ GeV}. Hence, it provides insight into the high energy tail of the flux, in which phase space is mostly dominated by (anti)neutrinos produced by underfocused or unfocused $K^+$ \mbox{and $\pi^{+}$}. 
 
@@ -36,7 +36,45 @@ This analysis uses MINERvA's combined flux constraint of (anti)neutrino-electron
 The flux simulation is then reweighted by the ratio of the weighted average of post-constraint flux universes to the weighted average of pre-constraint fluxes. The procedure results in predictions from universes with poor data agreement to be weighted down, which reduces the uncertainty (spread of the universes). In antineutrino dominated beam, the antineutrino energy range integrated flux uncertainty is reduced from $7.8\%$ to $4.7\%$ \cite{Zazueta2023_PhysRevD.107.012001} as shown in Figure \ref*{fig:fluxConstraint} and is further discussed in Chapter~\ref{ch:systematics}.
 
 \subsection{Nuclear target flux} \label{sec:nuclear_target_flux}
-Coming soon...
+
+% Figures:
+% calculated flux in targets + ratio (antineutrinos)
+% point to neutrinos in a reference
+% Flux in individual petals figure
+% Figure of the individual petals in a hexagon
+% Regularisation curve for targets in the back-up
+% back-up: antineutrino energy flux in 2D rebinning
+% weights before and after in the back-up for carbon, maybe get others 
+% table of chi2 in the back-up
+
+While the antineutrino beam is focused as described in Section~\ref{sec:NuMI}, the transverse distribution of the beam is relatively wide. Additionally, due to the downward pointing of the NuMI beam with respect to MINERvA, this also affects the flux seen by the detector as a function of the longitudinal position. The flux distribution described above provides an accurate representation of the averaged flux in the active tracker region and correctly accounts for these effects. However, the complex geometry of the nuclear target region, as detailed in Section~\ref{sec:MINERvAdetector}, with varying transverse positions of different materials within individual targets, particularly off-centre of the detector and, consequently, off-centre of the beam, is expected to introduce variations in both shape and normalization of the flux compared to the tracker.
+
+The nuclear target flux differences in the neutrino beam were first taken into consideration in cross-section calculations in Refs.~\cite{KleykampThesis2021, KleykampCCQE_PhysRevLett.130.161801} with applied neutrino-electron elastic scattering flux constraint only. To enable flux-independent comparisons between nuclear targets, i.e.~the nuclear target-to-scintillator cross-section ratios as discussed in Chapter~\ref{ch:measurement}, the procedure in Refs.~\cite{KleykampThesis2021, KleykampCCQE_PhysRevLett.130.161801} extracts the scintillator tracker cross-section in different transverse regions of the MINERvA fiducial volume. It is then weighted so that the summed scintillator cross-section has the same effective flux as the target flux.
+
+\begin{figure}[b!]
+  \centering
+  \vspace{5pt}
+  {\includegraphics[width=1.01\textwidth]{05dataAsimulation/figures/nuclearFlux.pdf}}%
+  \caption{Left: Calculated antineutrino flux for carbon, iron, and lead compared to the scintillator tracker flux. Right: Nuclear target-to-scintillator tracker flux ratio illustrating the flux differences in the 6--10~GeV region.}
+  %[short caption] {long caption}
+  \label{fig:nuclearFlux}
+\end{figure}
+
+I extended the procedure to the antineutrino flux with MINERvA's combined flux constraint of (anti)neutrino-electron scattering and IMD, and simultaneously reimplemented the neutrino flux with this new flux constraint as well. The antineutrino fluxes for each nuclear target (or combined nuclear targets of the same material) were calculated, as detailed in Appendix~\ref{ch:appendix_NuclearTargetFlux}, using the true information from the simulation.
+
+Figure~\ref{fig:nuclearFlux} depicts the calculated antineutrino fluxes for the combined nuclear targets used in this work and their ratios to the scintillator tracker flux distribution. Generally, the nuclear target fluxes differ by up to 10\% in the 6--10~GeV region (the falling edge of the flux peak). If the average position of the target is above the centre of the beam, as is the case for carbon, the nuclear target flux is higher than that for the scintillator. Conversely, if the average position of the target is below the centre of the beam, as is the case for the combination of iron targets, the nuclear target flux is lower than that for the scintillator. The combination of lead targets has approximately the same centre of mass and shape as the tracker, thus resulting in a flat lead-to-scintillator flux ratio.
+
+\begin{figure}[b!]
+  \centering
+  \vspace{-10pt}
+  {\includegraphics[width=0.8\textwidth]{05dataAsimulation/figures/daisyPetals.pdf}}%
+  \caption{Antineutrino scintillator tracker flux for each ‘daisy petal' as a function of antineutrino energy. The hexagon insert illustrates petal positions when looking downstream of the detector.}
+  %[short caption] {long caption}
+  \label{fig:daisyPetals}
+\end{figure}
+
+Similarly to the nuclear target fluxes, the scintillator tracker flux can be extracted in twelve transverse bins referred to as ‘daisy petals', as illustrated in Figure~\ref{fig:daisyPetals}. A linear combination of these ‘daisy petal' fluxes is then taken to create an effective scintillator tracker flux that matches that of the nuclear target combination.\enlargethispage{1.3\baselineskip} The weights for the individual petals are calculated using a regularised $\chi^{2}$ fit and later applied to the efficiency-corrected ‘daisy petal' distributions in the analysis procedure detailed in Chapter~\ref{ch:analysis1D}.  Specifics of this so-called ‘daisy' reweight technique are also further described in Appendix~\ref{ch:appendix_NuclearTargetFlux}.
+
 
 \section{Antineutrino simulation}
 % MINERvA tune v4.3.0
@@ -73,7 +111,7 @@ MINERvA uses the (anti)neutrino interaction event generator GENIE (Generates Eve
 As the incoming antineutrino in most cases interacts with the constituents of the nucleus (nucleons or quarks), the simulations need to account for the effects of the nuclear environment. GENIE models the nucleus as a relativistic Fermi gas (RFG) \cite{RFG_SMITH1972605}, where nucleons are confined to a potential well with walls at the nuclear radius. RFG treats the nucleons within a nucleus as independent particles (so-called impulse approximation). The nucleons inside the nucleus have nucleus-specific flat momentum distribution between 0 and Fermi momentum $p_{\text{F}}$ in the ground state determined from inclusive electron scattering and binding energy $E_{\text{B}}$. The $E_{\text{B}}$ refers to the energy needed to bring a bound nucleon on-shell and separate it from the remnant nucleus, or for the nucleus to be excited to a~higher energy bound state. 
 % RFG https://www.sciencedirect.com/science/article/pii/0550321372900405
 
-Because nucleons are fermions, they must obey the Pauli exclusion principle resulting in Pauli blocking. In quasi-elastic interactions, the final-state nucleon has to have momentum above $p_{\text{F}}$, which significantly suppresses the cross-section at low $Q^{2}$. To account for short-range correlations between the nucleons, i.e. interactions between the nucleons inside the nucleus, which can lead to a momentum greater than $p_{\text{F}}$, the simulation contains Bodek-Ritchie high-momentum tail \cite{BodekRitchie1981_PhysRevD.24.1400}. 
+Because nucleons are fermions, they must obey the Pauli exclusion principle resulting in Pauli blocking. In quasi-elastic interactions, the final-state nucleon has to have momentum above $p_{\text{F}}$, which significantly suppresses the cross-section at low $Q^{2}$. To account for short-range correlations between the nucleons, i.e. interactions between the nucleons inside the nucleus, which can lead to a momentum greater than $p_{\text{F}}$, the simulation contains Bodek-Ritchie high-momentum tail \cite{BodekRitchie1981_PhysRevD.24.1400}.
 % Bodek Ritchie tail https://link.aps.org/doi/10.1103/PhysRevD.24.1400
 
 Other nuclear models are relevant in the context of certain antineutrino interaction processes and are discussed below.
@@ -91,9 +129,9 @@ As described in Chapter~\ref{ch:theory}, different types of antineutrino interac
 \subsubsection{Quasi-elastic scattering}
 Quasi-elastic interactions are simulated using the LLewellyn-Smith formalism \cite{LLEWELLYNSMITH1972261}, which factorises the cross-section as a function of the four-momentum transfer squared, $Q^2$. The quasi-elastic vector form factors are modelled using the BBBA05 parametrization~\cite{BRADFORD2006127} of the electromagnetic form factors from electron scattering experiments. The axial form factor uses the dipole form with an axial mass of $M_{A}^{\text{QE}} = 0.99$ GeV/$c^2$. In addition, MINERvA's low energy low recoil neutrino analysis shown in Figure \ref{fig:LElowRecoil_2p2hRPA} demonstrated suppression of data in the low $Q^2$ region possibly due to long-range correlations in the nucleus \cite{Rodrigues2016_PhysRevLett.116.071802}. To address this, MINERvA modifies the baseline simulation as a function of energy and three momentum transfer based on the random phase approximation (RPA) part of the Valencia model~\cite{RPANieves2004_PhysRevC.70.055503, gran2017model}.
 
-\begin{figure}[t!]
+\begin{figure}[b!]
   \centering
-  {\includegraphics[width=1\textwidth]{05dataAsimulation/figures/LElowRecoil_2p2hRPA.pdf}}%
+  {\includegraphics[width=1.01\textwidth]{05dataAsimulation/figures/LElowRecoil_2p2hRPA.pdf}}%
   \caption{a) Low energy low recoil neutrino comparison of simulated and measured event rate as a function of reconstructed available energy with visible data and simulation discrepancy. b) Improved simulation with enhanced 2p2h events shows better agreement with data. c) Equivalent analysis in antineutrino mode compared to the base simulation. d) Improved simulation in the antineutrino mode using the fit of the 2p2h enhancement from the neutrino mode, i.e. b), also shows better agreement with data. Furthermore, the distributions demonstrate the need for the random phase approximation (RPA) suppression in the quasi-elastic process (QE). Plots based on the low energy neutrino \cite{Rodrigues2016_PhysRevLett.116.071802} and antineutrino \cite{Gran2018_PhysRevLett.120.221805} low recoil results.}
   %[short caption] {long caption}
   \label{fig:LElowRecoil_2p2hRPA}
@@ -108,7 +146,7 @@ Quasi-elastic interactions are simulated using the LLewellyn-Smith formalism \ci
 
 \subsubsection{Multi-nucleon scattering}
 \label{subsec:2p2h}
-Multi-nucleon scattering, specifically the 2p2h interaction, is simulated using the Valencia 2p2h model~\cite{2p2hNieves2011_PhysRevC.83.045501,2p2hGran2013_PhysRevD.88.113007,2p2hschwehr2017genie}. However, based on MINERvA's low energy recoil neutrino analysis~\cite{Rodrigues2016_PhysRevLett.116.071802}, the cross-section is increased in specific regions of energy and three momentum transfer as shown in Figure \ref*{fig:LElowRecoil_2p2hRPA}. This results in 2p2h rate enhancement by 50\% over the nominal prediction when integrated over all phase space. Figure \ref*{fig:LElowRecoil_2p2hRPA} also shows the equivalent analysis in the antineutrino mode \cite{Gran2018_PhysRevLett.120.221805} and how the 2p2h tune (fit to neutrino data only) naturally improves the simulation prediction for the data.
+Multi-nucleon scattering, specifically the 2p2h interaction, is simulated using the Valencia 2p2h model~\cite{2p2hNieves2011_PhysRevC.83.045501,2p2hGran2013_PhysRevD.88.113007,2p2hschwehr2017genie}. However, based on MINERvA's low energy recoil neutrino analysis~\cite{Rodrigues2016_PhysRevLett.116.071802}, the cross-section is increased in specific regions of energy and three momentum transfer as shown in Figure \ref*{fig:LElowRecoil_2p2hRPA}. This results in 2p2h rate enhancement by 50\% over the nominal prediction when integrated over all phase space. Figure \ref*{fig:LElowRecoil_2p2hRPA} also shows the equivalent analysis in the antineutrino mode \cite{Gran2018_PhysRevLett.120.221805} and how the 2p2h tune (fit to neutrino data only) naturally improves the simulation prediction for the data. \vspace{20pt}
 
 
 
