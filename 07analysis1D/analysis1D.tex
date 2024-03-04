@@ -2,7 +2,7 @@
 
 \label{ch:analysis1D}
 \vspace{-10pt}
-This chapter delineates the specific steps I performed to extract the cross-section for MINERvA's first measurement of nuclear dependence in inclusive antineutrino scattering in medium energy. The analysis utilises data from an exposure of $1.12 \times 10^{21}$ protons on target (POT), and the simulation sample detailed in Chapter~\ref{ch:dataAsimulation}. Both the data and simulation were reconstructed using the techniques described in Chapter~\ref{ch:Reconstruction}. The differential cross-sections for carbon, hydrocarbon (scintillator), iron, and lead were determined using Equation~\ref{eq:xsec1D} for muon transverse momentum $p_{\text{T}}$ and Bjorken $x$. Additionally, the nuclear target to scintillator cross-section ratios were calculated using the matching flux technique discussed in Section~\ref{sec:nuclear_target_flux}. The results of this analysis are shown and discussed in Chapter~\ref{ch:results}, with the systematic uncertainties detailed in Chapter~\ref{ch:systematics}.
+This chapter delineates the specific steps I performed to extract the cross-section for MINERvA's first measurement of nuclear dependence in inclusive antineutrino scattering in medium energy. The analysis utilises data from an exposure of $1.12 \times 10^{21}$ protons on target (POT), and the simulation sample detailed in Chapter~\ref{ch:dataAsimulation}. Both the data and simulation were reconstructed using the techniques described in Chapter~\ref{ch:Reconstruction}. The differential cross-sections for carbon, hydrocarbon (scintillator), iron, and lead were determined using Equation~\ref{eq:xsec1D} for muon transverse momentum $p_{\text{T}}$ and Bjorken $x$. Additionally, the nuclear target to scintillator cross-section ratios were calculated using the matching-flux technique discussed in Section~\ref{sec:nuclear_target_flux}. The results of this analysis are shown and discussed in Chapter~\ref{ch:results}, with the systematic uncertainties detailed in Chapter~\ref{ch:systematics}.
 
 \iffalse
 \fi
@@ -149,7 +149,7 @@ The data distributions for the carbon-heavy scintillator tracker in both ${p_{\t
     \label{fig:eventSelection_daisy_pTx}
 \end{figure}
 
-Finally, it is important to note that the scintillator tracker event distribution is also selected in 12 geometrical bins, referred to as ‘daisy petals’, as illustrated in Figure~\ref{fig:eventSelection_daisy_pTx} for both ${p_{\text{T}}}$ and Bjorken $x$. This extraction is essential for determining nuclear target-to-scintillator cross-section ratios using the matching flux technique discussed in Section~\ref{sec:nuclear_target_flux}. The number of events selected in each ‘daisy petal’ reflects the direction of the antineutrino beam traversing the detector. Additionally, ‘daisy petals' 5–7 experience a relative reduction in the number of events due to the MINOS coil cut.
+Finally, it is important to note that the scintillator tracker event distribution is also selected in 12 geometrical bins, referred to as ‘daisy petals’, as illustrated in Figure~\ref{fig:eventSelection_daisy_pTx} for both ${p_{\text{T}}}$ and Bjorken $x$. This extraction is essential for determining nuclear target-to-scintillator cross-section ratios using the matching-flux technique discussed in Section~\ref{sec:nuclear_target_flux}. The number of events selected in each ‘daisy petal’ reflects the direction of the antineutrino beam traversing the detector. Additionally, ‘daisy petals' 5–7 experience a relative reduction in the number of events due to the MINOS coil cut.
 
 \iffalse
 Efficiency denominator - includes true angle cut and fiducial volume cut (x,y + separation). Angle and fiducial volume events are allowed to migrate in and out of the sample - efficiency corrected.
@@ -165,8 +165,84 @@ Efficiency denominator - includes true angle cut and fiducial volume cut (x,y + 
 % Bkgs stuff from: /minerva/data/users/anezkak/10-25-2023_v430_p4/1D/combined/BackgroundSubtracted
 % Sideband plots from: /minerva/data/users/anezkak/11-28-2023_v430_p4_combinedPlastic/1D/combined/PlasticSidebands
 
+Appendix~\ref{ch:appendix_plasticSidebands}
+Appendix~\ref{ch:appendix_bkgSubtracted}
 
-\newpage
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/DSplasticSideband_plane.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:DSplasticSideband_plane}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/DSplasticSideband_pT.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:DSplasticSideband_pT}
+\end{figure}
+
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/DSplasticSideband_x.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:DSplasticSideband_x}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/ScaledeventSelection_bkg_ratio_t5z82_tracker_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:ScaledeventSelection_bkg_ratio_t5z82_tracker_pTx}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/bkgSubtracted_lead5_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:bkgSubtracted_lead5_pTx}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/bkgSubtractedFracErr_lead5_pT.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:bkgSubtractedFracErr_lead5_pT}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/bkgSubtracted_tracker_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:bkgSubtracted_tracker_pTx}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/bkgSubtractedFracErr_tracker_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:bkgSubtractedFracErr_tracker_pTx}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/bkgSubtracted_daisy_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:bkgSubtracted_daisy_pTx}
+\end{figure}
+
+
+\clearpage
 \section{Migration and unfolding}
 \label{sec:migration_unfolding}
 
@@ -199,7 +275,7 @@ The migration matrix can be represented as a two-dimensional histogram relating 
     \label{fig:migration_lead_tracker_pTx}
 \end{figure}
 
-The $p_{\text{T}}$ distribution is primarily smeared by the finite muon momentum resolution of the detector, stemming from the size of the scintillator strips affecting the length of particle tracks. On the other hand, the Bjorken $x$ distribution smearing likely arises from the calorimetric correction used to estimate the invisible energy from neutrons in the hadronic recoil energy reconstruction, as described in Chapter~\ref{ch:Reconstruction}. In addition, the region with $x > 1$, discussed in Chapter~\ref{ch:measurement}, is already inherently challenging at the true simulation level.~Events in this region predominantly originate from intranuclear scattering, and may not necessarily include other physics contributions such as short-range correlations indicated by electron-scattering data~\cite{CLAS:PhysRevLett.96.082501,SRC:annurev}. Therefore, caution is exercised when working with this particular bin. In general, the migration matrices are more diagonal in the scintillator tracker than in the passive target region due to better tracking (more active material). 
+The $p_{\text{T}}$ distribution is primarily smeared by the finite muon momentum resolution of the detector, stemming from the size of the scintillator strips affecting the length of particle tracks. On the other hand, the Bjorken $x$ distribution smearing likely arises from the calorimetric correction used to estimate the invisible energy from neutrons in the hadronic recoil energy reconstruction, as described in Chapter~\ref{ch:Reconstruction}. In addition, the region with $x > 1$, discussed in Chapter~\ref{ch:measurement}, is already inherently challenging at the true simulation level.~Events in this region predominantly originate from intranuclear scattering, and may not necessarily include other physics contributions such as short-range correlations indicated by electron-scattering data~\cite{CLAS:PhysRevLett.96.082501, SRC:annurev}. Therefore, caution is exercised when working with this particular bin. In general, the migration matrices are more diagonal in the scintillator tracker than in the passive target region due to better tracking (more active material). 
 
 
 %and relying on the simulation to estimate the smearing effects in the data.
@@ -294,7 +370,7 @@ Pion production is one of the largest contributions to this medium-energy antine
 %https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=31954&filename=2023-08-24-update.pdf&version=1 
 
 
-The warping studies in Table~\ref{table:warpingList} were conducted for each kinematic distribution in every target. The same warping studies were also replicated for each of the geometrical bins, referred to as `daisy petals', of the scintillator tracker distribution used in the nuclear target to scintillator cross-section ratios using the matching flux technique discussed in Section~\ref{sec:nuclear_target_flux}.~Generally, the warping studies showed that the passive target region requires one more iteration to unfold than the scintillator tracker. However, to maintain consistency across various materials for each kinematic distribution, the number of iterations was standardized across all warping studies. All antimuon $p_{\text{T}}$ distributions were unfolded with 3 iterations of the D'Agostini unfolding, and all Bjorken $x$ distributions were unfolded with 9 iterations as listed in the Table~\ref{table:unfoldingIterations}.
+The warping studies in Table~\ref{table:warpingList} were conducted for each kinematic distribution in every target. The same warping studies were also replicated for each of the geometrical bins, referred to as `daisy petals', of the scintillator tracker distribution used in the nuclear target to scintillator cross-section ratios using the matching-flux technique discussed in Section~\ref{sec:nuclear_target_flux}.~Generally, the warping studies showed that the passive target region requires one more iteration to unfold than the scintillator tracker. However, to maintain consistency across various materials for each kinematic distribution, the number of iterations was standardized across all warping studies. All antimuon $p_{\text{T}}$ distributions were unfolded with 3 iterations of the D'Agostini unfolding, and all Bjorken $x$ distributions were unfolded with 9 iterations as listed in the Table~\ref{table:unfoldingIterations}.
 
 \begin{table}[b!]
     \centering
@@ -365,10 +441,45 @@ Finally, RooUnfold's implementation of the D'Agostini unfolding doesn't take int
 % https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=28899&filename=MINERvA_Unfolding_AMatterOfUncertainty.pdf&version=1
 % https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=28992&filename=MINERvA_Unfolding_AMatterOfUncertainty_FollowUp_Collaboration.pdf&version=2
 
-In order to do so, a new migration matrix was constructed by Poisson throwing each bin of the original migration matrix as a fraction of data exposure. Then, the new reconstructed simulation coming from the projection of the new migration matrix was unfolded with this new migration matrix and compared to the original true \mbox{simulation~\cite{StatCorrFactor,StatCorrFactor2}}. The statistical covariance of the unfolded sample was multiplied by $\sqrt{(1+1/F)}$, where $F$ is the correction factor. 
-A search over various $F$ factors for the given fraction of data exposure was performed such as the calculated $\chi^2$ between the unfolded sample with the corrected statistical covariance and the original true distribution corresponded to the number of degrees of freedom at the number of iterations selected. Figure~\ref{fig:additionalStatUnc_pT} illustrates the correction factors $F$ for the antimuon $p_{\text{T}}$ distributions in target 5 lead and the scintillator tracker petal 7, which are 25 and 15 respectively. The correction factors for the equivalent Bjorken $x$ distributions are included in Appendix~\ref{ch:appendix_unfoldingStudies}.
+In order to do so, a new migration matrix was constructed by Poisson throwing each bin of the original migration matrix as a fraction of data exposure. Then, the new reconstructed simulation coming from the projection of the new migration matrix was unfolded with this new migration matrix and compared to the original true \mbox{simulation~\cite{StatCorrFactor, StatCorrFactor2}}. The statistical covariance of the unfolded sample was multiplied by $\sqrt{(1+1/F)}$, where $F$ is the correction factor. 
 
-[unfolded distribution plots]
+A search over various $F$ factors for the given fraction of data exposure was performed such as the calculated $\chi^2$ between the unfolded sample with the corrected statistical covariance and the original true distribution corresponded to the number of degrees of freedom at the number of iterations selected. Figure~\ref{fig:additionalStatUnc_pT} illustrates the correction factors~$F$ for the antimuon $p_{\text{T}}$ distributions in target 5 lead and the scintillator tracker petal~7, which are 25 and 15 respectively. The correction factors for the equivalent Bjorken $x$ distributions are included in Appendix~\ref{ch:appendix_unfoldingStudies}.
+\newpage
+
+\begin{figure}[b!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfolded_lead5tracker_pTx.pdf}}%
+    \caption{Unfolded distributions for target 5 lead (left panel) and scintillator tracker (right panel) as a function of $p_{\text{T}}$ (top) and Bjorken $x$ (bottom). In the top panel of each plot, the pink band on the simulation represents the statistical uncertainty of the simulation. The data points carry both statistical (inner error bar) and systematic (outer error bar, which is the sum of statistical and systematic errors) uncertainties. The bottom panel of each plot displays the data-to-simulation ratio, with the pink band around 1 representing systematic uncertainty on the data, while the black points reflect the statistical uncertainty on the data-to-simulation ratio.}
+    %[short caption] {long caption}
+    \label{fig:unfolded_lead5tracker_pTx}
+\end{figure}
+
+Figure~\ref{fig:unfolded_lead5tracker_pTx} displays the unfolded distributions for target 5 lead and the scintillator tracker in both antimuon~$p_{\text{T}}$ and Bjorken~$x$.\enlargethispage{2\baselineskip} Notably, the data-to-simulation ratio remains approximately identical to that observed in the background-subtracted distributions in Section~\ref{sec:bkgSubtraction}. The corresponding fractional uncertainties on the data for these distributions are depicted in Figure~\ref{fig:unfoldedFracErr_lead5tracker_pTx}. All other unfolded distributions and their associated fractional uncertainties are included in Appendix~\ref{ch:appendix_unfoldedDistributions}.
+
+\begin{figure}[b!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfoldedFracErr_lead5tracker_pTx.pdf}}%
+    \caption{Fractional uncertainty breakdown for the unfolded data distributions of target 5 lead (left panel) and scintillator tracker (right panel) as a function of $p_{\text{T}}$ (top) and Bjorken~$x$ (bottom). }
+    %[short caption] {long caption}
+    \label{fig:unfoldedFracErr_lead5tracker_pTx}
+\end{figure}
+
+
+Unsurprisingly, the antimuon~$p_{\text{T}}$ distribution in Figure~\ref{fig:unfoldedFracErr_lead5tracker_pTx} is ultimately dominated by the `Muon Reconstruction' uncertainty. The $x > 1$ bin of the Bjorken $x$ distribution is visibly governed by the `Interaction Model' uncertainty,
+arising from the unsmearing process with a migration matrix in which the simulation does not fully model this region at the nucleon level, as mentioned earlier in this section. In general, the data is unfolded in each of its systematic universes (in addition to its central value), leading to an increase in uncertainties compared to the background-subtracted distributions in Section~\ref{sec:bkgSubtraction}. Further discussion on the systematic uncertainties is presented in Chapter~\ref{ch:systematics}.
+
+Finally, the scintillator tracker distribution is also unfolded in the 12 ‘daisy petals’. This is illustrated in Figure~\ref{fig:unfolded_tracker_daisy_pTx} for both ${p_{\text{T}}}$ and Bjorken $x$. As reviewed in Sections~\ref{sec:eventSelection}~and~\ref{sec:bkgSubtraction}, this step is essential to determine the nuclear target-to-scintillator cross-section ratios using the matching flux technique explained in Section~\ref{sec:nuclear_target_flux}.
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfolded_tracker_daisy_pTx.pdf}}%
+    \caption{Unfolded distribution for the scintillator tracker in `daisy petals' for both antimuon ${p_{\text{T}}}$ (left) and Bjorken $x$ (right). The unfolded data and the simulation prediction for individual petals are color-coded as described in the legend. The unfolded data carry both statistical (inner error bar) and systematic (outer error bar, which is the sum of statistical and systematic errors) uncertainties. The hexagon insert illustrates the positions of the petals looking downstream of the detector.}
+    %[short caption] {long caption}
+    \label{fig:unfolded_tracker_daisy_pTx}
+\end{figure}
+
+
+
 
 
 % Check-marked warps
@@ -392,7 +503,8 @@ A search over various $F$ factors for the given fraction of data exposure was pe
 
 \iffalse
 \fi
-\newpage
+
+\clearpage
 \section{Efficiency correction}
 \label{ch:efficiency}
 
@@ -499,44 +611,62 @@ The fractional uncertainty on the target 5 lead and scintillator tracker efficie
 \end{figure}
 
 
-Finally, it is important to note that the scintillator tracker efficiency is also extracted in the `daisy petals', as illustrated in Figure~\ref{fig:efficiency_tracker_pT_daisy} for $p_{\text{T}}$. This extraction is essential for determining nuclear target-to-scintillator cross-section ratios using the matching flux technique discussed in Section~\ref{sec:nuclear_target_flux}. Similarly to the passive targets, the petals shadowing the MINOS coil have reduced efficiency at low $p_{\text{T}}$. All efficiency correction distributions for passive targets, scintillator tracker, and scintillator tracker divided in the `daisy petals' and their corresponding fractional uncertainties are included in Appendix~\ref{ch:appendix_efficiencyCorrection}.
+Furthermore, the scintillator tracker efficiency is also extracted in the `daisy petals', as illustrated in Figure~\ref{fig:efficiency_tracker_pT_daisy} for $p_{\text{T}}$. This extraction is essential for determining nuclear target-to-scintillator cross-section ratios using the matching-flux technique discussed in Section~\ref{sec:nuclear_target_flux}. Similarly to the passive targets, the petals shadowing the MINOS coil have reduced efficiency at low $p_{\text{T}}$. All other efficiency correction distributions for passive targets, scintillator tracker, and scintillator tracker divided in the `daisy petals' and their corresponding fractional uncertainties are included in Appendix~\ref{ch:appendix_efficiencyCorrection}.
 
-
-\begin{comment}
-After the efficiency correction, individual targets of the same material can be combined. In practice, this means adding up the efficiency-corrected histograms for targets 2,3 and 5 iron and 2-5 lead. Furthermore, the individual `daisy petals' of the scintillator tracker can be combined for cross-section ratios - a linear combination of the 
-
-An example of the lead efficiency-corrected distribution, its fractional uncertainty and the scintillator tracker combined to match the individual targets is shown. The fractional error on the base scintillator tracker unfolded distributions is shown for comparison. 
-\end{comment}
-
-[Plots of efficiency-corrected distributions]
-
-[For tracker cross-section used in cross-section ratios, this is where the individual distributions get combined]
-
-\newpage
-\section{Normalisation}
-
-The final step in the calculation of the differential cross-section involves normalising the efficiency-corrected distribution according to the Equation~\ref{eq:xsec1D}.~First, each bin of the
-efficiency-corrected distribution is divided by the number of scattering centres $T_{\text{nucleons}}$, i.e. the number of nucleons, within the fiducial volume available for an antineutrino to interact with in a given material.~Reporting the cross-section per nucleon ensures the result is independent of the detector's mass. The estimates of the number of nucleons in Table~\ref{table:normalisation} are derived from MINERvA's material assays~\cite{Aliaga_2014}. 
-
-Furthermore, to report a differential cross-section, one must divide each bin $\alpha$ of the efficiency-corrected distribution by the integrated antineutrino flux prediction $\Phi$ and the corresponding bin width $\Delta x_{\alpha}$.~The antineutrino flux integral is calculated as a function of true antineutrino energy between 0--120~GeV using the flux simulation prediction outlined in Sections~\ref{sec:NuMI} and \ref{sec:fluxSimulation}.~The upper limit is determined by the 120~GeV/$c$ protons from which the NuMI antineutrino beam originates.~However, the contribution above 20~GeV is negligible as illustrated in Figure \ref{fig:antinu_fluxes} due to the muon energy cut discussed in Section~\ref{sec:eventSelection}. 
-
-In line with the discussion in Section~\ref{sec:nuclear_target_flux}, Figure \ref{fig:antinu_fluxes} illustrates that antineutrino fluxes across different materials vary.~Consequently, the antineutrino flux integrals per protons on target (POT) are also shown to vary for different materials in Table~\ref{table:normalisation}. To eliminate the POT dependence, each flux integral in Table \ref{table:normalisation} is multiplied by the total data exposure of $1.12 \times 10^{21}$ POT in the cross-section extraction. A simple dimensional analysis shows that the differential cross-sections $\text{d}\sigma/\text{d}p_{T}$ and $\text{d}\sigma/\text{d}x$ can be reported in units of $10^{-39}/\text{cm}^{2}/\text{unit}/\text{nucleon}$, where `unit' represents the unit of the kinematic variable for which the differential cross-section was calculated.
-
-
-%The flux normalisation also propagates the uncertainties associated with the flux, which are explained in Chapter~\ref{ch:systematics}.
-
-%while accounting for the uncertainty associated with the target masses described in Chapter~\ref{ch:systematics}.
-%N neutrons: mass * TargetProp::AtomsPerGram::C   * TargetProp::NeutronsPerAtom::C;
-
-\begin{figure}[t!] 
+\begin{figure}[b!] 
     \centering
-    {\includegraphics[width=1\textwidth]{07analysis1D/figures/antinu_flux.pdf}}%
-    \caption{Antineutrino flux as a function of antineutrino energy between 0--20~GeV for carbon, iron, lead, and scintillator tracker. The contribution above 20~GeV is negligible.}
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfoldedEffCorrected_lead5tracker_pTx.pdf}}%
+    \caption{Efficiency-corrected distributions for target 5 lead (left panel) and scintillator tracker (right panel) as a function of $p_{\text{T}}$ (top) and Bjorken $x$ (bottom) with the simulation broken down into the various interaction channels stacked in the descending order of their contribution. In the top panel of each plot, the data points carry both statistical (inner error bar) and systematic (outer error bar, which is the sum of statistical and systematic errors) uncertainties. The bottom panel of each plot displays the data-to-simulation ratio, with the pink band around 1 representing systematic uncertainty on the data, while the black points reflect the statistical uncertainty on the data-to-simulation ratio.}
     %[short caption] {long caption}
-    \label{fig:antinu_fluxes}
+    \label{fig:unfoldedEffCorrected_lead5tracker_pTx}
 \end{figure}
 
 
+Figure~\ref{fig:unfoldedEffCorrected_lead5tracker_pTx} shows the efficiency-corrected distributions for target 5 lead and scintillator tracker in both antimuon $p_{\text{T}}$ and Bjorken $x$. Importantly, the shape of the data-to-simulation ratio remains consistent with that observed in previous steps of the analysis. The associated fractional uncertainties on the data for these distributions are depicted in Figure~\ref{fig:unfoldedEffCorrectedFracErr_lead5tracker_pTx}. All other efficiency-corrected distributions and their fractional uncertainties can be found in Appendix~\ref{ch:appendix_effCorrectedDistributions}.
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfoldedEffCorrectedFracErr_lead5tracker_pTx.pdf}}%
+    \caption{Fractional uncertainty breakdown for the efficiency-corrected data distributions of target 5 lead (left panel) and scintillator tracker (right panel) as a function of~$p_{\text{T}}$~(top) and Bjorken~$x$ (bottom). }
+    %[short caption] {long caption}
+    \label{fig:unfoldedEffCorrectedFracErr_lead5tracker_pTx}
+\end{figure}
+
+
+Similarly, the efficiency-corrected distribution for the scintillator tracker, extracted in the 'daisy petals,' is displayed in Figure~\ref{fig:unfoldedEffCorrected_tracker_daisy_pTx} for both antimuon $p_{\text{T}}$ and Bjorken $x$. The spread of the `daisy petals' distributions is significantly reduced as the efficiency correction aims to eliminate all acceptance-related effects. These individual efficiency-corrected petal distributions are then weighted and combined in Section~\ref{sec:xsecRatio} to generate scintillator cross-sections with an effective scintillator tracker flux matching that of carbon, iron, and lead, according to the technique discussed in Section~\ref{sec:nuclear_target_flux}.
+% [For tracker cross-section used in cross-section ratios, this is where the individual distributions get combined]
+
+\begin{figure}[] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfoldedEffCorrected_tracker_daisy_pTx.pdf}}%
+    \caption{Efficiency-corrected distribution for the scintillator tracker in `daisy petals' for both antimuon ${p_{\text{T}}}$ (left) and Bjorken $x$ (right). The unfolded data and the simulation prediction for individual petals are color-coded as described in the legend. The unfolded data carry both statistical (inner error bar) and systematic (outer error bar, which is the sum of statistical and systematic errors) uncertainties. The hexagon insert illustrates the positions of the petals looking downstream of the detector.}
+    %[short caption] {long caption}
+    \label{fig:unfoldedEffCorrected_tracker_daisy_pTx}
+\end{figure}
+
+\begin{figure}[] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfoldedEffCorrectedCombined_lead5_pTx.pdf}}%
+    \caption{Efficiency-corrected distributions for lead, i.e.~combined target 2--5 lead, as a function of $p_{\text{T}}$ (top) and Bjorken $x$ (bottom) with the simulation broken down into the various interaction channels stacked in the descending order of their contribution. In the top panel of each plot, the data points carry both statistical (inner error bar) and systematic (outer error bar, which is the sum of statistical and systematic errors) uncertainties. The bottom panel of each plot displays the data-to-simulation ratio, with the pink band around 1 representing systematic uncertainty on the data, while the black points reflect the statistical uncertainty on the data-to-simulation ratio.}
+    %[short caption] {long caption}
+    \label{fig:unfoldedEffCorrectedCombined_lead5_pTx}
+\end{figure}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/unfoldedEffCorrectedCombinedFracErr_lead5_pTx.pdf}}%
+    \caption{Fractional uncertainty breakdown for the combined lead efficiency-corrected data distributions as a function of~$p_{\text{T}}$~(top) and Bjorken~$x$ (bottom). }
+    %[short caption] {long caption}
+    \label{fig:unfoldedEffCorrectedCombinedFracErr_lead5_pTx}
+\end{figure}
+
+Furthermore, the efficiency-corrected distributions from the individual targets of the same material can be combined, as the different efficiency-related effects are removed. In practice, this involves adding up the efficiency-corrected histograms for targets 2, 3, and 5 iron and 2--5 lead. An example of the combined lead efficiency-corrected distribution for both antimuon $p_{\text{T}}$ and Bjorken $x$ is shown in Figure~\ref{fig:unfoldedEffCorrectedCombined_lead5_pTx}, with its associated fractional uncertainty depicted in Figure~\ref{fig:unfoldedEffCorrectedCombinedFracErr_lead5_pTx}. The combined iron efficiency-corrected distribution is included in Appendix~\ref{ch:appendix_effCorrectedDistributions}. In comparison to the individual target, the statistical uncertainty for the combined material distribution is significantly reduced.
+
+\clearpage
+\section{Normalisation to cross-section}
+
+The final step in the calculation of the differential cross-section involves normalising the efficiency-corrected distributions for carbon, iron, lead, and the scintillator tracker according to Equation~\ref{eq:xsec1D}.~First, each bin of the
+efficiency-corrected distribution is divided by the number of scattering centres $T_{\text{nucleons}}$, i.e. the number of nucleons, within the fiducial volume available for an antineutrino to interact with in a given material.~Reporting the cross-section per nucleon ensures the result is independent of the detector's mass. The estimates of the number of nucleons in Table~\ref{table:normalisation} are derived from MINERvA's material assays~\cite{Aliaga_2014}. The uncertainty associated with the target masses described in Chapter~\ref{ch:systematics} is also accounted for in the normalisation.
 
 \begin{table}[b!]
     \centering
@@ -559,9 +689,77 @@ In line with the discussion in Section~\ref{sec:nuclear_target_flux}, Figure \re
     \label{table:normalisation}
 \end{table}
 
+Furthermore, to report a differential cross-section, one must divide each bin $\alpha$ of the efficiency-corrected distribution by the integrated antineutrino flux prediction $\Phi$ and the corresponding bin width $\Delta x_{\alpha}$.~The antineutrino flux integral is calculated as a function of true antineutrino energy between 0--120~GeV using the flux simulation prediction outlined in Sections~\ref{sec:NuMI} and \ref{sec:fluxSimulation}.~The upper limit is determined by the 120~GeV/$c$ protons from which the NuMI antineutrino beam originates.~However, the contribution above 20~GeV is negligible due to the muon energy cut discussed in Section~\ref{sec:eventSelection}. 
 
-\section{Cross-section distributions}
-\section{Cross-section ratios}
-\section{Validation}
+In line with the discussion in Section~\ref{sec:nuclear_target_flux} and Figure~\ref{fig:nuclearFlux}, it was demonstrated that the antineutrino fluxes across different materials vary.~Consequently, the antineutrino flux integrals per protons on target (POT) are also shown to vary for different materials in Table~\ref{table:normalisation}.
+It is important to note that the flux normalisation also propagates the uncertainties associated with the flux, which are explained in Chapter~\ref{ch:systematics}.
 
+\begin{figure}[b!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/crossSection_leadTracker_pTx.pdf}}%
+    \caption{Lead (left panel) and scintillator cross-section
+    as a function of $p_{\text{T}}$ (top) and Bjorken $x$ (bottom) with the simulation broken down into the various interaction channels stacked in the descending order of their contribution. In the top panel of each plot, the data points carry both statistical (inner error bar) and systematic (outer error bar, which is the sum of statistical and systematic errors) uncertainties. The bottom panel of each plot displays the data-to-simulation ratio, with the pink band around 1 representing systematic uncertainty on the data, while the black points reflect the statistical uncertainty on the data-to-simulation ratio.}
+    %[short caption] {long caption}
+    \label{fig:crossSection_leadTracker_pTx}
+\end{figure}
+
+To eliminate the POT dependence, each flux integral in Table \ref{table:normalisation} is multiplied by the total data exposure of $1.12 \times 10^{21}$ POT in the cross-section extraction. A simple dimensional analysis shows that the differential cross-sections $\text{d}\sigma/\text{d}p_{\text{T}}$ and $\text{d}\sigma/\text{d}x$ can be reported in units of $10^{-39}/\text{cm}^{2}/\text{unit}/\text{nucleon}$, where `unit' represents the unit of the kinematic variable for which the differential cross-section was calculated.
+
+
+Figure~\ref{fig:crossSection_leadTracker_pTx} shows the final lead and scintillator cross-section results both in antimuon $p_{\text{T}}$ and Bjorken $x$. Similarly to the event selection distributions in Section~\ref{sec:eventSelection}, the cross-section prediction is categorised by various interaction types. The data-to-simulation ratios remain consistent with the previous analysis steps. The fractional uncertainties on these cross-section distributions are shown and discussed in detail in Chapter~\ref{ch:systematics}. All cross-section results, i.e. also including iron and carbon cross-sections, are included and discussed in Chapter~\ref{ch:results}.
+
+\section{Cross-section ratios}\label{sec:xsecRatio}
+
+Cross-section ratios offer a convenient and effective way to present comparisons between the nuclear targets and the scintillator, illustrating the nuclear dependence of the antineutrino interactions. Crucially, the cross-section ratios are essentially flux-independent, cancelling out the leading systematic uncertainty coming from the understanding of the incoming antineutrino beam.\enlargethispage{1\baselineskip}
+
+\begin{figure}[b!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/daisy_crossSection_pTx.pdf}}%
+    \caption{Effective scintillator cross-sections with matched flux to carbon, iron, and lead for both antimuon $p_{\text{T}}$ (left) and Bjorken $x$ (right). The inner error bars on the data points represent the statistical error, while the outer error bars correspond to the total error (statistical + systematic).}
+    %[short caption] {long caption}
+    \label{fig:daisy_crossSection_pTx}
+\end{figure}
+
+In order to do so, the `daisy reweight' of the scintillator tracker, detailed in Section~\ref{sec:nuclear_target_flux} and Appendix~\ref{ch:appendix_NuclearTargetFlux}, is implemented. Ultimately, a linear combination of the efficiency-corrected distributions from the `daisy petals' in Figure~\ref{fig:unfoldedEffCorrected_tracker_daisy_pTx} is taken to create an effective scintillator tracker flux that matches that of carbon, iron, and lead. This is achieved by applying the corresponding weights shown in Appendix~\ref{ch:appendix_NuclearTargetFlux}. The resulting combinations are then normalised to cross-sections, as demonstrated in Figure~\ref{fig:daisy_crossSection_pTx}. These scintillator cross-sections are used as the denominator in the relevant cross-section ratios.\enlargethispage{2\baselineskip}
+
+\begin{figure}[b!]%
+    \centering
+    \subfloat{\includegraphics[width=1\textwidth]{07analysis1D/figures/xsecRatio_PbCH_pTx.pdf} }%
+    \vspace{-10pt}
+    \qquad
+    \subfloat{\includegraphics[width=1\textwidth]{07analysis1D/figures/xsecRatioFracErr_PbCH_pTx.pdf}}%
+    \caption{Lead-to-scintillator cross-section ratio (top) and the corresponding breakdown of the fractional uncertainties on the data (bottom) in both antimuon $p_{\text{T}}$~(left) and Bjorken~$x$~(right). The inner error bars on the data points in the cross-section ratio distributions represent the statistical error, while the outer error bars show the total error (statistical + systematic). The pink band on the simulation prediction corresponds to the statistical error on the prediction.}
+    \label{fig:xsecRatio_PbCH_pTx}
+\end{figure}
+
+\begin{comment}
+\begin{figure}[b!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/xsecRatio_PbCH_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:xsecRatio_PbCH_pTx}
+\end{figure}
+
+\begin{figure}[b!] 
+    \centering
+    {\includegraphics[width=1\textwidth]{07analysis1D/figures/xsecRatioFracErr_PbCH_pTx.pdf}}%
+    \caption{Describe. }
+    %[short caption] {long caption}
+    \label{fig:xsecRatioFracErr_PbCH_pTx}
+\end{figure}
+\end{comment}
+
+The top panel of Figure~\ref{fig:xsecRatio_PbCH_pTx} shows the lead-to-scintillator cross-section ratio result in both antimuon $p_{\text{T}}$ and Bjorken $x$. The corresponding fractional uncertainties on the data cross-section ratios are displayed in the bottom panel of Figure~\ref{fig:xsecRatio_PbCH_pTx}. These illustrate that in addition to eliminating most flux effects, other shared detector uncertainties such as the ones related to antimuon reconstruction also partially cancel out. All cross-section ratio results and their respective uncertainties are presented and discussed in Chapter~\ref{ch:results}.
+
+
+% cross-section ratio lead to scintillator
+% cross-section ratio lead to scintillator errors
+% rest in the back-up
+
+\section{Note on validation}
+
+The cross-section extraction procedure outlined in this chapter was thoroughly examined for consistency across various steps and validated against MINERvA's closure test program, GENIEXSecExtract~\cite{GENIEXSecExtract}, using simulation.~Specifically, by construction, the efficiency numerator and the unfolded simulation should be equal, and the reconstructed simulated signal and the migration matrix projected onto the reconstructed axis should match. For this analysis, the ratios of these two cases are equal to 1, thereby passing this check. 
+
+Additionally, the efficiency denominator was cross-verified against the true event rate from the MINERvA analysis files outside of this analysis's infrastructure using GENIEXSecExtract, resulting in a flat ratio at 1. Similarly, the predicted cross-section underwent a similar validation process using GENIEXSecExtract. Since the same steps are applied to both the simulation prediction and the data, this inherently validates the cross-section extraction procedure for the data as well. 
 
