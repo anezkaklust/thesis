@@ -1,0 +1,89 @@
+\chapter{Nuclear target flux and ‘daisy' reweight procedure}
+
+\label{ch:appendix_NuclearTargetFlux}
+
+This appendix describes the calculation of the nuclear target flux and some details of the so-called ‘daisy' reweight of the scintillator tracker to enable flux-independent comparisons between nuclear targets as discussed in Section~\ref{sec:nuclear_target_flux}. The procedure first appeared in Refs.~\cite{KleykampThesis2021, KleykampCCQE_PhysRevLett.130.161801} and has been extended to the antineutrino flux with MINERvA's combined flux constraint of (anti)neutrino-electron scattering and IMD for this work.
+
+The antineutrino flux for each nuclear target (or combined nuclear targets of the same material) can be determined using the true information from the simulation as
+\begin{equation}
+  \label{eq:nuclearFlux}
+  \Phi(E_{\bar{\nu}_{\mu}}) = \frac{\text{Total } \bar{\nu}_{\mu} \text{ charged current events} (E_{\bar{\nu}_{\mu}})} {{\sigma_{\text{avg}}(E_{\bar{\nu}_{\mu}})N_{\text{atoms}} \text{POT}}} \hspace{2pt}.
+\end{equation}
+Here, the numerator represents the true charged-current antineutrino interactions in a given nuclear target, $\sigma_{\text{avg}}(E_{\bar{\nu}_{\mu}})$ is a GENIE~\cite{genie_ANDREOPOULOS201087,genie_andreopoulos2015} spline for the average cross-section on a given atom, and $N_{\text{atoms}}$ denotes the number of atoms per cm$^2$ in the nuclear target. The flux is also normalized by the number of protons on target (POT) corresponding to the simulation. Similarly, the flux can be extracted in the individual ‘daisy petals' of the scintillator tracker as shown in Figure~\ref{fig:daisyPetals_combined}.
+
+\begin{figure}[t!]
+    \centering
+    {\includegraphics[width=1\textwidth]{thesisFigures/Flux/daisyFlux_combined.pdf}}%
+    \caption{Left: Two-dimensional heatmap of the scintillator tracker flux in the individual ‘daisy petals' as a function of finely binned antineutrino energy. The color bar represents the flux intensity in a particular region. Right: One-dimensional projection of the scintillator tracker flux for each ‘daisy petal' as a function of antineutrino energy, using the binning employed in the fitting procedure. The hexagon insert illustrates petal positions when looking downstream of the detector.}
+    %[short caption] {long caption}
+    \label{fig:daisyPetals_combined}
+\end{figure}
+
+A regularised $\chi^2$ fit is used to find a weight for each petal so that the linear combination of the ‘daisy petals' fluxes matches the flux in the individual combinations of nuclear targets of the same material. This is defined as
+\begin{equation}
+    \label{eq:regularisedChi2}
+    \chi^2_{\text{reg}} = \frac{(N_{\text{target}} - \sum_{i} p_{i}N_i)^2}{\sigma_{\text{target}}^2 + \sum_{i} p_i \sigma_i^2} + \lambda \sum_i \frac{N_i}{\sum_j N_j} (p_i-1)^2 \hspace{2pt},
+\end{equation}
+where the first term corresponds to the regular $chi^2$ calculation and the second term represents the regularisation term. $N_{\text{target}}$ is the number of events (in a given bin of the nuclear target flux distribution), $N_i$ is the number of events in a ‘daisy petals' $i$, and $p_i$ is the ‘daisy petals' weight. 
+
+The regularisation term ensures that a preference is given to a solution with a small difference from the nominal weight of 1 and also enforces smoothness in the variation of the individual ‘daisy petals' weights.\enlargethispage{1.5\baselineskip} A regularisation strength $\lambda = 100 $ was found to work well for all combinations of nuclear targets of the same material by looking at the ‘knee' of the L-curve of $\log \chi^2$ of the regularised solution versus $\lambda$ as demonstrated in Figure~\ref{fig:lcurve}. This maintains the balance between the perfect fit (zero regularisation) and the smoothness of the solution~(large regularisation).
+
+\begin{figure}[t!]
+    \centering
+    \vspace{-5pt}
+    {\includegraphics[width=0.7\textwidth]{thesisFigures/Flux/antineutriniLcurve_fixed.pdf}}%
+    \caption{L-curve of $\log \chi^2$ of the regularised solution versus $\lambda$ for carbon, iron (combination of targets 2, 3, and 5), and lead (combination of targets 2--5). Note that different materials require different amounts of regularisation, but $\lambda$ in the range of 50--100 provides a good enough $\log \chi^2$.}
+    %[short caption] {long caption}
+    \label{fig:lcurve}
+\end{figure}
+
+Figures~\ref{fig:carbonDaisy}, \ref{fig:ironDaisy}, and \ref{fig:leadDaisy} illustrate the nuclear target-to-scintillator (antineutrino) flux ratios both before and after applying a linear combination of the ‘daisy petals' from the scintillator tracker to match the carbon, iron, and lead flux, respectively. The individual weights assigned to the ‘daisy petals' are also shown. As expected, the distribution of ‘daisy petal' weights reflects the transverse position of the individual target (or combined nuclear targets of the same material) within the detector. The statistical $\chi^2$ of the nuclear target-to-scintillator (antineutrino) flux ratios both before and after the reweight are shown in Table~\ref{table:chi2beforeAndAfterDaisy}.
+
+Note that the statistical errors on the fit are relatively large due to the petal-to-petal correlations. Therefore, the uncertainty on the fit is evaluated by re-extracting the weights for 50 Poisson-thrown universes around the central value of the flux. The overall error on the scale factor is calculated so the $\chi^2$ of the flux ratio is equal to 1. However, the impact of the error from the ‘daisy petal' reweight on the cross-section error is negligible.
+
+%I recorded this process of extending the ‘daisy' reweight to the antineutrino flux with MINERvA's combined flux constraint of (anti)neutrino-electron scattering and IMD, and simultaneously, the neutrino flux with this new flux constraint as well, in MINERvA's internal documentation in Refs.~\cite{klustovaDaisy1,klustovaDaisy2,klustovaDaisy3}.
+
+\begin{figure}[t!]
+    \vspace{-7pt}
+    \centering
+    {\includegraphics[width=1\textwidth]{thesisFigures/Flux/carbonDaisy.pdf}}%
+    \caption{Carbon-to-scintillator tracker flux ratio before (left) and after (centre) the reweight, and the individual ‘daisy petal' weights to match the carbon flux (right). }
+    %[short caption] {long caption}
+    \label{fig:carbonDaisy}
+\end{figure}
+
+\begin{figure}[t!]
+    \vspace{2pt}
+    \centering
+    {\includegraphics[width=1\textwidth]{thesisFigures/Flux/ironDaisy.pdf}}%
+    \caption{Iron-to-scintillator tracker flux ratio before (left) and after (centre) the reweight, and the individual ‘daisy petal' weights to match the iron flux (right).}
+    %[short caption] {long caption}
+    % ACTUALLY PUT IN PARAMETERS for iron t1-5
+    \label{fig:ironDaisy}
+\end{figure}
+\begin{figure}[t!]
+    \vspace{2pt}
+    \centering
+    {\includegraphics[width=1\textwidth]{thesisFigures/Flux/leadDaisy.pdf}}%
+    \caption{Lead-to-scintillator tracker flux ratio before (left) and after (centre) the reweight, and the individual ‘daisy petal' weights to match the lead flux (right). }
+    %[short caption] {long caption}
+    \label{fig:leadDaisy}
+\end{figure}
+
+\begin{table}[t!]
+    \vspace{5pt}
+    \centering
+    \begin{tabularx}{0.72\textwidth}{c c c}
+    \hline \\ [-1.5 ex]
+    Material & $\chi^2$ before reweight & $\chi^2$ after reweight\\ [0.5ex] % inserts table %heading
+    \hline
+    \hline \\ [-2.0ex]
+    Carbon & 101.11 & 2.30 \\
+    Iron (Target 2, 3 and 5) & 332.40 & 2.12 \\
+    Lead (Target 2--5) & 2.35 & 0.77 \\
+    \hline
+    \end{tabularx}
+    \caption{Statistical $\chi^2$ of the nuclear target-to-scintillator flux ratios both before and after applying a linear combination of the ‘daisy petals' from the scintillator tracker to match the carbon, iron, and lead flux, respectively. }
+    % chi2 from: https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=30294&filename=04-03-2022_CollabMeeting.pdf&version=1
+    \label{table:chi2beforeAndAfterDaisy}
+\end{table}
