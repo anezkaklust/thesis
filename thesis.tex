@@ -44,6 +44,7 @@
     \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \usepackage{rotating}
 \usepackage{tikzpagenodes}
+\usepackage[title, titletoc]{appendix}
 
 % ===============================================================================================
 % ===================================== THESIS HERE =============================================
@@ -57,7 +58,7 @@
 % Author
 \author{Ane\v{z}ka KLUSTOV\'{A}}
 % Date
-\submitdate{February 2024}
+\submitdate{March 2024}
 
 \normallinespacing
 \maketitle
@@ -74,16 +75,21 @@
 % All chapters come here
 \body
 \pagestyle{fancy}% Change page style to fancy
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
 \fancyhf{}% Clear header/footer
 % this would be chapter mark left and section mark right
 %\fancyhead[R]{\bfseries \rightmark}
 %\fancyhead[L]{\bfseries \leftmark}
 %\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 %\renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhead[L]{\chaptername{} \thechapter }
+%\fancyhead[L]{\chaptername{} \thechapter }
+\fancyhead[L]{\nouppercase{\rightmark}}
 \fancyhead[R]{\thepage}
 \renewcommand{\headrulewidth}{0.1pt}% Default \headrulewidth is 0.4pt
 % Include individual chapters
+% https://www.overleaf.com/learn/latex/Headers_and_footers#Using_the_fancyhdr_package
 
 \input{01introduction/introduction.tex}
 \input{02theory/theory.tex}
@@ -106,7 +112,14 @@
 \input{glossary/glossary.tex}
 
 % Appendices
-\appendix
+\newpage
+\begin{appendices}
+    \appendix
+    \renewcommand\chaptername{Appendix}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{\thepage}
 \input{appendix/appendix_nuclearTargetFlux}
 \input{appendix/appendix_eventSelection}
 \input{appendix/appendix_PlasticSidebands}
@@ -120,5 +133,5 @@
 \input{appendix/appendix_systematics}
 \input{appendix/appendixA}
 \input{appendix/appendixB}
-
+\end{appendices}
 \end{document}
