@@ -1,56 +1,202 @@
 \chapter{Results and discussion}
 
-\label{ch:results}
+\label{ch:results} 
 
-% model comparisons here
-% talk about potential better bin-by-bin fitting in the plastic sidebands region
-% talk about potential inclusion of water target in the future
+% Aaron:  https://arxiv.org/pdf/2209.07852.pdf
+% Jeffrey: https://minerva-docdb.fnal.gov/cgi-bin/sso/RetrieveFile?docid=31903&filename=MINERvA_Nucl_Target_PRD_based_on_JK_analysis%20%282%29.pdf&version=2
 
-\section{1D Cross-sections}
+This chapter presents the results and the related discussion of the nuclear dependence measurement in antineutrino scattering using MINERvA, the analysis that I conducted and detailed in this work. Specifically, the cross-section results include differential cross-sections in antimuon $p_{\text{T}}$ and Bjorken $x$ for carbon, hydrocarbon (scintillator), iron, and lead, along with their associated uncertainty breakdowns.
 
-\begin{table}[h]
+Additionally, the chapter features ratios of carbon-, iron-, and lead-to-hydrocarbon in both variables of interest, each with corresponding uncertainty breakdowns. These comparisons effectively highlight (mostly) flux-independent differences between the different nuclei. While the chapter includes all cross-section and cross-section ratio results, the discussion focuses on and summarises observed general trends. The discussion also considers potential future improvements to the analysis.
+
+Furthermore, the cross-section and cross-section ratio results are reviewed in the context of other (anti)neutrino event generators. In particular, the results are compared with a newer version of GENIE and with NEUT, which employ different interaction models than the underlying simulation.
+
+
+\section{Antimuon~$p_{\text{T}}$ results}
+
+% Say how many events, compare to the LE sample [ REF]
+
+Figure~\ref{fig:xsec_pT} shows the extracted differential cross-sections in antimuon transverse momentum $p_{\text{T}}$ for inclusive antineutrino scattering on carbon, hydrocarbon (scintillator), iron, and lead, while Figure~\ref{fig:ratio_pT} illustrates the corresponding nuclear target-to-scintillator ratios. As explained in Chapter~\ref{ch:measurement}, $p_{\text{T}}$ serves as a convenient recoil energy independent proxy to the square of the four-momentum transferred, $Q^2$, in the course of the scattering process. Therefore, the peaks of the individual interaction type contribution in the simulation prediction breakdown in Figure~\ref{fig:xsec_pT} can be visibly seen to follow the low-transfer to high-transfer ordering from low-$p_{\text{T}}$ to high-$p_{\text{T}}$ region, indicating that quasi-elastic scattering and 2p2h mainly contribute at low $p_{\text{T}}$, whereas the deep inelastic scattering tends to dominate at high $p_{\text{T}}$. However, overall, the cross-section is predicted to be dominated by the resonant pion production (even at lowest $p_{\text{T}}$) followed by the deep inelastic scattering as this analysis utilises MINERvA's medium energy dataset with antineutrino flux peak near $6$~GeV.
+
+\begin{figure}[t!] 
     \centering
-    \begin{tabular}{c c c c c c c }
-    \hline \\ [-1.5 ex]
-    \multirow[c]{2}{*}{Cross-section} & \multicolumn{6}{c}{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ (ndf = 13) } \\ [0.8ex]
-     & CV & GENIE 2.12.6 & v1 & v2 & v4 & v431  \\ [0.5ex] % inserts table %heading
-    \hline
-    \hline \\[-1.9ex]
-    Carbon &  2.64 &	2.12 &	2.12 &	4.88 &	2.93 &	3.33 \\
-    %\hline
-    Iron & 3.04 &	9.30 &	7.06 &	4.81 &	11.48 &	2.20 \\
-    %\hline
-    Lead & 6.22	& 18.20	& 15.72 & 2.62 &	24.86 &	3.70 \\
-    %\hline
-    Scintillator & 10.35 & 42.07 &	24.89 &	39.29 &	51.82 &	19.30 \\
-    \hline
-    \end{tabular}
-
-    \caption{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ cross-section (ndf = 13)}
-    \label{table:xsec_tuneComparison_pT}
-\end{table}
+    {\includegraphics[width=1.\textwidth]{10results/figures/xsec_pT.pdf}}%
+    \caption{xsec pT}
+    \label{fig:xsec_pT}
+\end{figure}
 
 
-\begin{table}[h]
+Importantly, the data-to-simulation ratios in Figure~\ref{fig:xsec_pT} reflect the trend observed throughout the analysis process. The region from the falling edge of the $p_{\text{T}}$ distribution to large $p_{\text{T}}$ is systematically underpredicted by the simulation for all nuclei. The data excess grows as $p_{\text{T}}$ increases. Interestingly, a similar excess was reported in MINERvA's measurement of antineutrino quasi-elastic-like scattering only~\cite{PhysRevD.108.032018}. This indicates that either quasi-elastic scattering or resonant pion production, or a combination thereof, is being mismodelled, i.e. underpredicted, by the underlying simulation. 
+
+
+Furthermore, the low $p_{\text{T}}$ region presents an interesting insight into the nuclear dependence of the inclusive antineutrino scattering, which is mostly ascribed to the resonant pion production in the simulation. The simulation prediction ranges from underprediction of the data for relatively light nuclei, i.e. low-$A$ carbon and hydrocarbon, to significant overprediction of the data for high-$A$ lead. In other words, the discrepancy changes and grows as a function of the mass number $A$. Notably, this has been seen in MINERvA's medium-energy neutrino charged-current single $\pi^+$ production on various nuclear targets~\cite{Bercellie2023_PhysRevLett.131.011801}. The low $Q^2$ suppression was also featured in several other datasets including MINOS neutrino measurement on iron~\cite{PhysRevD.91.012005}, and MINERvA low-energy measurements of neutrino pion production on the scintillator~\cite{PhysRevD.92.092008, PhysRevD.94.052005, PhysRevD.96.072003, PhysRevD.100.072005} and one low-energy antineutrino pion induced production also on the scintillator~\cite{PhysRevD.94.052005}. This analysis' result is the first such observation in an antineutrino dataset in medium energy across various nuclei. 
+
+% RATIOS
+\begin{figure}[t!] 
     \centering
-    \begin{tabular}{c  c c c c c c }
-    \hline \\ [-1.5 ex]
-    \multirow[c]{2}{*}{Cross-section} & \multicolumn{6}{c}{MINERvA tune $\chi^2$/ndf for Bjorken $x$ (ndf = 6) } \\ [0.8ex]
-    & CV & GENIE 2.12.6 & v1 & v2 & v4 & v431  \\ [0.5ex] % inserts 
-    \hline
-    \hline \\[-1.9ex]
-    Carbon & 5.34 &	4.87 &	4.56 &	7.50 &	5.08 &	8.54 \\
-    %\hline
-    Iron & 3.50 &	4.34 &	3.80 &	4.92 &	5.47 &	3.75 \\
-    %\hline
-    Lead & 4.46 & 	6.57 &	7.77 &	4.93 &	11.90 &	5.48 \\
-    %\hline
-    Scintillator & 17.22 & 10.19 &	6.47 &	30.38 &	6.09 &	42.11 \\
-    \hline
-    \end{tabular}
-    \caption{MINERvA tune $\chi^2$/ndf for Bjorken $x$ cross-section (ndf = 6)}
-    \label{table:xsec_tuneComparison_x}
-\end{table}
+    {\includegraphics[width=1.\textwidth]{10results/figures/ratios_pT.pdf}}%
+    \caption{xsec ratio pT}
+    \label{fig:ratio_pT}
+\end{figure}
+
+As described in Chapter~\ref{ch:dataAsimulation}, this analysis tried to partially remedy the suppression by reweighting its single pion production, both resonant and non-resonant, with $\pi^-$ in final states, to match the low $Q^2$ (low $p_{\text{T}}$) suppression observed in the medium-energy single $\pi^+$ production on scintillator~\cite{Bercellie2023_PhysRevLett.131.011801}. While
+the interpolation from neutrino to antineutrino mode was not necessarily expected to work, the suppression improved the simulation agreement with the data which is demonstrated in Appendix~\ref{ch:appendix_tuneComparisons}. The results show that this suppression seems to partially capture antineutrino interactions on iron, but it is not strong enough for lead. 
+
+These observed trends are further amplified by looking at the carbon-, iron-, and lead-to-scintillator ratios in Figure~\ref{fig:ratio_pT}. While the carbon-to-scintillator ratio in antimuon $p_{\text{T}}$ is relatively flat as expected, the iron-to-scintillator and lead-to-scintillator ratios demonstrate dramatic $A$-scaling changes as a function of $p_{\text{T}}$, specifically at low and high $p_{\text{T}}$ as mentioned above. Overall these results suggest that both the total cross-section scaling versus $A$ and the low $Q^2$ suppression are larger than modelled and that the effect increases with increasing $p_{\text{T}}$ (square of the four-momentum transfer). Crucially, while the low $Q^2$ suppression is based on the pion production measurements, the inclusive antineutrino analysis spans other interaction channels that may contribute to the suppression observed in this region.
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/xsec_pT_fracErr.pdf}}%
+    \caption{xsec pT frac err}
+    \label{fig:xsec_pT_fracErr}
+\end{figure}
+
+An interesting observation is the flat carbon-to-scintillator ratio in Figure~\ref{fig:ratio_pT}, which does not completely agree with the simulation prediction at unity, contrary to expectations. However, it is important to note that the systematic uncertainties on the data are missing the uncertainty accounting for the discrepancy in the plastic sidebands after the normalisation tune discussed in Section~\ref{sec:bkgSubtraction} and Chapter~\ref{ch:systematics}. Given that the shape of the ratio somewhat mirrors the shape of the data-to-simulation ratio in the sideband, this is expected to account for the discrepancy between the data and the simulation prediction in the final carbon-to-scintillator cross-section ratio. Alternatively, this discrepancy is also expected to be mitigated if the plastic sideband procedure is improved, for example, by fitting in the three distinct regions of $p_{\text{T}}$ (low, peak, and high $p_{\text{T}}$) to remove the shape differences in the sideband rather than using a simple normalisation fit. 
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/ratios_pT_fracErr.pdf}}%
+    \caption{xsec ratio pT frac errr}
+    \label{fig:ratio_pT_fracErr}
+\end{figure}
+
+Finally, the breakdowns of fractional uncertainties for both the cross-sections and cross-section ratios in $p_{\text{T}}$ are demonstrated in Figures~\ref{fig:xsec_pT_fracErr} and~\ref{fig:ratio_pT_fracErr}, respectively. The individual cross-sections are primarily influenced by systematic uncertainty rather than statistical uncertainty, specifically stemming from the flux and the antimuon reconstruction uncertainties. These two sources of uncertainty tend to cancel out to a large extent in the cross-section ratios, as evident in Figure~\ref{fig:ratio_pT_fracErr}. Consequently, the cross-section ratios become predominantly limited by statistical uncertainties.
+
+When comparing C/CH, Fe/CH, and Pb/CH, a noticeable increase in the uncertainty on the final-state interaction~(`FSI') is observed as FSI becomes more significant and complex for heavier nuclei. It is important to note that the `Particle Response' uncertainty band is mainly driven by uncertainties in GEANT4 neutron interaction modelling, impacting the analysis due to correlations between outgoing particle kinematics (as $p_{\text{T}}$ serves as a proxy for the momentum transfer). A similar impact of the GEANT4 neutron modeling uncertainty in iron has been observed in other MINERvA analyses, such as in Ref.~\cite{Bercellie2023_PhysRevLett.131.011801}, and is currently under investigation, potentially arising from large weights in the neutron reweight described in Section~\ref{sec:particleProp}.
+
+\section{Bjorken~$x$ results}
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/xsec_x.pdf}}%
+    \caption{xsec x}
+    \label{fig:xsec_x}
+\end{figure}
+
+
+Figures~\ref{fig:xsec_x} and \ref{fig:ratio_x} show the results of the differential cross-sections and cross-section ratios for various nuclei as functions of the dimensionless scaling variable Bjorken $x$. As discussed in Chapter~\ref{ch:measurement}, Bjorken $x$ is used to describe nuclear modifications to a bound nucleon cross-section compared to a free nucleon. While this effect is primarily associated with deep inelastic scattering (DIS), the substantial DIS contribution in this analysis sample makes the investigation interesting. By definition, the DIS contribution is expected to be large at low $x$ (corresponding to large recoil energy), while the quasi-elastic contribution should dominate the high $x$ region. This is illustrated in the interaction breakdown of the simulation prediction cross-section in Figure~\ref{fig:xsec_x}.
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/ratios_x.pdf}}%
+    \caption{xsec ratio x}
+    \label{fig:ratio_x}
+\end{figure}
+
+The cross-section ratios for iron and lead in Bjorken $x$ in Figure~\ref{fig:ratio_x} exhibit significant disagreement with the underlying simulation in the low $x$ region, the so-called shadowing-like region. These ratios particularly demonstrate a notable suppression of the iron and lead cross-section in this region compared to the scintillator, and the suppression grows with the size of the nucleus (iron versus lead) This is in agreement with MINERvA's first investigation of such effects in the low-energy inclusive neutrino scattering~\cite{Tice_PhysRevLett.112.231801}. Note that the results of this analysis represent the first comprehensive and statistically significant investigation of such effects across various nuclei in the medium-energy inclusive antineutrino sample. The low-energy equivalent was not possible due to limited statistics. Compared to the neutrino results in low energy in Ref.~\cite{Tice_PhysRevLett.112.231801}, this analysis was performed using roughly 10$\times$ more interactions in each nucleus.
+
+The depletion in the cross-sections for heavy targets at low $x$ mainly due to the DIS contribution is generally expected and it is attributed to the destructive interference of hadronic fluctuations of the intermediate boson that multiple-scatter off surface nucleons~\cite{KOPELIOVICH2013314, BEBCWA59:1989nmi, Tice_PhysRevLett.112.231801}, as explained in Chapter~\ref{ch:measurement}. There are several reasons why the depletion may be larger in the data than predicted by the simulation. First, the shadowing corrections included in the simulation prediction are based on charged lepton data, which, unlike antineutrinos, do not have axial-vector contributions. Additionally, the same shadowing corrections based on iron data are also applied to carbon and lead \cite{BODEK2005113}, as mentioned in Chapter~\ref{ch:dataAsimulation}. Furthermore, the underlying simulation is tuned to the perturbative region of higher $Q^2$ data ($Q^2 > 1$ GeV$/c^2$), whereas the low $x$ region in this analysis in particular is predicted to be dominated by events with $Q^2$ less than [CALCULATE].
+
+\begin{figure}[t!] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/xsec_x_fracErr.pdf}}%
+    \caption{xsec x frac err}
+    \label{fig:xsec_x_fracErr}
+\end{figure}
+
+
+Importantly, interpreting the observed suppression of heavy target cross-sections at low $x$ is challenging, as it is impossible to disentangle FSI and nuclear effects due to the inclusive nature of the analysis. FSI effects may distort the observed Bjorken $x$ distribution by increasing or decreasing the observed recoil energy, with such effects possibly more pronounced in heavier nuclei, introducing strong nuclear dependence effects. Additional complexity also arises due to the interplay between pion production and deep inelastic scattering in the low $x$ region.
+
+The high-$x$ region, dominated by quasi-elastic scattering across various nuclei, is also overpredicted in the cross-section ratios for iron and lead. However, its interpretation is also somewhat complex. The corresponding migration matrices in Section~\ref{sec:migration_unfolding} showed large smearing in this region, and while the model dependence in unfolding was studied, the quasi-elastic scattering in antineutrino interactions results in neutrons, which are often invisible to the calorimetric recoil reconstruction. The correction to the recoil energy accounting for this is inherently model-dependent as described in Chapter~\ref{ch:Reconstruction}.
+
+
+\begin{figure}[h] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/ratios_x_fracErr.pdf}}%
+    \caption{xsec ratio x frac errr}
+    \label{fig:ratio_x_fracErr}
+\end{figure}
+
+
+Furthermore, the $x > 1$ region simulated by GENIE comes mostly from smearing from final-state interactions and does not include predictions of interactions from short-range correlated nucleons. These are expected to occur in this region based on electron-scattering data~\cite{CLAS:PhysRevLett.96.082501, SRC:annurev}. Also, the exploratory study of the potential bias due to neutron modelling corrections in Section~\ref{sec:migration_unfolding} suggested a need for additional uncertainty in this region, as discussed in Chapter~\ref{ch:systematics}. Nevertheless, this analysis presents the first attempt to measure this region in antineutrino scattering and the data seems to indicate the need for a larger suppression at high $x$ compared to carbon. However, the challenges described above preclude the analysis from making any definitive conclusions. 
+
+Similarly to $p_{\text{T}}$, the carbon-to-scintillator ratio is most consistent with the simulation and with unity. The sideband effects discussed above for $p_{\text{T}}$ could potentially explain the differences from the underlying prediction of the ratio. Moreover, the low $x$ region is also sensitive to the recoil energy scale and a potential investigation of whether the recoil scale differs between the nuclear target region and the scintillator tracker has been suggested. 
+
+Figures~\ref{fig:xsec_x_fracErr} and \ref{fig:ratio_x_fracErr} summarise the breakdowns of the fractional uncertainties on the Bjorken $x$ cross-sections and the cross-section ratios for various nuclei. Similar to the $p_{\text{T}}$ cross-section, the Bjorken $x$ cross-section is dominated by flux. The $x > 1$ region is governed by the understanding of the underlying interactions, i.e. `Interaction Model' error band, for the reasons described above. The C/CH ratio is mostly limited by the underlying statistics (except at large $x$). 
+
+Overall, in all ratios, the leading systematic uncertainty arises from the `Interaction Model' error band. Similarly to $p_{\text{T}}$, the contribution in iron from the `Particle Response' uncertainty band, i.e. GEANT4 neutron modelling, is being investigated. However, the `Particle Response' in this case also includes the calorimetric detector response, as Bjorken $x$ depends on recoil reconstruction, making its contribution overall larger than in $p_{\text{T}}$. Finally, the `FSI' uncertainty becomes more prominent in the ratio as the nucleus in the numerator gets heavier.
+
+[ADD that covariance matrices in the back-up]
+
+
+\begin{comment}
+Iron and lead would be on average somewhere
+Bjorken $x$ also this scaling behaviour
+Generators: do not capture the evolution of cross-section
+Which generators to predicts the ratios and which do not
+GENIE uses pion and nucleon-nucleus scattering data to implement single-step absorption and otehr processes (INTRANUKE-hA), wjereas NEUT employs a different microscopit transport algorithms to simulate pion and nucleon intranuclear scattering
+
+- absolute normalisation not described well by some models
+\end{comment}
+
+\section{Model comparisons}
+
+% In summary, these data on single pion production on a wide variety of nuclei provide a new way to test nuclear models through their nuclear dependence. We observe a large modification to the predicted Q2 distribution of single pi+ events that it can be consistently seen in all nuclei. These results give guidance in how the wealth of data on scintillator targets can be applied to models for oxygen and argon for future neutrino experiments.
+
+
+% From Aaron
+% One of the striking features in these comparisons is that there are large difference in the ratios between the GENIEv2 and GENIEv3 models for the iron and lead targets. These are primarily from different the FSI effects in the generators. The increased pion scattering and absorption rates in heavy nuclei in GENIEv3 appear to better describe our data.
+% These suppression at low Q2 relative to high Q2 is a feature that has been observed in different data sets, including MINOS on iron [44] and in other MINERvA pion measurements on scintillator [8, 10, 11, 45]. Models have some differences in prediction, although generally do not predict this large suppression. The high Q2 shape evolution of different versions and tunes of GENIE goes from GENIEv2 MnvTune v4.2.1 (steepest), to untuned GENIE v2.12.6 to GENIE v3 02a 02 11a to GENIEv2 MnvTune v4.3.1 (flattest) via changes to the axial form factor and, in the case of GENIE v3, also the vector form factor and FSI processes. Like the tunes of Refs. 45 and 44, the MnvTune v4.3.1 adds the ad hoc additional shape at low Q2 evident in these data.
+% https://arxiv.org/pdf/2209.07852.pdf
+
+%\section{1D Cross-sections}
+
+
+% Low x regions: dominated by DIS and RES
+% High x dominated by only RES with contribution from QE and 
+% Generally the data lies above the simulation in almost all bins similarly to the QE tracker analysis [Amit's paper] - just true for scintillator, excess growing as pT increases
+% Table with cho2 comparisons
+% Most models fail to reproduce high pT behaviour
+% GENIE 3 does well in low pT
+% Overall best 
+% hA preferred by carbon and iron. hN preferred by lead, strong FSI
+
+
+
+% C/CH ratio no significant dependence on the muon kinematics seen at 10\% level
+% None of the generator predictions are in good agreement with the data.
+% C and Fe prefer hA model, lead prefers hN
+% LFG versus RFG initial-state nucleon models is small because affects mostly CCQE in GENIE and not 2p2h or RES (and nos IDS)
+
+% Combined with other measurements from MINERvA
+% These measurements combined provide key benchmarks for the field’s description of how the nucleus impacts neutrino interactions
+
+% Multi-neutron profuctuon at low Eavail (low momentum transfer) - SuSA 2p2h and unmodified Valencia predicts better the data in Andrew's result
+
+% The GENIE v3 empirical 2p2h model was developed with electron scattering data and a procedure much the same as the MnvTunev1 2p2h enhancement: add 2p2h events to the region between CCQE and resonance production until the model matches the data [57].
+
+
+%It has been experimentally demonstrated that the structure of the nucleon in the nuclear environment is indeed different than the free nucleon structure. Understanding this modified structure has played an important part in the experimental and theoretical exploration of nucleon structure by neutrinos and is one of the important goals of the on-going MINERvA experiment at Fermilab.
+
+% Model comparisons
+\begin{figure}[h] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/xsec_pT_modelComparison.pdf}}%
+    \caption{xsec pT model comparison}
+    \label{fig:xsec_pT_modelComparison}
+\end{figure}
+
+\begin{figure}[h] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/xsec_x_modelComparison.pdf}}%
+    \caption{xsec x model comparison}
+    \label{fig:xsec_x_modelComparison}
+\end{figure}
+
+\begin{figure}[h] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/ratios_pT_modelComparison.pdf}}%
+    \caption{xsec ratio pT model comparison}
+    \label{fig:ratio_pT_modelComparison}
+\end{figure}
+
+\begin{figure}[h] 
+    \centering
+    {\includegraphics[width=1.\textwidth]{10results/figures/ratios_x_modelComparison.pdf}}%
+    \caption{xsec ratio x model comparison}
+    \label{fig:ratio_x_modelComparison}
+\end{figure}
+
 
 
 \begin{table}[h]
@@ -107,46 +253,6 @@
 
 \begin{table}[h]
     \centering
-    \begin{tabular}{c c c c c c c }
-    \hline \\ [-1.5 ex]
-    \multirow[c]{2}{*}{Cross-section ratio} & \multicolumn{6}{c}{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ (ndf = 13) } \\ [0.8ex]
-     & CV & GENIE 2.12.6 & v1 & v2 & v4 & v431  \\ [0.5ex] % inserts table %heading
-    \hline
-    \hline \\[-1.9ex]
-    C/CH & 4.93 & 5.17 & 4.93 & 5.55 & 4.90 & 3.52 \\
-    %\hline
-    Fe/CH & 2.35 & 2.17 & 2.39 & 1.33 & 2.61 & 4.10 \\
-    %\hline
-    Pb/CH & 12.06 & 6.68 & 10.00 & 2.94 & 11.32 & 9.71 \\
-    \hline
-    \end{tabular}    
-    \caption{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ cross-section ratio (ndf = 13)}
-    \label{table:xsecRatio_tuneComparison_pT}
-\end{table}
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{c c c c c c c }
-    \hline \\ [-1.5 ex]
-    \multirow[c]{2}{*}{Cross-section ratio} & \multicolumn{6}{c}{MINERvA tune $\chi^2$/ndf for Bjorken $x$ (ndf = 6) } \\ [0.8ex]
-     & CV & GENIE 2.12.6 & v1 & v2 & v4 & v431  \\ [0.5ex] % inserts table %heading
-    \hline
-    \hline \\[-1.9ex]
-    C/CH & 5.91 & 6.58 & 6.31 & 6.24 & 6.40 & 4.35 \\
-    %\hline
-    Fe/CH & 6.28 & 6.08 & 5.72 & 5.45 & 5.80 & 8.62 \\
-    %\hline
-    Pb/CH & 12.69 & 11.52 & 10.83 & 8.97 & 11.61 & 32.11 \\
-    \hline
-    \end{tabular}    
-    \caption{MINERvA tune $\chi^2$/ndf forBjorken $x$ cross-section ratio (ndf = 6)}
-    \label{table:xsecRatio_tuneComparison_x}
-\end{table}
-
-
-
-\begin{table}[h]
-    \centering
     \begin{adjustbox}{width=1.01\textwidth,center=\textwidth}
     \begin{tabular}{c c c c c c c c}
     \hline \\ [-1.5 ex]
@@ -187,9 +293,51 @@
     \label{table:xsecRatio_modelComparison_x}
 \end{table}
 
-\section{2D Cross-sections}
-\section{2D Cross-sections ratios}
+%\section{2D Cross-sections}
+%\section{2D Cross-sections ratios}
+
+% From Aaron
+
+\begin{comment}
+
+
+GENIE version 3.0.6 
+G18\_02a/b shorthand for G18\_02a/b\_02\_11a
+- includes diffractive and lambda production models 
+- Berger-Sehgal for resonant and coherent pion production
+    - compared to RS includes effects due to the muon mass in the cross-section calculation
+    - new mapped axial and vector form factors from Rarita Schwinger formalism
+    - used the map to include Lalakulich tuned vector form factors
+- empirical MEC
+- a is for hA (effective cascade), hN is full cascade model 
+
+
+G18\_10a/b shorthand for G18\_10a/b\_02\_11a
+- same as above otherwise but in instead:
+- Local Fermi gas instead of Relativistic Fermi gas
+- Valencia CCQE and MEC (Nieves et al.)
+
+
+- hA and hN is dependent on A (rather than all for iron)
+
+NEUT version 5.4.1 
+- developed for (anti)neutrino interactions on carbon and water, mostly for measurements of lepton kinematics
+
+
+NEUT LFG ma105 is shorthand for NEUT version 5.4.1 
+- LFG based on Nieves et al. (MA = 1.05 GeV/c^2)
+- Nives 1p1h and 2p2h
+- Rein-Sehgal for  single pion production
+- Berger-Sehgal for coherent pions
+- Rein's model for diffractive pions 
+- Bodek-Yang with corrections and tuned multiplicity to data for DIS 
+- semi-classical intranuclear cascade model 
+
+NEUT SF ma103 is shorthand for NEUT version 5.4.1 
+- spectral function for nuclear ground state 
+- 1p1h for SF, ma =1.03 
+- Nieves 2p2h
 
 
 
-
+\end{comment}
