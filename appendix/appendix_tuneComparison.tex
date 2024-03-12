@@ -2,10 +2,20 @@
 
 \label{ch:appendix_tuneComparisons}
 
-\section{Cross-sections}
+This appendix presents the measured cross-section and cross-section ratio results compared to the various MINERvA tunes applied to the baseline GENIE 2.12.6 \cite{genie_ANDREOPOULOS201087,genie_andreopoulos2015}. These comparisons facilitate a broader understanding of this measurement in the context of other MINERvA results. The underlying simulation prediction corresponds to the MINERvA tune v4.3.0. In the comparisons, the baseline GENIE 2.12.6 is considered in addition to the so-called v1, v2 and v4 tunes based on different MINERvA results or reanalyses of other data. The characteristics of each tune are briefly reviewed below:
+\begin{itemize}
+    \item \textbf{GENIE 2.12.6}: baseline GENIE prediction
+    \item \textbf{MINERvA tune v1}: GENIE 2.12.6 + Valencia RPA suppression of the quasi-elastic interactions~\cite{RPANieves2004_PhysRevC.70.055503, Rodrigues2016_PhysRevLett.116.071802, gran2017model}, enhanced 2p2h \cite{2p2hNieves2011_PhysRevC.83.045501,2p2hGran2013_PhysRevD.88.113007,2p2hschwehr2017genie,Rodrigues2016_PhysRevLett.116.071802, Gran2018_PhysRevLett.120.221805}, and reduced non-resonant pion production \cite{pion_Rodrigues_2016}
+    \item \textbf{MINERvA tune v2}: v1 + low $Q^2$ suppression based on MINERvA's low-energy pion production data and older bubble chamber data \cite{PhysRevD.100.072005}
+    \item \textbf{MINERvA tune v4}: v1 + full bubble chamber fit changing $M_{A}^{\text{RES}}$ and charged-current resonant normalisation parameter \cite{pion_Rodrigues_2016}
+    \item \textbf{MINERvA tune v4.3.0}: v4 + low $Q^2$ suppression based on MINERvA's medium energy charged-current 1$\pi^+$ analysis \cite{Bercellie2023_PhysRevLett.131.011801}
+\end{itemize}
+Chapter~\ref{ch:dataAsimulation} provides a detailed description of the specific modifications made to the baseline GENIE predictions to create the MINERvA tune v4.3.0.
 
-\begin{figure}[h]%
-    \vspace{-30pt}
+% pT xsec
+
+\begin{figure}[t!]%
+    \vspace{-20pt}
     \centering
     \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/crossSection_Daisy_t3_z06_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison+ratio.pdf} }}%
     \qquad
@@ -17,10 +27,11 @@
     \qquad
     \hspace{-50pt}
     \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/crossSection_Daisy_t2345_z82_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison+ratio.pdf} }}%
-    \caption{Tune comparison cross-section pT}
+    \caption{Measured carbon, scintillator, iron, and lead (from left to right, top to bottom) cross-section as a function of antimuon $p_{\text{T}}$ compared to the predictions from different MINERvA tunes. The inner error bar on the data indicates the statistical error while the outer error bar corresponds to the total, i.e. statistical + systematic, error.}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b!]
+    \vspace{-30pt}
     \centering
     \begin{tabular}{c c c c c c c }
     \hline \\ [-1.5 ex]
@@ -38,11 +49,45 @@
     \hline
     \end{tabular}
 
-    \caption{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ cross-section (ndf = 13)}
+    \caption{Fully correlated $\chi^2$/ndf calculated according to Equation~\ref{eq:fullyCorrelatedChi2} to assess the agreement between the measured data and the various MINERvA tunes for carbon, scintillator, iron, and lead cross-section in antimuon $p_{\text{T}}$. }
     \label{table:xsec_tuneComparison_pT}
 \end{table}
 
-\begin{figure}[h]%
+% pT ratio
+\begin{figure}[t!]%
+    \centering
+    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t3_z06_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
+    \qquad
+    \hspace{-50pt}
+    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t235_z26_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}
+    \vspace{-10pt}
+    \qquad
+    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t2345_z82_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
+    \caption{Measured carbon-to-scintillator (top left), iron-to-scintillator (top right), and lead-to-scintillator (bottom) cross-section ratios in antimuon $p_{\text{T}}$ compared to the predictions from different MINERvA tunes. The data is displayed with both the statistical~(inner error bars) and the total (outer error bars) uncertainty.}
+\end{figure}
+
+\begin{table}[b!]
+    \centering
+    \begin{tabular}{c c c c c c c }
+    \hline \\ [-1.5 ex]
+    \multirow[c]{2}{*}{Cross-section ratio} & \multicolumn{5}{c}{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ (ndf = 13) } \\ [0.8ex]
+     & CV & GENIE 2.12.6 & v1 & v2 & v4   \\ [0.5ex] % inserts table %heading
+    \hline
+    \hline \\[-1.9ex]
+    C/CH & 4.93 & 5.17 & 4.93 & 5.55 & 4.90 \\
+    %\hline
+    Fe/CH & 2.35 & 2.17 & 2.39 & 1.33 & 2.61  \\
+    %\hline
+    Pb/CH & 12.06 & 6.68 & 10.00 & 2.94 & 11.32  \\
+    \hline
+    \end{tabular}    
+    \caption{Fully correlated $\chi^2$/ndf calculated according to Equation~\ref{eq:fullyCorrelatedChi2} to assess the agreement between the measured data and the various models in the cross-section ratios to scintillator for carbon, iron, and lead in antimuon $p_{\text{T}}$.}
+    \label{table:xsecRatio_tuneComparison_pT}
+\end{table}
+
+% x sec
+
+\begin{figure}[t!]%
     \vspace{-30pt}
     \centering
     \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/crossSection_Daisy_t3_z06_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison+ratio.pdf} }}%
@@ -55,11 +100,11 @@
     \qquad
     \hspace{-50pt}
     \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/crossSection_Daisy_t2345_z82_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison+ratio.pdf} }}%
-    \caption{Tune comparison cross-section x}
+    \caption{Measured carbon, scintillator, iron, and lead (from left to right, top to bottom) cross-section as a function of Bjorken $x$ compared to the predictions from different MINERvA tunes. The inner error bar on the data indicates the statistical error while the outer error bar corresponds to the total, i.e. statistical + systematic, error. }
 \end{figure}
 
-
-\begin{table}[h]
+\begin{table}[b!]
+    \vspace{-10pt}
     \centering
     \begin{tabular}{c  c c c c c }
     \hline \\ [-1.5 ex]
@@ -76,48 +121,26 @@
     Scintillator & 17.22 & 10.19 &	6.47 &	30.38 &	6.09  \\
     \hline
     \end{tabular}
-    \caption{MINERvA tune $\chi^2$/ndf for Bjorken $x$ cross-section (ndf = 6)}
+    \caption{Fully correlated $\chi^2$/ndf calculated according to Equation~\ref{eq:fullyCorrelatedChi2} to assess the agreement between the measured data and the various MINERvA tunes for carbon, scintillator, iron, and lead cross-section in Bjorken $x$. }
     \label{table:xsec_tuneComparison_x}
 \end{table}
 
-\clearpage
-\section{Cross-sections ratios}
+% x ratio
 
-\begin{table}[h]
+\begin{figure}[t!]%
     \centering
-    \begin{tabular}{c c c c c c c }
-    \hline \\ [-1.5 ex]
-    \multirow[c]{2}{*}{Cross-section ratio} & \multicolumn{5}{c}{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ (ndf = 13) } \\ [0.8ex]
-     & CV & GENIE 2.12.6 & v1 & v2 & v4   \\ [0.5ex] % inserts table %heading
-    \hline
-    \hline \\[-1.9ex]
-    C/CH & 4.93 & 5.17 & 4.93 & 5.55 & 4.90 \\
-    %\hline
-    Fe/CH & 2.35 & 2.17 & 2.39 & 1.33 & 2.61  \\
-    %\hline
-    Pb/CH & 12.06 & 6.68 & 10.00 & 2.94 & 11.32  \\
-    \hline
-    \end{tabular}    
-    \caption{MINERvA tune $\chi^2$/ndf for $p_{\text{T}}$ cross-section ratio (ndf = 13)}
-    \label{table:xsecRatio_tuneComparison_pT}
-\end{table}
-
-
-\begin{figure}[h]%
-    \vspace{-30pt}
-    \centering
-    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t3_z06_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
+    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t3_z06_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
     \qquad
     \hspace{-50pt}
-    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t235_z26_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}
+    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t235_z26_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}
     \vspace{-10pt}
     \qquad
-    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t2345_z82_pTmu1D_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
-    \caption{Tune comparison cross-section ratio pT}
+    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t2345_z82_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
+    \caption{Measured carbon-to-scintillator (top left), iron-to-scintillator (top right), and lead-to-scintillator (bottom) cross-section ratios in Bjorken $x$ compared to the predictions from different MINERvA tunes. The data is displayed with both the statistical (inner error bars) and the total (outer error bars) uncertainty.}
 \end{figure}
 
 
-\begin{table}[h]
+\begin{table}[b!]
     \centering
     \begin{tabular}{c c c c c c c }
     \hline \\ [-1.5 ex]
@@ -132,27 +155,9 @@
     Pb/CH & 12.69 & 11.52 & 10.83 & 8.97 & 11.61  \\
     \hline
     \end{tabular}    
-    \caption{MINERvA tune $\chi^2$/ndf forBjorken $x$ cross-section ratio (ndf = 6)}
+    \caption{Fully correlated $\chi^2$/ndf calculated according to Equation~\ref{eq:fullyCorrelatedChi2} to assess the agreement between the measured data and the various models in the cross-section ratios to scintillator for carbon, iron, and lead in Bjorken $x$.}
     \label{table:xsecRatio_tuneComparison_x}
 \end{table}
-
-\begin{figure}[h]%
-    \vspace{-30pt}
-    \centering
-    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t3_z06_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
-    \qquad
-    \hspace{-50pt}
-    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t235_z26_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}
-    \vspace{-10pt}
-    \qquad
-    \subfloat{{\includegraphics[width=0.49\textwidth]{thesisFigures/tuneComparisons2024/xSec_ratio_Daisy_t2345_z82_x_minervame5A6A6B6C6D6E6F6G6H6I6J_TuneComparison.pdf} }}%
-    \caption{Tune comparison cross-section ratio x}
-\end{figure}
-
-
-
-
-
 
 \begin{comment}
 
