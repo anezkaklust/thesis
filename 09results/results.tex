@@ -64,8 +64,8 @@ An interesting observation is the flat carbon-to-scintillator ratio in Figure~\r
 
 Finally, the breakdowns of fractional uncertainties for both the cross-sections and cross-section ratios in $p_{\text{T}}$ are demonstrated in Figures~\ref{fig:xsec_pT_fracErr} and~\ref{fig:ratio_pT_fracErr}, respectively. The individual cross-sections are primarily influenced by systematic uncertainty rather than statistical uncertainty, specifically stemming from the flux and the antimuon reconstruction uncertainties. These two sources of uncertainty tend to cancel out to a large extent in the cross-section ratios, as evident in Figure~\ref{fig:ratio_pT_fracErr}. Consequently, the cross-section ratios become predominantly limited by statistical uncertainties.
 
-When comparing C/CH, Fe/CH, and Pb/CH, a noticeable increase in the uncertainty on the final-state interaction~(`FSI') is observed as FSI becomes more significant and complex for heavier nuclei. It is important to note that the `Particle Response' uncertainty band is mainly driven by uncertainties in GEANT4 neutron interaction modelling, impacting the analysis due to correlations between outgoing particle kinematics (as $p_{\text{T}}$ serves as a proxy for the momentum transfer). A similar impact of the GEANT4 neutron modelling uncertainty in iron has been observed in other MINERvA analyses, such as in Ref.~\cite{Bercellie2023_PhysRevLett.131.011801}, and is currently under investigation, potentially arising from large weights in the neutron reweight described in Section~\ref{sec:particleProp}. Note that the full covariance matrices for the measured antimuon $p_{\text{T}}$ cross-sections are included in Appendix~\ref{ch:appendix_covarianceMatrices}.
-
+When comparing C/CH, Fe/CH, and Pb/CH, a noticeable increase in the uncertainty on the final-state interaction~(`FSI') is observed as FSI becomes more significant and complex for heavier nuclei. It is important to note that the `Particle Response' uncertainty band is mainly driven by uncertainties in GEANT4 neutron interaction modelling, impacting the analysis due to correlations between outgoing particle kinematics (as $p_{\text{T}}$ serves as a proxy for the momentum transfer). A similar impact of the GEANT4 neutron modelling uncertainty in iron has been observed in other MINERvA analyses, such as in Ref.~\cite{Bercellie2023_PhysRevLett.131.011801}, and is currently under investigation, potentially arising from large weights in the neutron reweight described in Section~\ref{sec:particleProp}. %Note that the full covariance matrices for the measured antimuon $p_{\text{T}}$ cross-sections are included in Appendix~\ref{ch:appendix_covarianceMatrices}.
+\clearpage
 \section{Bjorken~$x$ results}
 
 
@@ -91,7 +91,8 @@ Figures~\ref{fig:xsec_x} and \ref{fig:ratio_x} show the results of the different
 
 The cross-section ratios for iron and lead in Bjorken $x$ in Figure~\ref{fig:ratio_x} exhibit significant disagreement with the underlying simulation in the low $x$ region. These ratios particularly demonstrate a notable suppression of the iron and lead cross-section in this region compared to the scintillator, and the suppression grows with the size of the nucleus. This is in agreement with MINERvA's first investigation of such effects in the low-energy inclusive neutrino scattering~\cite{Tice_PhysRevLett.112.231801}. Note that the results of this analysis represent the first comprehensive and statistically significant investigation of such effects across various nuclei in the medium-energy inclusive antineutrino sample. The low-energy equivalent was not possible due to limited statistics. Compared to the neutrino results in low energy in Ref.~\cite{Tice_PhysRevLett.112.231801}, this analysis was performed using roughly 10$\times$ more interactions in each nucleus.
 
-The depletion in the cross-sections for heavy targets at low $x$, referred to as shadowing-like region, mainly due to the DIS contribution is generally expected, and it is attributed to the destructive interference of hadronic fluctuations of the intermediate boson that multiple-scatter off surface nucleons,~\cite{KOPELIOVICH2013314, BEBCWA59:1989nmi, Tice_PhysRevLett.112.231801}, as explained in Chapter~\ref{ch:measurement}. There are several reasons why the depletion may be larger in the data than predicted by the simulation. First, the shadowing corrections included in the simulation prediction are based on charged lepton data, which, unlike antineutrinos, do not have axial-vector contributions. Additionally, the same shadowing corrections based on iron data are also applied to carbon and lead \cite{BODEK2005113}, as mentioned in Chapter~\ref{ch:dataAsimulation}. Furthermore, the underlying simulation is tuned to the perturbative region of higher $Q^2$ data ($Q^2 > 1$ GeV$/c^2$), whereas the low~$x$ region in this analysis in particular is predicted to be dominated by events with $Q^2$ less than [CALCULATE]. \enlargethispage{1\baselineskip}
+The depletion in the cross-sections for heavy targets at low $x$, referred to as shadowing-like region, mainly due to the DIS contribution is generally expected, and it is attributed to the destructive interference of hadronic fluctuations of the intermediate boson that multiple-scatter off surface nucleons,~\cite{KOPELIOVICH2013314, BEBCWA59:1989nmi, Tice_PhysRevLett.112.231801}, as explained in Chapter~\ref{ch:measurement}. There are several reasons why the depletion may be larger in the data than predicted by the simulation. First, the shadowing corrections included in the simulation prediction are based on charged lepton data, which, unlike antineutrinos, do not have axial-vector contributions. Additionally, the same shadowing corrections based on iron data are also applied to carbon and lead \cite{BODEK2005113}, as mentioned in Chapter~\ref{ch:dataAsimulation}. Furthermore, more than 85\% of the data has $Q^2 < $ 1 (GeV/$c$)$^2$, whereas the underlying simulation is tuned to the perturbative region of higher $Q^2$ data.
+%\enlargethispage{1\baselineskip}
 
 
 Importantly, interpreting the observed suppression of heavy target cross-sections at low $x$ is challenging, as it is impossible to disentangle FSI and nuclear effects due to the inclusive nature of the analysis. FSI effects may distort the observed Bjorken $x$ distribution by increasing or decreasing the observed recoil energy, with such effects possibly more pronounced in heavier nuclei, introducing strong nuclear dependence effects. Additional complexity also arises due to the interplay between pion production and deep inelastic scattering in the low $x$ region, which may be resolved with MINERvA's incoming deep and shallow inelastic scattering results. 
@@ -119,7 +120,7 @@ Similarly to $p_{\text{T}}$, the carbon-to-scintillator ratio is most consistent
 
 Figures~\ref{fig:xsec_x_fracErr} and \ref{fig:ratio_x_fracErr} summarise the breakdowns of the fractional uncertainties on the Bjorken $x$ cross-sections and the cross-section ratios for various nuclei. Similar to the~$p_{\text{T}}$ cross-section, the Bjorken $x$ cross-section is dominated by flux uncertainty. The $x > 1$ region is governed by the understanding of the underlying interactions, i.e. `Interaction Model' error band, for the reasons described above. The C/CH ratio is mostly limited by the underlying statistics (except at large $x$). 
 
-Overall, in all ratios, the `Interaction Model' error band represents the leading source of systematic uncertainty. Akin to the $p_{\text{T}}$ results, the contribution in iron from the `Particle Response' uncertainty band, i.e. GEANT4 neutron modelling, is being investigated. However, the `Particle Response' in this case also includes the calorimetric detector response, as Bjorken $x$ depends on recoil reconstruction, making its contribution overall larger than in $p_{\text{T}}$. Finally, the `FSI' uncertainty becomes more prominent in the ratio as the nucleus in the numerator gets heavier. Similar to the $p_{\text{T}}$ cross-section results, the full covariance matrices for the measured Bjorken $x$ cross-sections are included in Appendix~\ref{ch:appendix_covarianceMatrices}.
+Overall, in all ratios, the `Interaction Model' error band represents the leading source of systematic uncertainty. Akin to the $p_{\text{T}}$ results, the contribution in iron from the `Particle Response' uncertainty band, i.e. GEANT4 neutron modelling, is being investigated. However, the `Particle Response' in this case also includes the calorimetric detector response, as Bjorken $x$ depends on recoil reconstruction, making its contribution overall larger than in $p_{\text{T}}$. Finally, the `FSI' uncertainty becomes more prominent in the ratio as the nucleus in the numerator gets heavier. %Similar to the $p_{\text{T}}$ cross-section results, the full covariance matrices for the measured Bjorken $x$ cross-sections are included in Appendix~\ref{ch:appendix_covarianceMatrices}.
 
 
 \section{Model comparisons}
@@ -131,7 +132,7 @@ Various aspects of the different generators that are relevant to the analysis an
 
 \vspace{5pt}
 % https://genie-docdb.pp.rl.ac.uk/DocDB/0000/000002/003/man.pdf
-\noindent \textbf{GENIE version 3.0.6} \cite{genie3}: The resonant pion production is simulated by Berger-Sehgal model~\cite{PhysRevD.76.113004} instead of Rein-Sehgal\cite{REIN198179}. The Berger-Sehgal update includes effects due to the muon mass in the cross-section calculation~\cite{kuzmin, coherentMass_REIN2007207,Adler_2006}, and new implementation \cite{Nowak_2009} of different axial and vector form factors~\cite{PhysRevD.77.053001}. The parameters of the vector form factor are determined from electron scattering data \cite{PhysRevD.74.014009}. Furthermore, the FSI model is improved by emphasizing medium correlations between nucleons which suppress multiple scattering and have a strong $A$-dependence~\cite{genie3, PhysRevD.104.053006}.~There are two FSI models available, effective cascade $hA$ and full intranuclear cascade model $hN$. In addition, the differences between the individual labels in the model comparisons are:
+\noindent \textbf{GENIE version 3.0.6} \cite{genie3}: The resonant pion production is simulated by the Berger-Sehgal model~\cite{PhysRevD.76.113004} instead of the Rein-Sehgal\cite{REIN198179}. The Berger-Sehgal update includes effects due to the muon mass in the cross-section calculation~\cite{kuzmin, coherentMass_REIN2007207,Adler_2006}, and new implementation \cite{Nowak_2009} of different axial and vector form factors~\cite{PhysRevD.77.053001}. The parameters of the vector form factor are determined from electron scattering data \cite{PhysRevD.74.014009}. Furthermore, the FSI model is improved by emphasizing medium correlations between nucleons which suppress multiple scattering and have a strong $A$-dependence~\cite{genie3, PhysRevD.104.053006}.~There are two FSI models available, effective cascade $hA$ and full intranuclear cascade model $hN$. In addition, the differences between the individual labels in the model comparisons are:
 % pion pole term which reproduce the expected Adler-screening effect at low $Q^2$ (because of the muon mass)
 % diffractive model Rein and hyperon production using the pais model
 % coherent pion production simulated by berger-seghal too
@@ -140,20 +141,20 @@ Various aspects of the different generators that are relevant to the analysis an
 % https://indico.cern.ch/event/1175720/attachments/2470263/4237838/Resonances-20220627.pdf
 
 \begin{itemize}
-    \item GENIE3 G18\_02a/b uses empirical 2p2h model \cite{genie_ANDREOPOULOS201087,katori2013meson}. The `a/b' tag represents the $hA$ and $hN$ FSI model, respectively. The label is a shorthand for the official GENIE 3 release G18\_02a/b\_02\_11a. 
-    \item GENIE3 G18\_10a/b employs local Fermi gas nuclear model \cite{RPANieves2004_PhysRevC.70.055503} instead of relativistic Fermi gas \cite{RFG_SMITH1972605}, and the quasi-elastic and 2p2h interactions are based on Valencia model \cite{2p2hNieves2011_PhysRevC.83.045501}. Again `a' refers to $hA$ and `b' to $hN$ FSI model. The label is a shorthand for the official GENIE 3 release G18\_10a/b\_02\_11a. 
+    \item GENIE3 G18\_02a/b uses the empirical 2p2h model \cite{genie_ANDREOPOULOS201087,katori2013meson}. The `a/b' tag represents the $hA$ and $hN$ FSI model, respectively. The label is a shorthand for the official GENIE 3 release G18\_02a/b\_02\_11a. 
+    \item GENIE3 G18\_10a/b employs the local Fermi gas nuclear model \cite{RPANieves2004_PhysRevC.70.055503} instead of the relativistic Fermi gas \cite{RFG_SMITH1972605}, and the quasi-elastic and 2p2h interactions are based on the Valencia model \cite{2p2hNieves2011_PhysRevC.83.045501}. Again `a' refers to $hA$ and `b' to $hN$ FSI model. The label is a shorthand for the official GENIE 3 release G18\_10a/b\_02\_11a. 
 \end{itemize}
 
 \vspace{5pt}
 \noindent 
 \textbf{NEUT version 5.4.1} \cite{Hayato:2009zz, HayatoPickering2021}: The resonant pion production is
-simulated by Rein-Sehgal model~\cite{REIN198179}. A custom multi-pion-production model is used for $W < 2$ GeV$/c^2$, while deep inelastic scattering with $W > 2$ GeV$/c^2$ is simulated using Pythia~\cite{Pythia_Sjostrand_2001}. Both are based on Bodek-Yang model\cite{BodekYang_2003} parton distribution functions. The 2p2h interaction is simulated using Valencia model \cite{2p2hNieves2011_PhysRevC.83.045501}. FSI uses a custom intranuclear cascade model. The two different labels have further distinguishing features:
+simulated by the Berger-Sehgal~\cite{PhysRevD.76.113004}. A custom multi-pion-production model is used for $W < 2$ GeV$/c^2$, while deep inelastic scattering with $W > 2$ GeV$/c^2$ is simulated using Pythia~\cite{Pythia_Sjostrand_2001}. Both are based on the Bodek-Yang model\cite{BodekYang_2003,BODEK2005113} parton distribution functions. The 2p2h interaction is simulated using the Valencia model \cite{2p2hNieves2011_PhysRevC.83.045501}. FSI uses a custom intranuclear cascade model. The two different labels have further distinguishing features:
 %- developed for (anti)neutrino interactions on carbon and water, mostly for measurements of lepton kinematics
 %- coherent Berger-Sehgal
 %- diffractive Rein model
 \begin{itemize}
-    \item NEUT LFG ma105 uses local Fermi gas nuclear model \cite{RPANieves2004_PhysRevC.70.055503} and the quasi-elastic scattering is based on Valencia model \cite{2p2hNieves2011_PhysRevC.83.045501, Bourguille_2021} with $M_{A} = 1.05$ GeV$/c^2$.
-    \item NEUT SF ma103 utilises spectral function for the nuclear ground state with the associated quasi-elastic scattering \cite{Benhar:1994hw, Juszczak_2006, Furmanski:2015knr} with $M_{A} = 1.03$ GeV$/c^2$.
+    \item NEUT LFG ma105 uses the local Fermi gas nuclear model \cite{RPANieves2004_PhysRevC.70.055503} and the quasi-elastic scattering is based on the Valencia model \cite{2p2hNieves2011_PhysRevC.83.045501, Bourguille_2021} with $M_{A} = 1.05$ GeV$/c^2$.
+    \item NEUT SF ma103 utilises the spectral function for the nuclear ground state with the associated quasi-elastic scattering \cite{Benhar:1994hw, Juszczak_2006, Furmanski:2015knr} with $M_{A} = 1.03$ GeV$/c^2$.
 \end{itemize}
 % what does it do for lead?
 \noindent Note that the general differences between the various theoretical models were addressed in Chapter~\ref{ch:theory}.
@@ -166,7 +167,7 @@ In addition to the visual comparison, the agreement between the measured data an
 \end{equation}
 The $\text{cov}_{ij}$ represents the element of the covariance matrix defined in Chapter~\ref{ch:systematics}, $x_i$ is the data in bin $i$, and $\mu_i$ is the corresponding model prediction. Note that the $\chi^2$ differences in the inclusive sample are often small as some model changes do not have large impact on the inclusive cross-section.
 
-Figures~\ref{fig:xsec_pT_modelComparison} and \ref{fig:ratio_pT_modelComparison} show the $p_{\text{T}}$ cross-section and cross-section ratio model comparisons, respectively, across the different nuclei. The corresponding fully-correlated $\chi^2$s per number of degrees of freedom (the number of bins) are summarised in Tables~\ref{table:xsec_modelComparison_pT} and~\ref{table:xsecRatio_modelComparison_pT}.
+Figures~\ref{fig:xsec_pT_modelComparison} and \ref{fig:ratio_pT_modelComparison} show the $p_{\text{T}}$ cross-section and cross-section ratio model comparisons, respectively, across the different nuclei. The corresponding fully-correlated $\chi^2$s per degree of freedom (the number of bins) are summarised in Tables~\ref{table:xsec_modelComparison_pT} and~\ref{table:xsecRatio_modelComparison_pT}.
 The Bjorken $x$ results are compared to other models in Figures \ref{fig:xsec_x_modelComparison} and \ref{fig:ratio_x_modelComparison} with the corresponding $\chi^2$s presented in Tables~\ref{table:xsec_modelComparison_x} and~\ref{table:xsecRatio_modelComparison_x}, respectively.
 
 \begin{figure}[t!] 
@@ -184,6 +185,9 @@ The Bjorken $x$ results are compared to other models in Figures \ref{fig:xsec_x_
     \label{fig:ratio_pT_modelComparison}
 \end{figure}
 
+
+The $p_{\text{T}}$ cross-section data generally indicates a preference for the new version of GENIE 3, with a slight inclination towards G18\_02a/b. G18\_10a/b, on the other hand, tends to provide a slightly better prediction for the carbon data based on the calculated~$\chi^2$. The improvements over the underlying simulation are likely to stem mainly from better modelling of the low $p_{\text{T}}$ regions using updated axial and vector mass form factors. The NEUT model using the spectral function nuclear ground state performs similarly well for carbon, scintillator, and iron. Overall, the models tend to underpredict the data, except in the low $p_{\text{T}}$ region for heavier nuclei where the models overpredict. All models fail to reproduce the high $p_{T}$ behaviour.
+% LFG versus RFG initial-state nucleon models is small because affects mostly CCQE in GENIE and not 2p2h or RES (and nos IDS)
 
 \begin{table}[t!]
     \centering
@@ -210,6 +214,7 @@ The Bjorken $x$ results are compared to other models in Figures \ref{fig:xsec_x_
     \label{table:xsec_modelComparison_pT}
 \end{table}
 
+
 \begin{table}[t!]
     \vspace{20pt}
     \centering
@@ -232,10 +237,6 @@ The Bjorken $x$ results are compared to other models in Figures \ref{fig:xsec_x_
     \label{table:xsecRatio_modelComparison_pT}
 \end{table}
 
-
-
-The $p_{\text{T}}$ cross-section data generally indicates a preference for the new version of GENIE 3, with a slight inclination towards G18\_02a/b. G18\_10a/b, on the other hand, tends to provide a slightly better prediction for the carbon data based on the calculated~$\chi^2$. The improvements over the underlying simulation are likely to stem mainly from better modelling of the low $p_{\text{T}}$ regions using updated axial and vector mass form factors. The NEUT model using the spectral function nuclear ground state performs similarly well for carbon, scintillator, and iron. Overall, the models tend to underpredict the data, except in the low $p_{\text{T}}$ region for heavier nuclei where the models overpredict. All models fail to reproduce the high $p_{T}$ behaviour.
-% LFG versus RFG initial-state nucleon models is small because affects mostly CCQE in GENIE and not 2p2h or RES (and nos IDS)
 
 % ratio
 The comparisons of cross-section ratios in $p_{\text{T}}$ demonstrate the improved $A$-dependent features of GENIE 3 in the low $p_{\text{T}}$ region. Specifically, the shape of the measured iron-to-scintillator ratio is well-captured by G18\_02a/b. However, the lead-to-scintillator cross-section ratio suggests that additional suppression strength in G18\_02a/b may be necessary. The Pb/CH also indicates a slight preference for the full intranuclear cascade rather than the effective FSI model (which is very slightly preferred by iron).
