@@ -2,14 +2,144 @@
 
 \label{ch:introduction}
 
-\section{Introduction}
+% Motivation and Objectives here.
+% What do you find in this thesis
 
-Motivation and Objectives here.
+Neutrinos and their antimatter counterparts, antineutrinos, are among the most abundant particles in the Universe, yet they barely interact with the matter that comprises it. In many ways, (anti)neutrinos are special---they are extremely light compared to other known particles and can only be observed via the particles they produce upon interaction. Importantly, if neutrinos and antineutrinos travel through space-time differently, as allowed by the phenomenon of so-called neutrino oscillations, they could hold one of the pieces of the puzzle as to why our universe is mostly made of matter rather than antimatter. However, in order to do so, we must precisely understand how (anti)neutrinos interact with matter around us in the first place. This can be done via measuring the probability, referred to as cross-section, for neutrinos and antineutrinos interacting in various ways with different nuclei. 
 
-\section{Neutrino oscillations}
+This thesis presents the first simultaneous measurement of charged-current inclusive muon antineutrino cross-sections on carbon, hydrocarbon, iron, and lead with mean antineutrino energy of 6~GeV at the MINERvA experiment.~Antineutrino scattering is generally a less explored process than neutrino scattering, as antineutrinos typically interact even less often than neutrinos and are also more difficult to produce artificially. Overall, this means that it takes much longer to accumulate enough data to perform precise measurements. Nonetheless, understanding both neutrino and antineutrino interactions is crucial for distinguishing whether they potentially behave differently when they oscillate. Therefore, the results of this study significantly contribute to expanding the antineutrino datasets used to inform neutrino oscillation experiments. In particular, the measurement spans the antineutrino energy phase space important for the future oscillation experiment, Deep Underground Neutrino Experiment (DUNE). 
 
-\section{Long-baseline oscillation experiments}
+Moreover, the fact that the antineutrino interacts with bound nucleons, i.e. nucleons in a nuclear environment, rather than free nucleons, has a profound effect on the cross-section and on what is observed in the detector\footnote{One can envision a detector being like a high-speed camera that captures rapid snapshots of these interactions.}. For example, the particles produced by (anti)neutrinos interacting with a nucleus may re-interact inside the nuclear environment, potentially altering their kinematics or even transforming into different particles before exiting it and being detected. This analysis capitalises on MINERvA's unique capability to measure how antineutrinos interact with different nuclei. Crucially, it explores how these and other effects vary with the increasing complexity of the nuclear environment while using the same detector technology and the same artificially produced beam of antineutrinos. This significantly reduces uncertainties from these sources when comparing measurements across different nuclei. Detailed descriptions of the underlying theory, the MINERvA experiment, and the measurement itself are provided in this work.
 
-\section{Importance of cross-sections to oscillations experiments}
+The remainder of this chapter outlines various key developments in neutrino physics, spanning from Pauli's initial proposal of the neutrino particle in 1930 to the discovery of the neutrino oscillation phenomenon and the open question of neutrino mass. Additionally, it emphasises the importance of understanding (anti)neutrino interactions in the context of neutrino oscillation experiments, particularly concerning forthcoming ones such as DUNE. This chapter also briefly delves into the measurement of (anti)neutrino cross-section as a means to investigate nuclear effects.
 
-\section{Cross-sections as a probe of nuclear effects}
+Chapter~\ref{ch:theory} reviews the theory of (anti)neutrino scattering and how the nuclear environment affects these interactions. The MINERvA experiment and the artificial production of (anti)neutrinos at an accelerator are then detailed in Chapter~\ref{ch:minerva}. In Chapter~\ref{ch:measurement}, the focus shifts to a more specific motivation for the measurement described in this thesis, i.e. the measurement of nuclear dependence in inclusive antineutrino scattering, and how it can be performed at MINERvA. Chapter~\ref{ch:dataAsimulation} discusses the MINERvA data used in this measurement and the underlying theoretical models employed in the simulation prediction, while Chapter~\ref{ch:Reconstruction} describes the reconstruction steps, i.e. how we go from what we see in the detector to physical quantities essential for the physics interpretation.
+
+The individual steps of the analysis, from defining the antineutrino interactions of interest to the extraction of cross-sections, are thoroughly reviewed in Chapter~\ref{ch:analysis1D}. The discussion of the uncertainties associated with the measurement is then included in Chapter~\ref{ch:systematics}. Following that, Chapter~\ref{ch:results} presents the results of the cross-section measurements on carbon, hydrocarbon, iron, and lead, along with their comparison and associated discussion. Concluding remarks about the implications of this analysis and the prospects of (anti)neutrino interaction modelling are provided in Chapter~\ref{ch:conclusions}.
+
+[Add note about 2D if necessary]
+
+\section{A brief history of neutrino physics}
+%What are neutrinos 
+%- From Pauli to neutrino oscillation
+%- Neutrinos and the Standard model
+%- sources of neutrinos
+%- Neutrino oscillation
+%- Importance of cross-section
+% super useful: https://icecube.wisc.edu/category/neutrino-history/page/2/
+
+Neutrinos were first postulated in 1930 by Pauli to explain the observed continuous energy spectrum of electrons in $\beta$ decay \cite{Pauli}. This inspired Fermi to present a theory of~$\beta$~decay that incorporated neutrinos and in which particles interacted through a point-like interaction~\cite{Fermi}, initiating the theory of weak interactions. 
+% nowadays considered reliable low energy approximation
+%This initiated the theory of weak interactions and gave a basis to the concept of universality, meaning that the strength of the interaction is the same regardless of the lepton flavour taking part.
+However, it wasn't until two decades later, in 1956, that neutrinos were experimentally discovered by Reines and Cowan through the observation of inverse $\beta$ decay $\overline{\nu}_e + p \rightarrow n + e^+$ \cite{Cowan103}, thus confirming the existence of what is now known as electron antineutrinos. 
+% muon neutrino theorised in 1940s
+
+%https://warwick.ac.uk/fac/sci/physics/staff/academic/boyd/stuff/neutrinolectures/weak.pdf
+In the same year, Lee and Yang theorised parity violation in weak interactions \cite{PhysRev.104.254}, which was experimentally confirmed in 1957 by Wu et al. through observations in the beta decay of Co$^{60}$ in a strong magnetic field \cite{PhysRev.105.1413}. This discovery led Sudarshan and \mbox{Marshak~\cite{sudarshanMarshak, PhysRev.109.1860.2}} and subsequently Feynman and Gell-Mann \cite{PhysRev.109.193} to propose and develop the chiral $\text{V}-\text{A}$ theory of weak interactions. This theory postulated that weak interactions are produced by both vector (V) and axial (A) vector currents, establishing the intrinsic left-handed chirality of particles and right-handed chirality of antiparticles in weak interactions\footnote{In 1958, the neutrino was experimentally confirmed to be left-handed only by Goldhaber et al.\cite{PhysRev.109.1015}}. Furthermore, it, for example, provided an explanation for the observed differences between the muonic and electronic pion decay modes \cite{PhysRev.119.2050}, upholding the universality of lepton interactions. 
+% Gell-Mann propose V-A, chiral projection
+% excellent: https://iopscience.iop.org/article/10.1088/1742-6596/196/1/012002/pdf
+% very good: https://iopscience.iop.org/article/10.1088/1742-6596/196/1/012004/pdf
+
+% 1962 Brookhaven National Laboratory
+% tau neutrino DONUT 2001 or so
+The existence of the muon neutrino was experimentally confirmed in 1962 \cite{PhysRevLett.9.36}, and the subsequent discovery of the tau lepton \cite{PhysRevLett.35.1489} led to theoretical predictions of its corresponding neutrino counterpart\footnote{The tau neutrino was not discovered until 2001 by the DONUT experiment 
+\cite{KODAMA2001218}.}. The unification of electromagnetic and weak interactions, i.e. electroweak theory, in the 1960s by Glashow \cite{GLASHOW1961579}, Salam \cite{SALAM1964168}, and Weinberg \cite{PhysRevLett.19.1264}, confirmed by the discovery of neutral currents \cite{HASERT1973121, HASERT1973138}, and the theory of strong interactions laid the groundwork for the Standard Model (SM), depicted in Figure~\ref{fig:sm}. The SM serves as the cornerstone of high-energy physics, categorising all elementary particles and describing three out of the four known fundamental forces (excluding gravity).
+
+\begin{figure}[t!]
+    \centering
+    {\includegraphics[width=1\textwidth]{01introduction/figures/sm.pdf}}%
+    \caption{The Standard Model diagram.~Modified from D. Galbraith and C. Burgard~\cite{smFigure}.}
+    %[short caption] {long caption}
+    \label{fig:sm}
+\end{figure}
+
+
+\begin{figure}[t!]
+    \centering
+    \vspace{-10pt}
+    {\includegraphics[width=0.75\textwidth]{01introduction/figures/ccAndnc.pdf}}%
+    \caption{Examples of Feynman diagrams of a charged-current (CC) interaction (left) and a neutral-current (NC) interaction (right) on a nucleon.}
+    %[short caption] {long caption}
+    \label{fig:ccAndnc}
+\end{figure}
+
+In the SM, neutrinos are formulated to be massless leptons (half-integer spin par\-ticles) with zero electric charge, interacting only through the weak force via an exchange of gauge bosons. Charged-current interactions are mediated by the $W^{\pm}$ boson, while the neutral-current interactions involve the $Z$ boson, as demonstrated in Figure~\ref{fig:ccAndnc}. The specifics of charged-current interactions in the context of (anti)neutrino scattering are reviewed in detail in Chapter~\ref{ch:theory}. Similar to charged leptons, the SM predicts three active flavours of neutrinos, electron neutrino $\nu_e$, muon neutrino $\nu_{\mu}$, and tau neutrino $\nu_{\tau}$. The measurement of the partial width of the $Z$-boson mass distribution decaying to invisible particles at the Large Electron-Positron Collider~(LEP) in 1989 was consistent with this SM prediction and indeed favoured the existence of three light neutrinos~\cite{DECAMP1990399}.
+% W boson and electroweak unification to give Z boson - showed in figure
+% different types of charged current interactions are detailed in Chapter 2
+
+The experimental mystery that would later lead to the discovery of neutrino oscillation and neutrino mass also began to unfold in the 1960s. In 1968, the Homestake experiment detected a large fraction missing from the electron neutrino flux coming from the Sun, contradicting predictions from the well-established model of solar processes \cite{Cleveland_1998}. These discrepancies, referred to as `The Solar Neutrino Problem', were eventually resolved by experimental data provided by the Super-Kamiokande (SK) and the Sudbury Neutrino Observatory (SNO) experiments. 
+
+% standard model
+%https://texample.net/tikz/examples/model-physics/
+
+In 1998, the SK experiment detected a zenith angle-dependent deficit in atmospheric neutrinos, which was in disagreement with the theoretical predictions. The data was however consistent with the two-flavour ($\nu_{\mu} \leftrightarrow \nu_{\tau}$) oscillation hypothesis \cite{Fukuda1998}.~The SNO experiment then demonstrated and confirmed neutrino oscillations in solar neutrinos by observing both neutral-current and charged-current interactions in 2001 \cite{PhysRevLett.87.071301}.~Their measurements showed that flavour transformation was taking place, which supplied concrete evidence that neutrinos must have a non-zero mass.
+
+\begin{figure}[t!]
+    \centering
+    {\includegraphics[width=1\textwidth]{01introduction/figures/oscillation.pdf}}%
+    \caption{Illustration of the evolution of linear superposition of neutrino mass eigenstates over time being detected as neutrino flavour states. Reproduced with permission from Springer Nature~\cite{oscillation}.}
+    %[short caption] {long caption}
+    \label{fig:oscillation}
+\end{figure}
+
+% explain neutrino oscillation
+The theoretical framework for neutrino oscillations was first proposed much earlier, in~1957, by Pontecorvo, drawing an analogy to $K^0 - \Bar{K}^0$ oscillations \cite{Pontecorvo:1957cp}. This concept was further developed by Maki, Nakagawa, and Sakata in 1962 \cite{Maki:1962mu}. Neutrino oscillation is a quantum mechanical phenomenon whereby neutrinos created in a pure flavour eigenstate, $\nu_e, \nu_{\mu}$ or $\nu_{\tau} $, can be measured at a later time to be in a different flavour eigenstate. This implies the existence of mass eigenstates, $\nu_1, \nu_2$ and $\nu_3$, that are distinct from the flavour eigenstates. 
+The flavour eigenstates can be then interpreted as a coherent linear superposition of these mass eigenstates, propagating as plane waves through space at different frequencies because of their small mass differences, as illustrated in Figure~\ref{fig:oscillation}. 
+
+The mass eigenstates and the flavour eigenstates are related via the Pontecorvo-Maki-Nakagawa-Sakata~(PMNS) mixing matrix, analogous to the Cabibbo-Kobayashi-Maskawa~(CKM) matrix for quarks. The $3\times3$ PMNS matrix is usually parametrised using three mixing angles, which have been measured by a variety of experiments, and a complex phase allowing for possible charge-parity (CP) violation in the leptonic sector. While the CP violation has been detected in the flavour-mixing of quarks \cite{PhysRevLett.13.138, Workman:2022ynf}, its magnitude is not sufficiently large to explain the matter-antimatter asymmetry in the Universe \cite{riotto1998theories, leptogenesis_model}. However, its observation in the neutrino sector could potentially provide an explanation. Specifically, the CP violation can be measured by observing that the oscillations of neutrinos are fundamentally different from the oscillations of antineutrinos\footnote{Neutrino oscillation experiments measure the unoscillated (anti)neutrinos at the so-called near detector close to their production, and compare them to the measurements at the so-called far detector some distance away after they had likely oscillated.}.
+% PMNS matrix?
+% Probability that (anti)neutrinos oscillate from flavour alpha to flavour beta
+
+% mass
+% https://warwick.ac.uk/fac/sci/physics/staff/academic/boyd/stuff/neutrinolectures/lec_oscillations.pdf
+
+Finally, it is important to note that while the observation of neutrino oscillation showed that neutrinos have mass, their absolute values are still unknown. The neutrino oscillation experiments can only provide information on the difference between the mass values---the mass ordering of the mass eigenstates is one of the outstanding questions in neutrino physics. However, the latest direct neutrino-mass measurements by the Karlsruhe Tritium Neutrino~(KATRIN) experiment set the upper mass limit on the effective electron antineutrino mass of $m_{\nu} \lesssim 0.8 \: \text{eV}/c^2$ \cite{Aker_2022}, i.e. orders of magnitude smaller than any other particle. 
+%The neutrino masses control the relative phases between the propagating neutrino mass eigenstates. 
+% If they are the same, then the mass states will never get out of phase and you will measure the same linear combination of mass states at the detector as you generated at the source. 
+
+The origin of the smallness of neutrino mass, much like its absolute value, remains unresolved. Whilst it is conceivable that neutrinos, akin to other fundamental particles, are of Dirac nature (with their right-handed counterparts being `sterile', i.e. not interacting), the question persists: Why are neutrinos so light? Is the Yukawa coupling of the Higgs field to neutrinos simply minuscule compared to other lepton masses (cf. the mass of an electron, $m_{e} = 511$ keV)? The neutrino mass is thus often interpreted as a manifestation of Beyond Standard Model (BSM) physics, in particular, that neutrinos could instead be Majorana in nature \cite{Majorana}, with the small mass provided by a so-called seesaw mechanism \cite{MOHAPATRA_2005}. The interpretation of a Majorana neutrino is that neutrinos and antineutrinos are the same particles, whereby left-handed and right-handed chiral states are related through charge conjugation. Whether neutrinos are indeed Majorana in nature could be answered by the experimental searches for neutrinoless double beta decay.
+\vspace{10pt}
+% mass so small, unknown, often interpreted as a manifestation of BSM physics
+% could be Dirac-like distinct from antineutrinos o Majorana, whereby left-handed and right-handed chiralte states 
+
+
+\section{Importance of (anti)neutrino cross-sections}
+%% making dedicated cross-section measurements such as those from MINERvA~\cite{Aliaga_2014} indispensable
+
+% For an accurate interpretation of the experimental data, a thorough understanding of the interactions involved in oscillation experiments is indispensable. Cross sections for neutrino-nucleus interactions play an important role.
+% The main difficulty involved in the analysis of the measured neutrino-nucleus cross sections stems from the fact that the beam energy is distributed over a broad spectrum
+% The evidence of this turbulent, though fruitful history, are four Nobel Prizes received in the span of the last 50 years.
+
+One of the current challenges in neutrino physics is to better understand how (anti)neu\-trinos interact with matter, particularly in the context of neutrino oscillation measurements. This is because neutrino oscillation experiments require accurate measurements of true (anti)neutrino energy, i.e. the energy at the initial (anti)neutrino-nucleus interaction, to infer the oscillation parameters. This is already complicated by the broad spectrum of accelerator-produced beams of mostly muon (anti)neutrinos used to study them. Additionally, to obtain a statistically significant sample of (anti)neutrino interactions for precise measurements, these experiments often employ heavy materials, meaning nuclei with a large number of nucleons, such as water, carbon, hydrocarbon, or argon.
+
+However, as previously mentioned, the nuclear environment can alter particles produced before they exit the nucleus and are detected in the detector. This alteration can lead to what is known as (anti)neutrino energy smearing, where the reconstructed (anti)neutrino energy does not directly correspond to the true (anti)neutrino energy. To mitigate this smearing, experiments rely on simulations that utilise theoretical models of different processes contributing to the (anti)neutrino cross-section at various (anti)neutrino energies as well as account for the effects of the nuclear environment (further discussed in detail in Chapter~\ref{ch:theory}).
+%Dedicated measurements of (anti)neutrino cross-sections help us better understand how (anti)neutrinos interact with matter. 
+
+Consequently, current long-baseline neutrino oscillation experiments, such as the Tokai-to-Kamioka~(T2K) in Japan~\cite{t2k_ABE2011106} and the Neutrinos at the main injector Off-axis $\nu_e$ Appearance (NOvA) in the USA~\cite{NOvA:2007rmc}, generally report large uncertainties on their measurements of neutrino oscillation parameters related to modelling of (anti)neutrino-nucleus interactions. For example, in 2020, the results presented by T2K indicated the first measurement of~CP violation in leptons~\cite{Abe2020}, in which these uncertainties contributed about~5.9\% of~the total~6\% systematic uncertainty on the~predicted relative number of $\nu_e$ to $\bar{\nu}_e$
+%electron neutrino to electron antineutrino 
+\mbox{candidates~\cite{Abe2020}}.
+
+
+While the measurements of current oscillation experiments are still limited by the statistical power of the collected samples, the next-generation oscillation experiments, the Deep Underground Neutrino Experiment (DUNE)~\cite{abi2020deep} and Hyper-Kamiokande~(HK)~\cite{protocollaboration2018hyperkamiokande}, aim to measure neutrino oscillations with unprecedented precision. These experiments will overcome the limitations imposed by the statistics and will become systematics-limited instead. For example, the DUNE near detector is expected to detect about~100~million interactions/year on argon~\cite{abi2020deep}. Therefore, in order to meet their physics goals, i.e. determining mass hierarchy and the extent of CP violation in the neutrino sector, the systematics on their measurements must be constrained within a few percent. For DUNE, this is around 2\% uncertainty \cite{abi2020deep}. 
+
+Ultimately, our understanding of how (anti)neutrinos scatter off heavy nuclei poses a challenge to these future measurements and needs to be improved. Specifically, we can reduce the uncertainties on the interaction models by constraining them with data from dedicated neutrino-nucleus cross-section measurements such as MINERvA \cite{Aliaga_2014}. Furthermore, the cross-section measurements can test various aspects of the current interaction models used in simulations, inform the neutrino interaction community and lead to further developments of the underlying models. 
+
+MINERvA's unique contribution lies in extending these models to heavier nuclei, i.e. measuring the nuclear dependence of (anti)neutrino interactions. This provides further insights into interaction models for elements like argon which will be used in DUNE. Importantly, the energy range of (anti)neutrino interactions analysed in this analysis has a large overlap with the future DUNE dataset, especially at higher energies beyond the capabilities of other cross-section experiments which tend to probe the lower-energy regions.
+As mentioned before, to measure the CP-violating phase by comparing $\nu_{\mu} \xrightarrow[]{} \nu_e$ and $\bar{\nu}_{\mu} \xrightarrow[]{} \bar{\nu}_e$, antineutrino cross-sections like the one presented in this work, which have been so far studied less extensively, are necessary.  
+
+Finally, cross-section measurements can be used as a probe of nuclear physics itself. In particular, nuclear effects in scattering off heavier nuclei are an active area of research \cite{doi:10.1146/annurev-nucl-102115-044720}. By examining the cross-section distributions on various nuclei and comparing them to the available nuclear models, we can better understand these effects and extend the existing theory of neutrino-nucleus scattering.
+
+\begin{comment}
+
+- overlap between DUNE and MINERvA LE and ME datasets (RES, DIS)
+- complex region of phase space with multiple interaction channels and their transition regions
+- challenge for neutrino interaction models, systematics limited
+- understanding nuclear effects and their A-dependence is one of MINERvA's primary goals - useful for interactions on argon
+- measurements of interaction cross-section at MINERvA can help to refine neutrino interaction simulations for DUNE
+- need 1-3\% total systematic error to achieve their physics goals
+- nuclear effects get more complex the heavier the nucleus is, we rely on the interaction models implemented in our simulations to tell us what happened inside of the nucleus
+- in heavy nuclei, interactions between nucleons in the nucleus affect the scattering behaviour
+- can examine cross-section distributions and compare to various models of these nuclear effects to understand what is happening or at least how much is it happening
+\end{comment}
+
+
