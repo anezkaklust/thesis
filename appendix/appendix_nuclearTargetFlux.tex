@@ -24,7 +24,7 @@ A regularised $\chi^2$ fit is used to find a weight for each petal so that the l
     \label{eq:regularisedChi2}
     \chi^2_{\text{reg}} = \frac{(N_{\text{target}} - \sum_{i} p_{i}N_i)^2}{\sigma_{\text{target}}^2 + \sum_{i} p_i \sigma_i^2} + \lambda \sum_i \frac{N_i}{\sum_j N_j} (p_i-1)^2 \hspace{2pt},
 \end{equation}
-where the first term corresponds to the regular $chi^2$ calculation and the second term represents the regularisation term. $N_{\text{target}}$ is the number of events (in a given bin of the nuclear target flux distribution), $N_i$ is the number of events in a ‘daisy petals' $i$, and $p_i$ is the ‘daisy petals' weight. 
+where the first term corresponds to the regular $\chi^2$ calculation and the second term represents the regularisation term. $N_{\text{target}}$ is the number of events (in a given bin of the nuclear target flux distribution), $N_i$ is the number of events in a ‘daisy petals' $i$, and $p_i$ is the ‘daisy petals' weight. 
 
 The regularisation term ensures that a preference is given to a solution with a small difference from the nominal weight of 1 and also enforces smoothness in the variation of the individual ‘daisy petals' weights.\enlargethispage{1.5\baselineskip} A regularisation strength $\lambda = 100 $ was found to work well for all combinations of nuclear targets of the same material by looking at the ‘knee' of the L-curve of $\log \chi^2$ of the regularised solution versus $\lambda$ as demonstrated in Figure~\ref{fig:lcurve}. This maintains the balance between the perfect fit (zero regularisation) and the smoothness of the solution~(large regularisation).
 
