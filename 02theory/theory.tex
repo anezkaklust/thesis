@@ -123,7 +123,7 @@ At higher (anti)neutrino energies, enough energy can be imparted to the nucleon 
 % nucleon or delta resonance
 Subsequently, the resonance states decay back to the ground state, producing extra particles, mostly pions. An example of Feynman diagram for the resonant single-pion production, which is the primary focus of this section, was shown in Figure~\ref{fig:intChannels}. The resonant pion production usually dominates the total cross-section in the $1$--$5$ GeV (anti)neutrino energy range as shown in Figure[].~Notably, it is predicted to represent the dominant contribution to the inclusive cross-section measurement in this work. 
 
-Most (anti)neutrino interaction simulations use the Rein-Sehgal model \cite{REIN198179}, derived in the limit of zero lepton mass in the rest frame of the individual resonances, to predict the resonant pion production. The Rein-Sehgal model describes the resonance region up to the invariant mass of $W = 2$ GeV, including a total of 18 possible resonances. The differential cross-section for an antineutrino-induced resonance with an invariant mass $W$ is given by,
+Most (anti)neutrino interaction simulations use the Rein-Sehgal model \cite{REIN198179}, derived in the limit of zero lepton mass in the rest frame of the individual resonances, to predict the resonant pion production. The Rein-Sehgal model describes the resonance region up to the invariant mass of $W = 2$ GeV, including a total of 18 possible resonances. The double-differential cross-section for an antineutrino-induced resonance with an invariant mass $W$ is given by,
 % define invariant mass
 % https://arxiv.org/pdf/0709.4378.pdf
 \vspace{-10pt}
@@ -132,7 +132,7 @@ Most (anti)neutrino interaction simulations use the Rein-Sehgal model \cite{REIN
     \vspace{-10pt}
     \label{eq:rein-sehgal}
 \end{equation}
-where the kinematical factors $u$ and $v$ depend on the initial and final momenta, while the~$\kappa$ factor relates the nucleon mass $m_N$ and the invariant mass $W$.~$G_F$ is the Fermi constant, $\theta_C$ represents the Cabbibo angle, and $\bm{q_3}$ is the 3-momentum transfer in the lab frame.
+where the kinematical factors $u$ and $v$ depend on the initial and final momenta, while the~$\kappa$ factor relates the nucleon mass $m_N$ and the invariant mass $W$. Their definitions are given in Ref.~\cite{REIN198179}.~$G_F$ is the Fermi constant, $\theta_C$ represents the Cabbibo angle, and $\bm{q_3}$ is the 3-momentum transfer in the lab frame.
 %originating from the CKM matrix element which describes the transition probability between the $u$ and $d$ quarks (constituents of protons and neutrons).
 
 The partial cross-sections $\sigma_{R/L/S}$ for the absorption of the intermediate vector boson~$W^{\pm}$ account for its different polarisation/helicity contributions, i.e.~positive, negative or zero, to the differential cross-section. The partial cross-sections are proportional to their corresponding helicity amplitudes, which are calculated in terms of the nucleon vector and axial form factors using the relativistic harmonic oscillator quark model \cite{PhysRevD.3.2706}. The form factors, similar to Equation \ref{eq:formFactor}, assume a dipole form, but with values for resonant axial and vector mass instead. The only datasets available for pion production on a nucleon to fit the axial mass parameter are from the Argonne National Laboratory (ANL) \cite{ANL_PhysRevD.25.1161} and Brookhaven National Laboratory (BNL) data \cite{BNL_PhysRevD.34.2554}, while the vector parameters can be obtained from electron-scattering data. 
@@ -156,7 +156,7 @@ Furthermore, newer versions of GENIE and NEUT often use an improved version of t
 
 The resonant single-pion production is not an exclusive channel for producing pions. They can also be produced through a non-resonant interaction, as depicted in Figure[]. The non-resonant channel is experimentally indistinguishable from the single-pion production, as it yields the same final-state particles.~Furthermore, at even higher energies, the (anti)neutrino may excite higher mass resonances that can decay into multi-pion states. This transition between the resonant pion production and the deep inelastic scattering is often referred to as the shallow inelastic scattering (SIS). The measurement presented in this work is expected to have a significant contribution from this transition region due to its inclusive nature and the energy phase space it probes.
 
-In the interaction community, the SIS region is defined as a region with inclusive meson production with \mbox{$(m_N + m_{\pi}) < W < 2$ GeV/$c^2$} and $Q^2 < 1$ (GeV/$c$)$^2$ \cite{athar2020neutrino}. It represents the non-perturbative regime of quantum chromodynamics, and its modeling in (anti)neutrino interaction simulations is thus extremely challenging. However, its description and understanding are crucial for DUNE, where the SIS contribution will be significant~\cite{abi2020deep}. Various (anti)neutrino event generators handle this region in different ways, but the general practice is to extend and scale the model of deep inelastic scattering producing pions to the lower $W$ range. The non-resonant contribution is added incoherently to the resonant pion production, ignoring any interference effects, and its strength is tuned to pion production data\footnote{Note that an alternative approach is provided by the MK model for single pion production \cite{PhysRevD.97.013002, PhysRevD.102.053009}, i.e.~for both resonant and non-resonant interactions with included interference effects.~Recently, this model extended its pion production model to higher $W$ to provide predictions for the SIS region \cite{PhysRevC.107.025502}.}. The specific implementation in GENIE, used in the underlying simulation prediction for this work's measurement, is described in Chapter~\ref{ch:dataAsimulation}
+In the interaction community, the SIS region is defined as a region with inclusive meson production with \mbox{$(m_N + m_{\pi}) < W < 2$ GeV/$c^2$} and $Q^2 < 1$ (GeV/$c$)$^2$ \cite{athar2020neutrino}. It represents the non-perturbative regime of quantum chromodynamics, and its modeling in (anti)neutrino interaction simulations is thus extremely challenging. However, its description and understanding are crucial for DUNE, where the SIS contribution will be significant~\cite{abi2020deep}.\enlargethispage{1\baselineskip} Various (anti)neutrino event generators handle this region in different ways, but the general practice is to extend and scale the model of deep inelastic scattering producing pions to the lower $W$ range. The non-resonant contribution is added incoherently to the resonant pion production, ignoring any interference effects, and its strength is tuned to pion production data\footnote{Note that an alternative approach is provided by the MK model for single pion production \cite{PhysRevD.97.013002, PhysRevD.102.053009}, i.e.~for both resonant and non-resonant interactions with included interference effects.~Recently, this model extended its pion production model to higher $W$ to provide predictions for the SIS region \cite{PhysRevC.107.025502}.}. The specific implementation in GENIE, used in the underlying simulation prediction for this work's measurement, is described in Chapter~\ref{ch:dataAsimulation}
 %- significant to DUNE 
 %SIS/DIS significance for DUNE - 45\% of nµ CC events have W > 1.5 GeV.
 
@@ -170,29 +170,136 @@ This extension of the deep inelastic scattering model to lower invariant mass dr
 %As we just heard, Bodek-Yang model keeps Duality in mind by extending GRV LO DIS PDFs for W > 2 GeV, Q2 > 0.8 GeV2 down in Q2 and W into the SIS region. ! They include Target Mass Correction (TMC) and Higher Twist (HT) effects by replacing xBj with xW an enhanced TMC term to account for both TMC and HT
 
 \subsection{Deep inelastic scattering}
+% Thomson p 322
+% Thomson handout: https://www.hep.phy.cam.ac.uk/~thomson/partIIIparticles/handouts/Handout_10_2011.pdf
+% Best description of DIS: https://arxiv.org/abs/hep-ex/9707015
+% Morfin NuFact21: https://indico.cern.ch/event/855372/contributions/4366089/attachments/2304186/3919942/Morfin-SISandDIS-upload-NuFact21.pdf
+% Morfin NuInt22: https://indico.cern.ch/event/881216/contributions/5095823/attachments/2533473/4359605/Morfin-SIS&DIS-NuInt22%20upload.pdf
+% Why coupled to u and d(bar) :)) https://cds.cern.ch/record/880469/files/Neutrino%20interactions.pdf
+% Morfin and Athar: https://arxiv.org/pdf/2006.08603.pdf
+% Heavily inspired by Stowel: https://etheses.whiterose.ac.uk/22623/1/thesis.pdf
+% MINERvA DIS measurement: https://journals.aps.org/prd/pdf/10.1103/PhysRevD.93.071101
+% Bubble chambers useful review: https://hep.ph.liv.ac.uk/~costasa/genie/school/2014/lectures/Lecture_E1.pdf
+% Bodek-Yang Model: https://iopscience.iop.org/article/10.1088/0954-3899/29/8/369
+
+At even higher (anti)neutrino energies corresponding to large energy-momentum transfers, the (anti)neutrino can resolve the quark-parton structure within the nucleon. This process is referred to as deep inelastic scattering. The example Feynman diagram in Figure~\ref{fig:intChannels} demonstrates that the (anti)neutrino interacts with a point-like quark or antiquark inside the nucleon, causing the nucleon to break apart, undergo hadronisation, and form multiple final-state particles. The primary definition of deep inelastic scattering on a free nucleon is given by the phase-space requirement of $Q^2 > 1$ (GeV/$c$)$^2$ stemming from the kinematics of the interaction products. In order to further differentiate from the resonance region, the interaction community also often imposes the \mbox{$W > 2$~GeV/$c^2$} criterion \cite{Morfin:2022lO}. As shown in Figure~\ref{fig:totalXsecEnu}, deep inelastic scattering starts to dominate the total antineutrino cross-section around 8 GeV, and therefore, it is expected to be the second major contribution to the measurement presented in this thesis.
+% what quarks neutrinos and antineutrinos couple to
+% define x and y
+% define in the lab frame
+% differential cross-section
+% The function xF3(x, Q2) appears only in the cross section for the weak interaction. It originates from the parityviolating term in the product of the leptonic and hadronic tensors.
+
+Deep inelastic scattering is typically described using two Lorentz-invariant dimensionless quantities: Bjorken $x$, and the Bjorken inelasticity, $y$. The Bjorken $x$ can be interpreted as the fraction of the nucleon momentum carried away by the struck quark in a frame where the nucleon momentum is very large (and its mass can be therefore neglected), often referred to as the `infinite momentum frame' or Breit frame. The inelasticity $y$ is the fraction of the (anti)neutrino energy transferred to the hadronic system.~They can be defined as 
+\begin{equation}
+    x = \frac{Q^2}{2p_{N}\cdot q} \overset{\mathrm{lab}}{=} \frac{Q^2}{2m_{N}E_{\text{recoil}}}
+\end{equation}
+and
+\begin{equation}
+    y = \frac{p_{N}\cdot q}{p_{N} \cdot p_{\bar{\nu}}} \overset{\mathrm{lab}}{=} \frac{E_{\text{recoil}}}{E_{\bar{\nu}}} \hspace{2pt} ,
+\end{equation}
+where $\overset{\mathrm{lab}}{=}$ denotes the corresponding definitions in the lab frame, where the nucleon is assumed to be stationary. The derivation of these expressions in the lab frame can be found, for example, in Ref~\cite{Thomson}.
+% refer to text book for definition
+
+% Model
+The double-differential cross-section for deep inelastic scattering of antineutrinos in terms of $x$ and $y$ is then given by \cite{Thomson, RevModPhys.70.1341}
+\vspace{-7pt}
+\begin{equation}
+    \begin{aligned}
+        \frac{d^2 \sigma}{dx dy} {} & = \frac{G_F^2 m_N E_{\bar{\nu}}}{\pi (1+Q^2/M_W^2)^2} \left(y^2xF_1+ (1-y)F_2 - y\left(1-\frac{y}{2}\right)xF_3\right)\hspace{2pt},
+    \end{aligned}
+    \label{eq:dis}
+    \vspace{-3pt}
+\end{equation}
 \begin{comment}
-- community definition of W > 2 GeV with Q2 > 1 GeV2 (Untouched! – “soft DIS” Q2 < 1 GeV2 )
+\vspace{-7pt}
+\begin{equation}
+    \begin{aligned}
+        \frac{d^2 \sigma}{dx dy} {} & = \frac{G_F^2 m_N E_{\bar{\nu}}}{\pi (1+Q^2/M_W^2)^2} (A(x,y)F_1+ B(x,y, E_{\bar{\nu}})F_2 - C(y)xF_3)\hspace{2pt},
+    \end{aligned}
+    \label{eq:dis}
+    \vspace{-3pt}
+\end{equation}
+\end{comment}
+where $M_W$ is the mass of the gauge boson $W^{-}$, and $F_i \equiv F_i(x, Q^2)$ for $i = 1, 2, 3$ are the structure functions describing the parton structure of the nucleon.
+\begin{comment}
+, and the individual coefficients are\enlargethispage{1\baselineskip}
+\vspace{-10pt}
+\begin{equation}
+    A (x, y) = y^2 x \hspace{2pt},
+    \vspace{-10pt}
+\end{equation}
+\vspace{-10pt}
+\begin{equation}
+    B(x, y, k_0) = 1 - y - \frac{m_N x y}{2E_{\bar{\nu}}} \hspace{2pt},
+    \vspace{-10pt} 
+\end{equation}
+and
+\vspace{-10pt}
+\begin{equation}
+    C(y) = y \left(1 - \frac{y}{2}\right)\hspace{2pt}.
+    \vspace{-3pt}
+\end{equation}
+\end{comment}
+The remaining parameters are as defined in previous subsections. Compared to the charged-lepton scattering, the cross-section expression features the $xF_3$ structure function, coupling antineutrinos to $u$ and $\bar{d}$ quarks (and similarly in other generations). This arises from the parity-violating terms in the product of leptonic and hadronic tensors.~Note, that it would have an opposite sign for neutrinos.
+% this is because!!
+% W- + u -> d !! charge conservation
+% -1 + 2/3 -> -1/3 !!!!
 
-\begin{equation}
-\begin{aligned}
-    \frac{d^2 \sigma}{dx dy} {} & = \frac{G_F^2 m_N k_0}{\pi (1+Q^2/M_W^2)^2} (A(x,y)F_1+ B(x,y, k_0)F_2 \pm C(y)xF_3)
-\end{aligned}
-\end{equation}
+% structure functions
 
+The $F_1$ and $F_2$ structure functions can be related via
+\vspace{-10pt}
 \begin{equation}
-    A (x, y) = y^2 x
+    2x F_1 = \frac{F_2 (1+4M^2x^2/Q^2)}{R_L + 1},
+    \vspace{-10pt}
+    \label{eq:f1f2relationship}
 \end{equation}
+where $R_L$ can be interpreted as the ratio of the longitudinal and transverse virtual boson absorption cross-sections, i.e. $R_L \equiv R_L(x, Q^2) = \sigma_L/\sigma_T $ \cite{RevModPhys.70.1341}. Importantly, to the leading order, $R_L (x, Q^2) = 0$ for spin-half quarks which are assumed to be massless, and the equation above reduces to the well-known Callan-Gross relationship $2xF_1 = F_2$ \cite{PhysRevLett.22.156}.
+% because spin- 12 massless quarks cannot absorb a longitudinally polarized virtual boson, reverse direction in the center
+
+At the leading order, the remaining $F_2$ and $F_3$ structure functions can be written in terms of the fractional momentum-weighted parton distribution functions (PDFs) $q_i(x)$ and $\bar{q}_i(x)$. This is assuming the Bjorken scaling limit, i.e. $F_{2,3}(x,Q^2) \rightarrow F_{2,3}(x)$, due to the near independence of the structure functions on $Q^2$ from scattering from point-like particles \cite{Thomson}. For example, for antineutrino scattering from a proton above the charm production treshold, $F_2$ and $F_3$ are given by
+\vspace{-12pt}
 \begin{equation}
-    B(x, y, k_0) = 1 - y - \frac{m_N x y}{2k_0} 
+    F_2(x) = 2x(u(x) + \bar{d}(x) + c(x) + \bar{s}(x)) \hspace{2pt},
+    \vspace{-25pt}
 \end{equation}
+and
+\vspace{-10pt}
 \begin{equation}
-    C(y) = y (1 \frac{y}{2})
+    xF_3(x) = 2x(u(x) - \bar{d}(x) + c(x) - \bar{s}(x)) \hspace{2pt},
+    \vspace{-5pt}
 \end{equation}
-\subsection{Other interations}
+% Sensitive to the total quark-antiquark and total valence quark respectively
+describing the contributions from valence and sea quarks. At high Bjorken $x$ values, antineutrinos are generally scattering from valence quarks as they carry the majority of the nucleon's momentum, while the sea quarks contribute at low $x$. Note that only positively charged (anti)quarks participate in antineutrino scattering. 
+
+%PDFs must be measured - high energy
+Since PDFs need to be inferred directly from experimental data, lepton deep inelastic scattering, particularly (anti)neutrino deep inelastic scattering, has been intensively studied at high energies in bubble chambers \cite{osti_991307, Aachen-Bonn-CERN-London-Oxford-Saclay:1978eks, Allasia:1982sb, WA25:1983qub} and on heavy targets such as iron \cite{cdhsw, ccfr, nutev_PhysRevD.74.012008}. However, PDFs on free and bound nucleons differ, and the corresponding modifications to the PDFs in antineutrino-nucleus scattering are reviewed in the next section.
+
+% neutrinos at lower energies
+Furthermore, in the deep inelastic scattering regime relevant to accelerator-based experiments, i.e., below 10 GeV, non-perturbative quantum chromodynamics processes, known as higher-twist effects, start to become significant, as discussed for shadow-inelastic scattering. The quarks can no longer be considered massless, and the Callan-Gross relation ceases to be valid as the $R_L$ in Equation \ref{eq:f1f2relationship} deviates away from zero \cite{RevModPhys.70.1341}. Multi-parton effects also need to be considered, as quarks cannot be seen as non-interacting particles anymore. The Bodek-Yang model used in (anti)neutrino event generators to simulate deep inelastic scattering includes corrections to PDFs based on fits to charged-lepton scattering data to account for these higher-twist effects \cite{BodekYang_2003, BODEK2005113}. To directly explore these effects with (anti)neutrinos and verify model predictions, dedicated measurements from experiments like MINERvA are essential \cite{PhysRevD.93.071101}.
+
+Finally, modelling the hadronisation process is a crucial step in (anti)neutrino event simulations of deep inelastic scattering in order to predict the outgoing final-state particles and their kinematics for a given value of $x$ and $Q^2$. For GENIE, this process is detailed in Chapter~\ref{ch:dataAsimulation}.
+
+%Generators such as NEUT rely on the PYTHIA/JETSET \cite{Pythia_Sjostrand_2001} model based on the Lund string fragmentation model. GENIE in addition to PYTHIA/JETSET implements additional model
+
+
+\subsection{Other interactions}
+
+Other interaction processes that contribute to the total (anti)neutrino cross-section are subdominant and are predicted to make up less than 1\% of the total antineutrino cross-section in the measurement presented in this work. However, interactions such as coherent pion production will be mentioned in the subsequent chapters, particularly in the description of the underlying antineutrino model simulation used in the analysis in Chapter~\ref{ch:dataAsimulation}.
+
+Coherent pion production is a low four-momentum transfer process in which the (anti)neutrino interacts with the entire nucleus. The charged-current interaction produces very forward-going (anti)muon and pion while leaving the nucleus intact. It can be interpreted as a fluctuation of the gauge boson to a virtual pion that scatters elastically from the nucleus. The Rein-Sehgal model~\cite{coherent_REIN198329} for coherent pion production predicts that the coherent cross-section scales as $A^{1/3}$ for different nuclei, while the Berger-Sehgal model \cite{coherentMass_REIN2007207}, including mass correction, predicts $A^{2/3}$ scaling. MINERvA has made several measurements of the charged-current neutrino- and antineutrino-induced coherent pion production \cite{PhysRevLett.113.261802, PhysRevD.97.032014, PhysRevLett.131.051801}. 
+
+
+
+
+
+
 
 \section{Nuclear environment}
+
 \subsection{Nuclear model}
 
+\begin{comment}
 \textbf{Smith-Moniz Relativistic Fermi Gas (RFG):} The nucleons are treated as a collection of non-interaction fermions which form plane-waves in a nuclear potential, with stated filled up to the Fermi-momentum level $p_{F}$. For particles to escape the potential, they must gain sufficient momentum to be raised into a state above $p_{F}$. This is one of the first models used in neutrino scattering and implemented in neutrino simulations. The downsides are the assumptions of constant binding energy applied to each nucleon, Pauli blocking effects tend to be larger than in other more realistic models at low energy transfer. 
 %This has the effect of, for a given energy transfer, setting a lower limit on the possible energy range of target nucleons for which an interaction is allowed.
 % strict momentum cut-off
@@ -214,8 +321,11 @@ slight increase in the total cross-section [102].
 
 \subsection{Long-range correlations}
 \subsection{Multi-nucleon effects}
+\subsubsection{Modifications to structure functions}
 
 
+These structure functions are different for free nucleons and
+nucleons bound in a nucleus
 
 
 \section{Final state interactions}
@@ -223,17 +333,7 @@ slight increase in the total cross-section [102].
 
 
 \section{Inclusive (anti)neutrino scattering}
-When a lepton scatters off a nucleus, the interaction depends on the transferred energy-momentum.
-In the case of scattering on a single nucleon, three regions can be distinguished. 
 
-- antineutrino scatter off of 
-- charged-current and neutral current interactions (and gravity haha)
-- on a nucleon
-- different interaction types - explain
-- CCQE, RES, inelastci transition region (SIS), DIS
-DIS - antienutrinos scatter off of u, c, d(bar), s(bar) and produce d, s, u(bar) and c(bar)
-- structure functions - xF3 to represernt the V-A interference term - negatively interfere, cross-sections generally lower
-- define  x
 - notes neutrinos can also scatter from the whole nucleus - coherent
 
 
@@ -255,8 +355,6 @@ the interaction does not take place on a free nucleon, but on a particle bound i
 .
 In the case of the neutrino-nucleus cross section, the complicated many-body dynamics
 of the nuclear system dramatically changes the situation, and introduces new theoretical uncertaintie
-
-
 
 
 - nuclear environments
