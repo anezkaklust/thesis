@@ -3,10 +3,9 @@
 %It enables a direct comparison of the impact of nuclear effects on antineutrino scattering, as well as the strong dynamics of the nucleon and nucleus that affect these interactions. 
 \vspace{-10pt}
 \label{ch:measurement}
-This thesis presents the first high-statistics simultaneous measurement of charged-current inclusive muon antineutrino differential cross-sections on carbon, hydrocarbon, iron, and lead as a function of antimuon transverse momentum $p_{\text{T}}$ and Bjorken $x$. Inclusive analysis in this case refers to an analysis considering all final states, i.e. all antineutrino interaction modes. The measurement uses data taken by the MINERvA experiment with peak antineutrino energy of~$\sim$6~GeV. It enables a direct comparison of the impact of nuclear effects in antineutrino scattering since the cross-sections are extracted employing identical techniques, within the same detector, and with the same antineutrino beam. Additionally, this measurement expands the antineutrino data sets, which are crucial for studying CP violation. 
+This thesis presents the first high-statistics simultaneous measurement of charged-current inclusive muon antineutrino differential cross-sections on carbon, hydrocarbon, iron, and lead as a function of antimuon transverse momentum, $p_{\text{T}}$, and Bjorken $x$.~Inclusive analysis, in this case, refers to an analysis considering all final states, i.e.~all antineutrino interaction modes. The measurement uses data taken by the MINERvA experiment with peak antineutrino energy of~$\sim$6~GeV, and it is kinematically constrained by the detector's acceptance to antimuon angles less than 17 degrees relative to the antineutrino beam, and antimuon energies between 2--20 GeV due to our limited understanding of flux modelling at higher energies. This measurement enables a direct comparison of the impact of nuclear effects in antineutrino scattering since the cross-sections are extracted employing identical techniques within the same detector and with the same antineutrino beam. Additionally, this measurement expands the antineutrino datasets, which are crucial for studying CP violation.
 
-This chapter focuses on the specific motivation for such measurement, as well as the general process of extracting the cross-section in the variables of interest. The data and the simulation sample, their reconstruction, and the analysis procedure itself are detailed in the subsequent chapters.
-
+This chapter focuses on the specific motivation for such measurement, as well as the general process of extracting the cross-section in the variables of interest. Subsequent chapters detail the data and simulation sample, their reconstruction, and the analysis procedure itself.
 
 \section{Motivation for the measurement}
 
@@ -26,7 +25,7 @@ At the time, a similar analysis for inclusive antineutrino cross-section on diff
 
 Notably, the 2014 neutrino analysis was also reported in terms of the reconstructed Bjorken $x$ due to the inability to deconvolute the detector effects from the measurement \cite{TiceThesis2014}. Thanks to improvements in interaction modelling, reconstruction techniques, increased statistics in the sample, and rigorous unfolding studies (detailed in Section \ref{sec:migration_unfolding}), this medium-energy antineutrino analysis can now estimate the cross-section in terms of the true Bjorken $x$. This allows for reporting a detector-independent cross-section, valuable for interpretation in the context of various theoretical and phenomenological studies, as well as for comparisons with results from other experiments. 
 
-Furthermore, motivated by the observation of an SRC plateau at $x > 1$ in electron scattering data in Figure~\ref{fig:srcPlateau}, this analysis also attempts to make the first such measurement in antineutrino scattering on different nuclei. The expectation is that the antineutrino could scatter from two correlated nucleons, probing the structure of deeply bound nucleons. However, the measurement in this region is limited by the available models of scattering off correlated nucleons in the underlying simulation. The results are also reported in terms of the well-reconstructed antimuon transverse momentum $p_{\text{T}}$, which can be related to the four-momentum transfer in the interaction, as demonstrated in Section~\ref{sec:variables}. This allows for the interpretation and comparison of results specifically in antimuon kinematics, which are generally less dependent on interaction models compared to kinematics involving recoil information.
+Furthermore, motivated by the observation of an SRC plateau at $x > 1$ in electron scattering data in Figure~\ref{fig:srcPlateau}, this analysis also attempts to make the first such measurement in antineutrino scattering on different nuclei. The expectation is that the antineutrino could scatter from two correlated nucleons, probing the structure of deeply bound nucleons. However, the measurement in this region is limited by the available models of scattering off correlated nucleons in the underlying simulation. The results are also reported in terms of the well-reconstructed antimuon transverse momentum $p_{\text{T}}$, which can be related to the four-momentum transfer in the interaction, as demonstrated in Section~\ref{sec:variables}.
 % SRC
 
 \begin{figure}[t!]
@@ -94,14 +93,20 @@ Finally, similar to the MINERvA analysis in Figure~\ref{fig:emcLike}, the cross-
 
 \section{Variables of interest}\label{sec:variables}
 
-The final cross-section and cross-section ratio results are reported in terms of the antimuon transverse momentum $p_{\text{T}}$ and Bjorken $x$. The muon transverse momentum variable is well-reconstructed and can be related to the four-momentum transfer. The Bjorken x variable directly considers hadronic final states and is used to describe nuclear modifications to a bound nucleon cross-section compared to a free nucleon
+The final cross-section and cross-section ratio results are extracted in terms of the antimuon transverse momentum, $p_{\text{T}}$, and Bjorken $x$. Observables depending solely on antimuon kinematics, such as $p_{\text{T}}$, are well-reconstructed and allow for comparison of results, which are generally almost independent of the underlying interaction models compared to observables involving recoil information. On the other hand, Bjorken $x$ directly considers hadronic final states and describes the nuclear modifications to a bound nucleon cross-section compared to a free nucleon and can be used to inform PDFs.
 
+
+Importantly, the antimuon transverse momentum can be directly related to the four-momentum transfer squared, $Q^2$, as follows
+\vspace{-5pt}
 \begin{equation}
-    Q^2 \approx p_{\text{T}}^2\left(1 + \mathcal{O}\left(\frac{E_\text{recoil}}{E_\mu}\right)\right)
+    Q^2 \approx p_{\text{T}}^2\left(1 + \mathcal{O}\left(\frac{E_\text{recoil}}{E_\mu}\right)\right) \hspace{2pt}.
+    \vspace{-7pt}
 \end{equation}
-\cite{Bercellie2023_PhysRevLett.131.011801}
+The interpretation of $p_{\text{T}}$ distributions is, therefore, intuitive when it comes to the expected interaction mode dominating in a given $p_{\text{T}}$ range. Furthermore, $p_{\text{T}}$ serves as a direct proxy to the antimuon angle relative to the antineutrino beam. This is especially helpful when discussing the acceptance of the MINERvA detector in the subsequent chapters.
 
-How to relate
+Bjorken $x$ is a dimensionless quantity that can be interpreted as the fraction of the momentum carried away by the struck quark in a frame where the nucleon momentum is very large, as described in Chapter~\ref{ch:theory}. Consequently, at low $x$, the distribution is expected to be dominated by deep inelastic scattering, while quasi-elastic scattering is expected to occur around $x = 1$. The $x > 1$ region should then consist of events in which the antineutrino scattered off two or more correlated nucleons.
+
+In the context of this measurement, Bjorken $x$ is defined as given in Equation~\ref{eq:bjorkenx}. Its dependence ultimately comes down to the recoil energy reconstructed in the detector, as well as the momentum and angle of the antimuon. The reconstruction details and their limitations, particularly in the context of reconstructed recoil information, are further described in Chapter~\ref{ch:Reconstruction}.
 
 \begin{comment}
 
