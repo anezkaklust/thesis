@@ -45,6 +45,9 @@
 \usepackage{rotating}
 \usepackage{tikzpagenodes}
 \usepackage[title, titletoc]{appendix}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{notoccite}
 
 % ===============================================================================================
 % ===================================== THESIS HERE =============================================
@@ -58,7 +61,7 @@
 % Author
 \author{Ane\v{z}ka KLUSTOV\'{A}}
 % Date
-\submitdate{March 2024}
+\submitdate{April 2024}
 
 \normallinespacing
 \maketitle
@@ -69,7 +72,7 @@
 \input{00preface/declaration}
 \input{00preface/declarationcopyright}
 \input{00preface/acknowledgements}
-\input{00preface/quotes}
+%\input{00preface/quotes}
  
 % Body of the thesis
 % All chapters come here
@@ -108,7 +111,7 @@
 \bibliographystyle{unsrturl2authabbrvpp}
 \bibliography{bibliography/bibliography.bib}
 
-\input{glossary/glossary.tex}
+%\input{glossary/glossary.tex}
 
 % Appendices
 \newpage
@@ -131,6 +134,9 @@
 \input{appendix/appendix_efficiencyCorrectedDistributions}
 \input{appendix/appendix_systematics}
 \input{appendix/appendix_tuneComparison}
-\input{appendix/appendix_covarianceMatrices}
 \end{appendices}
 \end{document}
+
+\begin{comment}
+    \input{appendix/appendix_covarianceMatrices}
+\end{comment}
