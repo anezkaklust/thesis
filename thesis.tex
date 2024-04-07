@@ -48,7 +48,8 @@
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage{notoccite}
-
+\usepackage{longtable}
+\usepackage{setspace}
 % ===============================================================================================
 % ===================================== THESIS HERE =============================================
 % ===============================================================================================
@@ -76,6 +77,8 @@
  
 % Body of the thesis
 % All chapters come here
+\renewcommand{\listfigurename}{List of figures}
+\renewcommand{\listtablename}{List of tables}
 \body
 \pagestyle{fancy}% Change page style to fancy
 \renewcommand{\chaptermark}[1]{%
@@ -90,7 +93,12 @@
 %\fancyhead[L]{\chaptername{} \thechapter }
 \fancyhead[L]{\nouppercase{\rightmark}}
 \fancyhead[R]{\thepage}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.~#1}}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{Chapter \thechapter{}: #1}{Chapter \thechapter{}: #1}%
+}
 \renewcommand{\headrulewidth}{0.1pt}% Default \headrulewidth is 0.4pt
+
 % Include individual chapters
 % https://www.overleaf.com/learn/latex/Headers_and_footers#Using_the_fancyhdr_package
 
@@ -117,9 +125,11 @@
 \newpage
 \begin{appendices}
     \appendix
-    \renewcommand\chaptername{Appendix}
-    \pagestyle{fancy}
     \fancyhf{}
+    \renewcommand\chaptername{Appendix}
+    \renewcommand{\chaptermark}[1]{%
+  \markboth{Appendix \thechapter{}: #1}{Appendix \thechapter{}: #1}}
+    \pagestyle{fancy}
     \fancyhead[L]{\leftmark}
     \fancyhead[R]{\thepage}
 \input{appendix/appendix_nuclearTargetFlux}

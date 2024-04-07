@@ -112,19 +112,28 @@
 }
 
 \def\body{
-    \cleardoublepage    
-    \pagestyle{uheadings}
+    \cleardoublepage   
+    \pagestyle{fancy}
+    \fancyhead[L]{\nouppercase{\rightmark}}
+    \fancyhead[R]{\thepage}
     \singlespacing
     \tableofcontents
-    \pagestyle{plain}
+    %\pagestyle{plain}
+    \clearpage
     \cleardoublepage
-    \pagestyle{uheadings}
+    %\pagestyle{uheadings}
     \listoffigures
-    \pagestyle{plain}
+    \clearpage
+    %\pagestyle{plain}
     \cleardoublepage
-    \pagestyle{uheadings}
+    %\pagestyle{uheadings}
     \listoftables
-    \pagestyle{plain}
+    \clearpage
+    %\pagestyle{plain}
+    \cleardoublepage
+    %\pagestyle{uheadings}
+    \input{glossary/glossary.tex}
+    %\pagestyle{plain}
     \cleardoublepage
     \pagestyle{uheadings}
     \pagenumbering{arabic}
