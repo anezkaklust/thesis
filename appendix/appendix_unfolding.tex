@@ -59,23 +59,23 @@ As discussed in Section~\ref{sec:migration_unfolding}, the zeroth order true dis
 The unfolded truth can be expressed as 
 \begin{equation}
     \label{eq:unfolding1}
-    \lambda_{\alpha} = \sum_{j} \frac{P(\lambda \in \text{true bin} ~\alpha~|~y \in \text{reco bin}~j)~y_{j}}{P(y \in \text{reco bin}~j~|~\lambda \in \text{true bin}~\alpha)},
+    \lambda_{\alpha} = \frac{\sum_{j} P(\lambda \in \text{true bin} ~\alpha~|~y \in \text{reco bin}~j)~y_{j}}{\sum_{i} P(y \in \text{reco bin}~i~|~\lambda \in \text{true bin}~\alpha)},
 \end{equation}
-where the denominator represents the overall unfolding efficiency $\epsilon_{\alpha}$, which is the sum over the reconstructed bins $j$ of the migration matrix in the Equation~\ref{eq:migration}, 
+where the denominator represents the overall unfolding efficiency $\epsilon_{\alpha}$, which is the sum over the reconstructed bins $i$ of the migration matrix in the Equation~\ref{eq:migration}, 
 \begin{equation}
     \label{eq:efficiencyUnfolding}
-    \epsilon_{\alpha} = \sum_{j} P(y \in \text{reco bin } j~|~\lambda \in \text{true bin}~\alpha) = \sum_{j} U_{j\alpha}.
+    \epsilon_{\alpha} = \sum_{i} P(y \in \text{reco bin } i~|~\lambda \in \text{true bin}~\alpha) = \sum_{i} U_{i\alpha}.
 \end{equation}
 The estimate of the true distribution after the first iteration is then given by substituting the Equation~\ref{eq:unfoldingMatrix5} in the Equation~\ref{eq:unfolding1}, i.e. 
 \begin{equation}
     \label{eq:unfolding2}
-    \lambda_{\alpha} = \frac{\lambda_{\alpha}^0}{\sum_{j}U_{\j\alpha}}\sum_{j} \frac{U_{j\alpha}y_j}{\sum_{\beta}U_{j\beta}\lambda_{\beta}^0}.
+    \lambda_{\alpha} = \frac{\lambda_{\alpha}^0}{\sum_{i}U_{i\alpha}}\sum_{j} \frac{U_{j\alpha}y_j}{\sum_{\beta}U_{j\beta}\lambda_{\beta}^0}.
 \end{equation}
 
 This is valid for each iteration, as the true distribution $\boldsymbol{\lambda}$ is updated after each step with the new prediction. Finally, the $(k+1)$th iteration of the D'Agostini method can be determined by 
 \begin{equation}
     \label{eq:unfolding3}
-    \lambda_{\alpha}^{(k+1)} = \frac{\lambda_{\alpha}^{(k)}}{\sum_{j}U_{\j\alpha}}\sum_{j} \frac{U_{j\alpha}y_j}{\sum_{\beta}U_{j\beta}\lambda_{\beta}^{(k)}}.
+    \lambda_{\alpha}^{(k+1)} = \frac{\lambda_{\alpha}^{(k)}}{\sum_{i}U_{i\alpha}}\sum_{j} \frac{U_{j\alpha}y_j}{\sum_{\beta}U_{j\beta}\lambda_{\beta}^{(k)}}.
 \end{equation}
 
 It is also important to note that this method was shown to be equivalent to the expectation--maximisation (EM) iteration algorithm \cite{EM:477e7e2b-4ded-3369-981e-9b40850a2701} for finding the maximum likelihood estimator (MLE) of $\boldsymbol{\lambda}$ in the Poisson regression problem $\boldsymbol{y} \sim \text{Poission}(\boldsymbol{U\lambda})$, $\boldsymbol{\lambda} \geq 0$ as $k \rightarrow \infty$ \cite{McLachlan2004Algorithm, KuuselaThesis2016}.

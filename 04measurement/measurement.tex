@@ -32,7 +32,7 @@ Furthermore, motivated by the observation of an SRC plateau at $x > 1$ in electr
     \centering
     \vspace{-5pt}
     {\includegraphics[width=0.75\textwidth]{04measurement/figures/antinu_flux.pdf}}%
-    \caption{Comparison of the expected antineutrino flux at the DUNE near detector~(ND) according to ND Technical Design Report (TDR)~\cite{abi2020deep} and the MINERvA medium energy antineutrino flux in the 0--10 GeV range of antineutrino energy.~Note the significant overlap at the upper end of antineutrino energy.}
+    \caption{Comparison of the expected antineutrino flux at the DUNE near detector~(ND) according to ND Technical Design Report (TDR)~\cite{abi2020deep} and the MINERvA medium energy antineutrino flux in the 0--10 GeV range of antineutrino energy.~Note the significant overlap at the upper end of DUNE antineutrino energy.}
     %[short caption] {long caption}
     \label{fig:fluxDune}
 \end{figure}
@@ -74,20 +74,20 @@ measurements help improve theoretical interaction models, essential components o
 The probability that a certain interaction process occurs is parameterised as a cross-section and can be thought of as the effective area subtended by the target particle to an incident beam \cite{perkins_2000}. This measurement reports flux-integrated differential cross-sections per nucleon on particular nuclei, namely carbon, hydrocarbon, iron, and lead. The cross-section distributions are discretised into a finite number of bins of a quantity of interest, defined in order to obtain a statistically significant sample in each of them, and are extracted as follows,
 \begin{equation}
     \label{eq:xsec1D}
-    {\left(\frac{d\sigma}{dx}\right)}_{\alpha} = \frac{\Sigma_{j} \tilde{U}_{j\alpha}(N_{\text{data}, j} - N^{\text{bkg}}_{\text{data}, j})}{E_{\alpha} T_{\text{nucleons}} \Phi \Delta x_{\alpha} \text{POT}} \hspace{2pt}.
+    {\left(\frac{d\sigma}{dx}\right)}_{\alpha} = \frac{\Sigma_{j} \tilde{U}_{j\alpha}(N_{\text{data}, j} - N^{\text{bkg}}_{\text{data}, j})}{\epsilon_{\alpha} T_{\text{nucleons}} \Phi \Delta x_{\alpha} \text{POT}} \hspace{2pt}.
 \end{equation}
 
 In the above, the left-hand side corresponds to the cross-section in bin $\alpha$ with respect to a quantity $x$. In this analysis, this quantity can either be antimuon transverse momentum $p_{\text{T}}$ or Bjorken~$x$.~To distinguish between the true value of the variable of interest, in which the final detector-independent cross-section is reported, and its reconstructed value, the bin containing the true value is labelled as $\alpha$, while the bin containing the reconstructed value is represented by $j$. The difference between the true bin and the reconstructed bin arises from the complex nature of the antineutrino interactions and the imperfect reconstruction, further explained in the following chapters.
 
 $N_{\text{data}, j}$ is the number of reconstructed events of interest in bin $j$ and $N_{\text{data},j}^{\text{bkg}}$ is the estimated number of background events. The background-subtracted selected events correspond to the signal. Therefore, in this analysis, it is the number of all charged-current antineutrino interactions that occurred in a specific target material with certain kinematic constraints discussed in Chapter~\ref{ch:analysis1D}. $\tilde{U}_{j\alpha}$ represents the so-called unfolding process which tries to
-remove the smearing of the reconstructed distribution to report the cross-section in the true quantities. Efficiency correction, $\epsilon_{\alpha}$, takes into account the signal events that were lost due to detector acceptance and imperfect reconstruction. 
+remove the smearing of the reconstructed distribution to report the cross-section in the true quantities. The efficiency correction, $\epsilon_{\alpha}$, takes into account the signal events that were lost due to detector acceptance and imperfect reconstruction. 
 
 Furthermore, the differential cross-section is normalised to the flux prediction integrated over all bins, $\Phi$, the number of nucleons in a given material, $T_{\text{nucleons}}$, the bin width of the corresponding bin, $\Delta x$, to make it differential, and the number of protons on the target, POT, which is the metric used to characterise the integrated luminosity of the antineutrino beam. Note that all these individual steps of the cross-section extraction are described in detail in Chapter~\ref{ch:analysis1D}.
 
 Finally, similar to the MINERvA analysis in Figure~\ref{fig:emcLike}, the cross-section ratios of the nuclear target (A) to scintillator tracker (CH) are reported to minimise the dependence on the underlying antineutrino flux, as well as to cancel out some shared reconstruction and antineutrino interaction modelling effects. While the cross-section ratios are taken directly from the calculated cross-sections according to Equation~\ref{eq:xsec1D}, the ratios approximately correspond to
 \vspace{-5pt}
 \begin{equation}
-    \left( \frac{d\sigma^\text{A}}{dx} \mathlarger{\mathlarger{\mathlarger{/}}} \frac{d\sigma^{\text{CH}}}{dx} \right)_{\alpha} \approx \mathlarger{\sum_j} \frac{\tilde{U}_{\alpha j}^\text{A}(N_{\text{data}, j}^\text{A}- N_{\text{data},j}^{\text{bkg},\text{A}})\epsilon_{\alpha}^{\text{CH}}T^{\text{CH}}}{\tilde{U}_{\alpha j}^{\text{CH}}(N_{\text{data}, j}^{\text{CH}}- N_{\text{data},j}^{\text{bkg},\text{CH}})\epsilon_{\alpha}^{\text{A}} T^{\text{A}}} \hspace{2pt}.
+    \left( \frac{d\sigma^\text{A}}{dx} \mathlarger{\mathlarger{\mathlarger{/}}} \frac{d\sigma^{\text{CH}}}{dx} \right)_{\alpha} \approx \frac{\sum_j \tilde{U}_{\alpha j}^\text{A}(N_{\text{data}, j}^\text{A}- N_{\text{data},j}^{\text{bkg},\text{A}})\epsilon_{\alpha}^{\text{CH}}T^{\text{CH}}}{\sum_k \tilde{U}_{\alpha k}^{\text{CH}}(N_{\text{data}, k}^{\text{CH}}- N_{\text{data},k}^{\text{bkg},\text{CH}})\epsilon_{\alpha}^{\text{A}} T^{\text{A}}} \hspace{2pt}.
     \label{xsecs_ratios}
 \end{equation}
 
@@ -104,7 +104,7 @@ Importantly, the antimuon transverse momentum can be directly related to the fou
 \end{equation}
 The interpretation of $p_{\text{T}}$ distributions is, therefore, intuitive when it comes to the expected interaction mode dominating in a given $p_{\text{T}}$ range. Furthermore, $p_{\text{T}}$ serves as a direct proxy to the antimuon angle relative to the antineutrino beam. This is especially helpful when discussing the acceptance of the MINERvA detector in the subsequent chapters.
 
-Bjorken $x$ is a dimensionless quantity that can be interpreted as the fraction of the momentum carried away by the struck quark in a frame where the nucleon momentum is very large, as described in Chapter~\ref{ch:theory}. Consequently, at low $x$, the distribution is expected to be dominated by deep inelastic scattering, while quasi-elastic scattering is expected to occur around $x = 1$. The $x > 1$ region should then consist of events in which the antineutrino scattered off two or more correlated nucleons.
+Bjorken $x$ is a dimensionless quantity that can be interpreted as the fraction of the momentum carried by the struck quark in a frame where the nucleon momentum is very large, as described in Chapter~\ref{ch:theory}. Consequently, at low $x$, the distribution is expected to be dominated by deep inelastic scattering, while quasi-elastic scattering is expected to occur around $x = 1$. The $x > 1$ region should then consist of events in which the antineutrino scattered off two or more correlated nucleons.
 
 In the context of this measurement, Bjorken $x$ is defined as given in Equation~\ref{eq:bjorkenx}. Its dependence ultimately comes down to the recoil energy reconstructed in the detector, as well as the momentum and angle of the antimuon. The reconstruction details and their limitations, particularly in the context of reconstructed recoil information, are further described in Chapter~\ref{ch:Reconstruction}.
 
