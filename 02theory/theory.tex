@@ -51,22 +51,23 @@ The notation used in the following subsections is:
     \bar{\nu}_{\mu}(p_{\bar{\nu}}) + N (p_N) \rightarrow \mu^{+} (p_\mu) + X(p_\text{recoil}) \vspace{2pt}.
     \vspace{-12pt}
 \end{equation}
-Here, $p_{\bar{\nu}} = (E_{\bar{\nu}}, \bm{p_{\bar{\nu}}})$ is the antineutrino Lorentz four-vector, $p_N = (E_N, \bm{p_N})$ is the initial nucleon four-vector, and $p_\mu = (E_\mu, \bm{p_\mu})$ is the outgoing antimuon four-vector. The total four-vector of the outgoing hadronic system $X$ is denoted $p_\text{recoil} = (E_{\text{recoil}}, \bm{p_{\text{had}}})$. The four-momentum transfer is calculated as $q = (q_0, \bm{q_3}) = p_{\bar{\nu}} - p_{\mu}$, with $q_0$ and $\bm{q_3}$ corresponding to the energy and three-momentum transfer, respectively.
+Here, $p_{\bar{\nu}} = (E_{\bar{\nu}}, \bm{p}_{\bar{\nu}})$ is the antineutrino Lorentz four-vector, $p_N = (E_N, \bm{p}_N)$ is the initial nucleon four-vector, and $p_\mu = (E_\mu, \bm{p}_\mu)$ is the outgoing antimuon four-vector. The total four-vector of the outgoing hadronic system $X$ is denoted $p_\text{recoil} = (E_{\text{recoil}}, \bm{p}_{\text{recoil}})$. The four-momentum transfer is calculated as $q = (q_0, \bm{q}_3) = p_{\bar{\nu}} - p_{\mu}$, with $q_0$ and $\bm{q}_3$ corresponding to the energy and three-momentum transfer, respectively.
 
 The four-momentum transfer squared discussed above and used in the different model descriptions is therefore defined as
 \vspace{-10pt}
 \begin{equation}
-    Q^2 = -q^2 = -(p_{\bar{\nu}}-p_\mu)^2 = 2E_{\bar{\nu}} (E_\mu - |\bm{p_\mu}| \cos{\theta_{\mu}}) - m^2_\mu \vspace{2pt} .
+    Q^2 = -q^2 = -(p_{\bar{\nu}}-p_\mu)^2 = 2E_{\bar{\nu}} (E_\mu - |\bm{p}_\mu| \cos{\theta_{\mu}}) - m^2_\mu \vspace{2pt} .
     \vspace{-10pt}
 \end{equation}
 Additionally, the invariant mass of the final-state hadronic system in the interaction, $W$, is referred to throughout the discussion of the higher energy inelastic processes. This can be calculated as
 \vspace{-10pt}
 \begin{equation}
-    W = (p_\text{had})^2 = (p_N + q)^2 = (p_N+p_{\bar{\nu}}-p_{\mu})^2 = -Q^2 + 2E_{\text{recoil}}m_N + m_N^2 \vspace{2pt} .
+    W^2 = (p_\text{recoil})^2 = (p_N + q)^2 = (p_N+p_{\bar{\nu}}-p_{\mu})^2 = -Q^2 + 2E_{\text{recoil}}m_N + m_N^2 \vspace{2pt} .
     \vspace{-10pt}
 \end{equation}
-In the equations above, $\theta_{\mu}$ is the scattering angle of the antimuon with respect to the incoming antineutrino beam, $m_{\mu}$ is the antimuon mass, and $m_N$ is the mass of the nucleon on which the interaction occurs. $E_{\text{recoil}}$ denotes the difference between the antineutrino and antimuon energy, i.e. $E_{\text{recoil}} = E_{\bar{\nu}} - E_\mu$. For derivations of these quantities from four-vectors to the measurable kinematic quantities, one can refer to various particle physics textbooks such as Refs.~\cite{Thomson, Griffiths}.
-
+In the equations above, $\theta_{\mu}$ is the scattering angle of the antimuon with respect to the incoming antineutrino beam, $m_{\mu}$ is the antimuon mass, and $m_N$ is the mass of the nucleon on which the interaction occurs.~$E_{\text{recoil}}$ denotes the energy of the outgoing hadronic system. For derivations of these quantities from four-vectors to the measurable kinematic quantities, one can refer to various particle physics textbooks such as Refs.~\cite{Thomson, Griffiths}.
+%$E_{\text{recoil}}$ denotes the difference between the antineutrino and antimuon energy, i.e. $E_{\text{recoil}} = E_{\bar{\nu}} - E_\mu$. 
+\newpage
 \subsection{Quasi-elastic scattering}
 
 At low momentum transfers, the dominant process is the quasi-elastic interaction, which primarily contributes to the total (anti)neutrino cross-section below 1 GeV. The (anti)neu\-trino interacts with a nucleon by exchanging a $W^{\pm}$ boson, resulting in the production of a charged lepton and a nucleon in the final state, with a different electric charge than the initial nucleon. Specifically, in antineutrino scattering, the incoming antineutrino scatters off a target proton, producing a neutron and an antimuon as shown in Figure~\ref{fig:intChannels}. This process is also sometimes referred to as 1p1h---one particle, one hole---and typically leaves the nucleus mostly intact. 
@@ -154,7 +155,7 @@ Furthermore, newer versions of GENIE and NEUT often use an improved version of t
 \subsection{Shallow inelastic scattering}
 % https://indico.cern.ch/event/855372/contributions/4366089/attachments/2304186/3919942/Morfin-SISandDIS-upload-NuFact21.pdf 
 
-The resonant single-pion production is not an exclusive channel for producing pions. They can also be produced through a non-resonant interaction, as depicted in Figure~\ref{fig:nonrespi}. The non-resonant channel is experimentally indistinguishable from the single-pion production, as it yields the same final-state particles.~Furthermore, at even higher energies, the (anti)neutrino may excite higher mass resonances that can decay into multi-pion states. This transition between the resonant pion production and the deep inelastic scattering is often referred to as shallow inelastic scattering (SIS). The measurement presented in this work is expected to have a significant contribution from this transition region due to its inclusive nature and the energy phase space it probes.
+The resonant single-pion production is not an exclusive channel for producing pions. They can also be produced through a non-resonant interaction, as depicted in Figure~\ref{fig:nonrespi}. The non-resonant channel is experimentally indistinguishable from the single-pion production, as it yields the same final-state particles.~Furthermore, at even higher energies, the (anti)neutrino may excite higher mass resonances that can decay into multi-pion states. This transition between the resonant pion production and the deep inelastic scattering is referred to as shallow inelastic scattering (SIS). The measurement presented in this work is expected to have a significant contribution from the SIS due to its inclusive nature and the energy phase space it probes.
 
 \begin{figure}[t!]
     \centering
@@ -475,6 +476,9 @@ Pions in particular, being the lightest mesons, are a useful probe for studying 
 
 The cascade models simulate the propagation of particles throughout the nucleus by treating the individual hadrons independently and advancing through the nucleus in discrete steps based on the hadron mean free path. At each step, the probability for the various possible FSI is calculated based on the surrounding nuclear density, determining whether the re-interaction takes place \cite{SALCEDO1988557}. If an interaction is chosen to occur, one of the possible FSI channels is selected at random according to their relative cross-sections, calculating the kinematics of the outgoing particles.~This process continues until the hadron leaves the nucleus. Multiple FSI can occur.
 
-The relative probabilities for different FSI processes are tuned to external data from pion-nucleus and proton-nucleus scattering \cite{Ma_2017, genie_ANDREOPOULOS201087,genie_andreopoulos2015}. Furthermore, at higher energies where outgoing particles are expected to produce relatively forward-going hadronic showers, the FSI occurs on the hadronic shower as a whole. This leads to suppressions of the re-interaction cross-sections, which are motivated by the data \cite{BRODSKY1988685}. (Anti)neutrino simulations, therefore, utilise a so-called formation zone around the vertex, within which the recoiling particles cannot interact with the nuclear environment \cite{PhysRevD.104.053006}.
+The relative probabilities for different FSI processes are tuned to external data from pion-nucleus and proton-nucleus scattering \cite{Ma_2017, genie_ANDREOPOULOS201087,genie_andreopoulos2015}. Furthermore, suppression of the re-interaction cross-sections at higher energies, as motivated by data \cite{BRODSKY1988685}, is often implemented utilising a so-called formation zone around the vertex, within which recoiling particles cannot interact with the nuclear environment \cite{PhysRevD.104.053006}. Hadrons therefore propagate some distance from the (anti)neutrino interaction point, proportional to their momentum, before they can re-interact, making the effect of FSI smaller.
+
+% before corrections
+%Furthermore, at higher energies where outgoing particles are expected to produce relatively forward-going hadronic showers, the FSI occurs on the hadronic shower as a whole. This leads to suppressions of the re-interaction cross-sections, which are motivated by the data \cite{BRODSKY1988685}. (Anti)neutrino simulations, therefore, utilise a so-called formation zone around the vertex, within which the recoiling particles cannot interact with the nuclear environment \cite{PhysRevD.104.053006}.
 
 Specific details about the implementation of the intranuclear cascade used in the underlying simulation prediction for this measurement are outlined in Chapter~\ref{ch:dataAsimulation}.
