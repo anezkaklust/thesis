@@ -156,7 +156,7 @@ simulated by the Berger-Sehgal model~\cite{PhysRevD.76.113004}. A custom multi-p
     \item NEUT SF ma103 utilises the spectral function for the nuclear ground state with the associated quasi-elastic scattering \cite{Benhar:1994hw, Juszczak_2006, Furmanski:2015knr} with $M_{A} = 1.03$ GeV$/c^2$.
 \end{itemize}
 % what does it do for lead?
-\noindent Note that the general differences between the various theoretical models were addressed in Chapter~\ref{ch:theory}.
+\noindent Note that the general differences between the various theoretical models were addressed in Chapter~\ref{ch:theory}, and that there is no NEUT SF prediction currently available for lead.
 
 % chi-squared statistic with general covariance matrix
 In addition to the visual comparison, the agreement between the measured data and the various models is calculated using $\chi^2$, which takes into account bin-to-bin correlations,
@@ -186,7 +186,7 @@ The Bjorken~$x$ results are compared to other models in Figures \ref{fig:xsec_x_
 \end{figure}
 
 
-The $p_{\text{T}}$ cross-section data generally indicates a preference for the new version of GENIE 3, with a slight inclination towards G18\_02a/b. G18\_10a/b, on the other hand, tends to provide a slightly better prediction for the carbon data based on the calculated~$\chi^2$. The improvements over the underlying simulation are likely to stem mainly from better modelling of the low $p_{\text{T}}$ regions using updated axial and vector mass form factors. The NEUT model using the spectral function nuclear ground state performs similarly well for carbon, scintillator, and iron. Overall, the models tend to underpredict the data, except in the low $p_{\text{T}}$ region for heavier nuclei where the models overpredict. All models fail to reproduce the high $p_{T}$ behaviour.
+The $p_{\text{T}}$ cross-section data generally indicates a preference for the new version of GENIE 3, with a slight inclination towards G18\_02a/b. G18\_10a/b, on the other hand, tends to provide a slightly better prediction for the carbon data based on the calculated~$\chi^2$. The improvements over the underlying simulation are likely to stem mainly from better modelling of the low $p_{\text{T}}$ regions using updated axial and vector mass form factors. The NEUT model using the spectral function nuclear ground state performs similarly well for carbon, scintillator, and iron. Overall, the models tend to underpredict the data, except in the low $p_{\text{T}}$ region for heavier nuclei where the models overpredict. All models fail to reproduce the high $p_{\text{T}}$ behaviour.
 % LFG versus RFG initial-state nucleon models is small because affects mostly CCQE in GENIE and not 2p2h or RES (and nos IDS)
 
 \begin{table}[t!]
@@ -198,13 +198,13 @@ The $p_{\text{T}}$ cross-section data generally indicates a preference for the n
     & CV & G18\_02a & G18\_02b & G18\_10a & G18\_10b & LFG\_ ma105 & SF\_ma103\\ [0.5ex] % inserts table %heading
     \hline
     \hline \\[-1.9ex]
-    Carbon & 2.64 & 2.15 & 2.15 & 1.67 & 1.67 & 2.24 & 2.15 \\
+    Carbon & 2.64 & 2.15 & 2.15 & 1.67 & 1.67 & 2.26 & 2.15 \\
     %\hline
     Scintillator & 10.35 & 4.37 & 4.47 & 12.77 & 12.22 & 40.75 & 4.37\\
     %\hline
-    Iron & 3.04 & 1.63 & 1.67 & 3.12 & 3.13 & 9.60 &1.63 \\
+    Iron & 3.04 & 1.63 & 1.67 & 3.12 & 3.13 & 8.34 &1.63 \\
     %\hline
-    Lead & 6.22 & 3.20 & 3.11 & 9.07 & 9.24 & 36.59 & 3.20 \\
+    Lead & 6.22 & 3.20 & 3.11 & 9.07 & 9.24 & 3.20 & - \\
 
     \hline
     \end{tabular}
@@ -225,11 +225,11 @@ The $p_{\text{T}}$ cross-section data generally indicates a preference for the n
      & CV & G18\_02a & G18\_02b & G18\_10a & G18\_10b & LFG\_ ma105 & SF\_ma103\\ [0.5ex] % inserts table %heading
     \hline
     \hline \\[-1.9ex]
-    C/CH & 4.93 & 5.72 & 5.75 & 5.80 & 5.74 & 5.90 & 5.60 \\
+    C/CH & 4.93 & 5.72 & 5.75 & 5.80 & 5.74 & 5.90 & 5.59 \\
     %\hline
-    Fe/CH & 2.35 & 1.63 & 1.68 & 1.71 & 1.73 & 3.00 & 3.23 \\
+    Fe/CH & 2.35 & 1.63 & 1.68 & 1.71 & 1.73 & 2.52 & 3.90 \\
     %\hline
-    Pb/CH & 12.06 & 5.06 & 4.80 & 6.11 & 6.41 & 28.79 & 29.40 \\
+    Pb/CH & 12.06 & 5.06 & 4.80 & 6.11 & 6.41 & 22.00 & - \\
     \hline
     \end{tabular}    
     \end{adjustbox}
@@ -251,7 +251,7 @@ The comparisons of cross-section ratios in $p_{\text{T}}$ demonstrate the improv
 \end{figure}
 
 % bjorken x
-The Bjorken $x$ cross-section results across the various nuclei prefer both NEUT implementations over GENIE 3. Specifically, the local Fermi gas model appears to perform quite well. This preference could potentially be attributed to differences in the treatment of the resonant pion production to deep inelastic scattering transition region compared to GENIE, or the distinct intranuclear cascade. However, further investigation would be required for a more detailed understanding.
+The Bjorken $x$ cross-section results across the various nuclei prefer both NEUT implementations over GENIE 3. Specifically, the local Fermi gas model appears to perform quite well. This preference could potentially be attributed to differences in the treatment of the resonant pion production to deep inelastic scattering transition region compared to GENIE 3, or the distinct intranuclear cascade. However, further investigation would be required for a more detailed understanding.
 
 % bjorken x ratio
 In contrast, many of the differences between the data and the models cancel out in the Bjorken $x$ cross-section ratios to the scintillator. Consequently, GENIE 3 shows its strength in modelling the $A$-dependence of the overall cross-section again. Both G18\_02a/b and G18\_10a/b predict the suppression in the low-$x$ region relatively well, with the Pb/CH ratio requiring additional strength, similar to the $p_{\text{T}}$ ratios.
@@ -273,13 +273,13 @@ In contrast, many of the differences between the data and the models cancel out 
     & CV & G18\_02a & G18\_02b & G18\_10a & G18\_10b & LFG\_ ma105 & SF\_ma103\\ [0.5ex] % inserts table %heading
     \hline
     \hline \\[-1.9ex]
-    Carbon & 5.34 & 8.44 & 8.47 & 7.02 & 7.07 & 4.47 & 8.44\\
-    %\hline
-    Iron & 3.50 & 7.64 & 7.64 & 5.98 & 6.10 & 2.07 & 7.64 \\
-    %\hline
-    Lead & 4.46 & 5.94 & 5.92 & 5.19 & 5.23 & 1.27 & 5.94 \\
-    %\hline
+    Carbon & 5.34 & 8.44 & 8.47 & 7.02 & 7.07 & 4.45 & 8.44\\
     Scintillator & 17.22 & 44.61 & 44.30 & 29.79 & 30.12 & 10.49 & 10.49 \\
+    %\hline
+    Iron & 3.50 & 7.64 & 7.64 & 5.98 & 6.10 & 1.65 & 7.64 \\
+    %\hline
+    Lead & 4.46 & 5.94 & 5.92 & 5.19 & 5.23 & 5.94 & - \\
+    %\hline
     \hline
     \end{tabular}
     \end{adjustbox}
@@ -296,11 +296,11 @@ In contrast, many of the differences between the data and the models cancel out 
      & CV & G18\_02a & G18\_02b & G18\_10a & G18\_10b & LFG\_ ma105 & SF\_ma103\\ [0.5ex] % inserts table %heading
     \hline
     \hline \\[-1.9ex]
-    C/CH & 5.91 & 5.80 & 5.85 & 5.73 & 5.71 & 5.60 & 5.53 \\
+    C/CH & 5.91 & 5.80 & 5.85 & 5.73 & 5.71 & 5.56 & 5.59 \\
     %\hline
-    Fe/CH & 6.28 & 3.39 & 3.47 & 3.01 & 3.08 & 9.95 & 9.91 \\
+    Fe/CH & 6.28 & 3.39 & 3.47 & 3.01 & 3.08 & 17.44 & 13.12 \\
     %\hline
-    Pb/CH & 12.69 & 11.14 & 11.13 & 7.74 & 7.69 & 20.19 & 20.24 \\
+    Pb/CH & 12.69 & 11.14 & 11.13 & 7.74 & 7.69 & 31.95 & - \\
     \hline
     \end{tabular}    
     \end{adjustbox}
