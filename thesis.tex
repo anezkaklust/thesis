@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,oneside]{report}
+\documentclass[a4paper,12pt,twoside]{report}
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=3cm]{geometry}
 
 \include{thesis.preamble}
@@ -91,8 +91,13 @@
 %\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 %\renewcommand{\sectionmark}[1]{\markright{#1}}
 %\fancyhead[L]{\chaptername{} \thechapter }
-\fancyhead[L]{\nouppercase{\rightmark}}
-\fancyhead[R]{\thepage}
+%\fancyhead[LE]{\nouppercase{\rightmark}}
+%\fancyhead[RO]{\nouppercase{\leftmark}}
+\fancyhead[LE]{\thepage\hfill\nouppercase{\rightmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}\hfill\thepage}
+%\fancyhead[LE]{\thepage\hfill}
+%\fancyhead[RO]{\hfill\thepage}
+
 \renewcommand{\sectionmark}[1]{\markright{\thesection.~#1}}
 \renewcommand{\chaptermark}[1]{%
   \markboth{Chapter \thechapter{}: #1}{Chapter \thechapter{}: #1}%
@@ -102,16 +107,45 @@
 % Include individual chapters
 % https://www.overleaf.com/learn/latex/Headers_and_footers#Using_the_fancyhdr_package
 
+% start chapter on odd pages
 \input{01introduction/introduction.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{02theory/theory.tex}
 \input{03minerva/minerva.tex}
 \input{04measurement/measurement.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{05dataAsimulation/dataAsimulation.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{06reconstruction/reconstruction.tex}
 \input{07analysis1D/analysis1D.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{08systematics/systematics.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{09results/results.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{10conclusions/conclusions.tex}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 
 % Formatting of Bibligraphy
 \addcontentsline{toc}{chapter}{Bibliography}
@@ -123,6 +157,10 @@
 
 % Appendices
 \newpage
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \begin{appendices}
     \appendix
     \fancyhf{}
@@ -130,18 +168,36 @@
     \renewcommand{\chaptermark}[1]{%
   \markboth{Appendix \thechapter{}: #1}{Appendix \thechapter{}: #1}}
     \pagestyle{fancy}
-    \fancyhead[L]{\leftmark}
-    \fancyhead[R]{\thepage}
+    \fancyhead[LE]{\thepage\hfill\nouppercase{\leftmark}}
+    \fancyhead[RO]{\nouppercase{\leftmark}\hfill\thepage}
+    %\fancyhead[L]{\leftmark}
+    %\fancyhead[R]{\thepage}
 \input{appendix/appendix_nuclearTargetFlux}
 \input{appendix/appendix_eventSelection}
 \input{appendix/appendix_PlasticSidebands}
 \input{appendix/appendix_backgroundSubtraction}
 \input{appendix/appendix_migrationMatrices}
 \input{appendix/appendix_unfolding}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{appendix/appendix_unfoldingStudies}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{appendix/appendix_unfoldedDistributions}
 \input{appendix/appendix_efficiency}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{appendix/appendix_efficiencyCorrectedDistributions}
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 \input{appendix/appendix_systematics}
 \input{appendix/appendix_tuneComparison}
 \end{appendices}

@@ -62,6 +62,9 @@
 }
 \def\endabstract{
   \par
+  \clearpage
+  \thispagestyle{empty}
+  \cleardoublepage
 }
 
 \newenvironment{declaration}{
@@ -101,6 +104,9 @@
 }{\cleardoublepage}
 \def\enddeclarationcopyright{
   \par
+  \clearpage
+  \thispagestyle{empty}
+  \cleardoublepage
 }
 
 
@@ -114,12 +120,16 @@
 \def\body{
     \cleardoublepage   
     \pagestyle{fancy}
-    \fancyhead[L]{\nouppercase{\rightmark}}
-    \fancyhead[R]{\thepage}
+    \fancyhf{}
+    \fancyhead[LE]{\thepage\hfill\nouppercase{\rightmark}}
+    \fancyhead[RO]{\nouppercase{\rightmark}\hfill\thepage}
+    %\fancyhead[L]{\nouppercase{\rightmark}}
+    %\fancyhead[R]{\thepage}
     \singlespacing
     \tableofcontents
     %\pagestyle{plain}
     \clearpage
+    \thispagestyle{empty}
     \cleardoublepage
     %\pagestyle{uheadings}
     \listoffigures
@@ -134,6 +144,8 @@
     %\pagestyle{uheadings}
     \input{glossary/glossary.tex}
     %\pagestyle{plain}
+    \clearpage
+    \thispagestyle{empty}
     \cleardoublepage
     \pagestyle{uheadings}
     \pagenumbering{arabic}
