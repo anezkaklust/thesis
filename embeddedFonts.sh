@@ -6,5 +6,5 @@
     -dBATCH \
     -sDEVICE=pdfwrite \
     -sOutputFile=Klustova-A-2024-PhD-Thesis.pdf \
-    -c ".setpdfwrite <</NeverEmbed [ ]>> setdistillerparams" \
+    -c " <</NeverEmbed [ ]>> setdistillerparams" \
     -f thesis.pdf
